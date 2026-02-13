@@ -339,6 +339,7 @@
       select.innerHTML = '';
 
       const national = manifest.entities.filter(e => e.type === 'national');
+      const combined = manifest.entities.filter(e => e.type === 'combined');
       const regulated = manifest.entities.filter(e => e.type === 'regulated');
       const exempt = manifest.entities.filter(e => e.type === 'exempt');
 
@@ -355,6 +356,7 @@
       }
 
       addGroup('National', national);
+      if (combined.length) addGroup('Combined Networks', combined);
       addGroup('Regulated EDBs (' + regulated.length + ')', regulated);
       addGroup('Consumer-Owned EDBs (' + exempt.length + ')', exempt);
 

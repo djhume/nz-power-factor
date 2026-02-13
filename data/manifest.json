@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-13T02:26:03.614041+00:00",
+  "generated": "2026-02-13T03:00:28.474264+00:00",
   "categories": [
     "Summer Night",
     "Summer Day",
@@ -208,6 +208,196 @@
           "mean_pf": 1.001617,
           "pct_leading": 63.7,
           "display_pf": "0.9984 leading"
+        }
+      }
+    },
+    {
+      "code": "PWNT",
+      "name": "PowerNet",
+      "display_name": "PowerNet (TPCO + ELIN, Southland)",
+      "type": "combined",
+      "years": [
+        1997,
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 250,
+        "pf_min": 0.915,
+        "pf_max": 1.02
+      },
+      "stats": {
+        "1997": {
+          "mean_pf": 0.970479,
+          "pct_leading": 0.0,
+          "display_pf": "0.9705 lagging"
+        },
+        "1998": {
+          "mean_pf": 0.971166,
+          "pct_leading": 0.0,
+          "display_pf": "0.9712 lagging"
+        },
+        "1999": {
+          "mean_pf": 0.970792,
+          "pct_leading": 0.0,
+          "display_pf": "0.9708 lagging"
+        },
+        "2000": {
+          "mean_pf": 0.971688,
+          "pct_leading": 0.0,
+          "display_pf": "0.9717 lagging"
+        },
+        "2001": {
+          "mean_pf": 0.975386,
+          "pct_leading": 0.0,
+          "display_pf": "0.9754 lagging"
+        },
+        "2002": {
+          "mean_pf": 0.961465,
+          "pct_leading": 0.0,
+          "display_pf": "0.9615 lagging"
+        },
+        "2003": {
+          "mean_pf": 0.962436,
+          "pct_leading": 0.0,
+          "display_pf": "0.9624 lagging"
+        },
+        "2004": {
+          "mean_pf": 0.970226,
+          "pct_leading": 0.0,
+          "display_pf": "0.9702 lagging"
+        },
+        "2005": {
+          "mean_pf": 0.970642,
+          "pct_leading": 0.0,
+          "display_pf": "0.9706 lagging"
+        },
+        "2006": {
+          "mean_pf": 0.973282,
+          "pct_leading": 0.0,
+          "display_pf": "0.9733 lagging"
+        },
+        "2007": {
+          "mean_pf": 0.971163,
+          "pct_leading": 0.0,
+          "display_pf": "0.9712 lagging"
+        },
+        "2008": {
+          "mean_pf": 0.971128,
+          "pct_leading": 0.5,
+          "display_pf": "0.9711 lagging"
+        },
+        "2009": {
+          "mean_pf": 0.977855,
+          "pct_leading": 0.0,
+          "display_pf": "0.9779 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.979368,
+          "pct_leading": 1.5,
+          "display_pf": "0.9794 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.98056,
+          "pct_leading": 0.7,
+          "display_pf": "0.9806 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.98034,
+          "pct_leading": 0.8,
+          "display_pf": "0.9803 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.980377,
+          "pct_leading": 1.6,
+          "display_pf": "0.9804 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.982394,
+          "pct_leading": 2.5,
+          "display_pf": "0.9824 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.983109,
+          "pct_leading": 2.8,
+          "display_pf": "0.9831 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.98321,
+          "pct_leading": 4.8,
+          "display_pf": "0.9832 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.986054,
+          "pct_leading": 8.4,
+          "display_pf": "0.9861 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.987512,
+          "pct_leading": 9.6,
+          "display_pf": "0.9875 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.989489,
+          "pct_leading": 12.2,
+          "display_pf": "0.9895 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.991133,
+          "pct_leading": 13.5,
+          "display_pf": "0.9911 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.992381,
+          "pct_leading": 15.5,
+          "display_pf": "0.9924 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.995194,
+          "pct_leading": 21.5,
+          "display_pf": "0.9952 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.993106,
+          "pct_leading": 21.7,
+          "display_pf": "0.9931 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.992194,
+          "pct_leading": 22.9,
+          "display_pf": "0.9922 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.994412,
+          "pct_leading": 23.2,
+          "display_pf": "0.9944 lagging"
         }
       }
     },
