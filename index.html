@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Power Factor Explorer - Gridlytics</title>
-  <meta name="description" content="How are power factors changing across NZ distribution networks? Animated scatter plots for 29 EDBs from 2009 to 2025.">
+  <title>NZ Power Factor Explorer</title>
+  <meta name="description" content="How are power factors changing across NZ distribution networks? Animated scatter plots for 29 EDBs from 1997 to 2025.">
   <style>
-    /* Gridlytics base styles (inlined for standalone deployment) */
+    /* Base styles */
     :root {
-      --gl-blue-dark: #003366;
-      --gl-blue-mid: #0066b3;
-      --gl-blue-light: #e6f0fa;
+      --blue-dark: #003366;
+      --blue-mid: #0066b3;
+      --blue-light: #e6f0fa;
       --bg-primary: #ffffff;
       --bg-secondary: #f8f9fa;
       --text-primary: #212529;
@@ -30,11 +30,11 @@
       color: var(--text-primary);
       background: var(--bg-secondary);
     }
-    a { color: var(--gl-blue-mid); text-decoration: none; }
+    a { color: var(--blue-mid); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     .tool-nav {
-      background: var(--gl-blue-dark);
+      background: var(--blue-dark);
       color: white;
       padding: var(--space-sm) var(--space-md);
       display: flex;
@@ -59,7 +59,7 @@
       border-radius: 4px;
     }
     .site-footer {
-      background: var(--gl-blue-dark);
+      background: var(--blue-dark);
       color: rgba(255,255,255,0.7);
       text-align: center;
       padding: var(--space-lg);
@@ -135,8 +135,7 @@
 <body>
   <div class="page-wrapper">
     <nav class="tool-nav">
-      <a href="https://gridlytics.co.nz" class="nav-home">Gridlytics</a>
-      <span class="nav-title">Power Factor Explorer</span>
+      <span class="nav-title">NZ Power Factor Explorer</span>
       <span class="data-status" id="dataStatus">Loading...</span>
     </nav>
 
@@ -154,12 +153,12 @@
       </div>
       <div class="attribution">
         Data source: <a href="https://www.emi.ea.govt.nz">Electricity Authority EMI</a>
-        &middot; Half-hourly metered P and Q at grid exit points, 2009&ndash;2025
+        &middot; Half-hourly metered P and Q at grid exit points, 1997&ndash;2025
       </div>
     </main>
 
     <footer class="site-footer">
-      <p>Data: <a href="https://www.emi.ea.govt.nz">EMI</a> | <a href="https://gridlytics.co.nz">More tools</a> | Built by <a href="https://gridlytics.co.nz">Gridlytics</a></p>
+      <p>Data source: <a href="https://www.emi.ea.govt.nz">Electricity Authority EMI</a></p>
     </footer>
   </div>
 
@@ -430,8 +429,10 @@
         CATEGORY_COLORS = manifest.category_colors;
 
         const gen = new Date(manifest.generated);
+        const firstYear = manifest.entities[0].years[0];
+        const lastYear = manifest.entities[0].years.slice(-1)[0];
         document.getElementById('dataStatus').textContent =
-          'Data: 2009\u2013' + manifest.entities[0].years.slice(-1)[0];
+          'Data: ' + firstYear + '\u2013' + lastYear;
 
         populateDropdown();
 
