@@ -1,0 +1,3511 @@
+{
+  "generated": "2026-02-12T19:33:55.430310+00:00",
+  "categories": [
+    "Summer Night",
+    "Summer Day",
+    "Autumn Night",
+    "Autumn Day",
+    "Winter Night",
+    "Winter Day",
+    "Spring Night",
+    "Spring Day"
+  ],
+  "category_colors": [
+    "#1f77b4",
+    "#ff7f0e",
+    "#2ca02c",
+    "#d62728",
+    "#9467bd",
+    "#8c564b",
+    "#e377c2",
+    "#7f7f7f"
+  ],
+  "entities": [
+    {
+      "code": "NZ",
+      "name": "All New Zealand",
+      "display_name": "All New Zealand",
+      "type": "national",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 7500,
+        "pf_min": 0.92,
+        "pf_max": 1.04
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.987558,
+          "pct_leading": 0.0,
+          "display_pf": "0.9876 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.988138,
+          "pct_leading": 0.0,
+          "display_pf": "0.9881 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.990933,
+          "pct_leading": 0.0,
+          "display_pf": "0.9909 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.993127,
+          "pct_leading": 0.0,
+          "display_pf": "0.9931 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.99306,
+          "pct_leading": 0.1,
+          "display_pf": "0.9931 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.993264,
+          "pct_leading": 0.1,
+          "display_pf": "0.9933 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.993949,
+          "pct_leading": 0.4,
+          "display_pf": "0.9939 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.995349,
+          "pct_leading": 3.0,
+          "display_pf": "0.9953 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.996222,
+          "pct_leading": 9.7,
+          "display_pf": "0.9962 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.996916,
+          "pct_leading": 15.6,
+          "display_pf": "0.9969 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.997485,
+          "pct_leading": 20.6,
+          "display_pf": "0.9975 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.998764,
+          "pct_leading": 32.5,
+          "display_pf": "0.9988 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.999119,
+          "pct_leading": 36.0,
+          "display_pf": "0.9991 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.999734,
+          "pct_leading": 44.3,
+          "display_pf": "0.9997 lagging"
+        },
+        "2023": {
+          "mean_pf": 1.00035,
+          "pct_leading": 51.2,
+          "display_pf": "0.9997 leading"
+        },
+        "2024": {
+          "mean_pf": 1.001049,
+          "pct_leading": 58.5,
+          "display_pf": "0.9990 leading"
+        },
+        "2025": {
+          "mean_pf": 1.001695,
+          "pct_leading": 64.2,
+          "display_pf": "0.9983 leading"
+        }
+      }
+    },
+    {
+      "code": "ALPE",
+      "name": "Alpine Energy",
+      "display_name": "Alpine Energy (South Canterbury)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 150,
+        "pf_min": 0.95,
+        "pf_max": 1.02
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.978053,
+          "pct_leading": 0.0,
+          "display_pf": "0.9781 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.982873,
+          "pct_leading": 5.7,
+          "display_pf": "0.9829 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.987807,
+          "pct_leading": 6.2,
+          "display_pf": "0.9878 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.987575,
+          "pct_leading": 6.0,
+          "display_pf": "0.9876 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.984445,
+          "pct_leading": 2.2,
+          "display_pf": "0.9844 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.98585,
+          "pct_leading": 5.9,
+          "display_pf": "0.9859 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.986538,
+          "pct_leading": 6.5,
+          "display_pf": "0.9865 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.989181,
+          "pct_leading": 8.8,
+          "display_pf": "0.9892 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.987435,
+          "pct_leading": 6.0,
+          "display_pf": "0.9874 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.991733,
+          "pct_leading": 11.1,
+          "display_pf": "0.9917 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.990951,
+          "pct_leading": 14.2,
+          "display_pf": "0.9910 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.992734,
+          "pct_leading": 19.7,
+          "display_pf": "0.9927 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.994238,
+          "pct_leading": 18.9,
+          "display_pf": "0.9942 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.996242,
+          "pct_leading": 22.0,
+          "display_pf": "0.9962 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.995169,
+          "pct_leading": 24.7,
+          "display_pf": "0.9952 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.996475,
+          "pct_leading": 32.1,
+          "display_pf": "0.9965 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.99831,
+          "pct_leading": 39.6,
+          "display_pf": "0.9983 lagging"
+        }
+      }
+    },
+    {
+      "code": "DUNE",
+      "name": "Aurora Energy",
+      "display_name": "Aurora Energy (Dunedin, Central Otago, Queenstown)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 300,
+        "pf_min": 0.96,
+        "pf_max": 1.11
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.99444,
+          "pct_leading": 19.8,
+          "display_pf": "0.9944 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.996677,
+          "pct_leading": 31.7,
+          "display_pf": "0.9967 lagging"
+        },
+        "2011": {
+          "mean_pf": 1.011941,
+          "pct_leading": 68.0,
+          "display_pf": "0.9881 leading"
+        },
+        "2012": {
+          "mean_pf": 1.022414,
+          "pct_leading": 84.7,
+          "display_pf": "0.9776 leading"
+        },
+        "2013": {
+          "mean_pf": 1.029587,
+          "pct_leading": 88.9,
+          "display_pf": "0.9704 leading"
+        },
+        "2014": {
+          "mean_pf": 1.020853,
+          "pct_leading": 84.3,
+          "display_pf": "0.9791 leading"
+        },
+        "2015": {
+          "mean_pf": 1.018473,
+          "pct_leading": 80.9,
+          "display_pf": "0.9815 leading"
+        },
+        "2016": {
+          "mean_pf": 1.030419,
+          "pct_leading": 94.0,
+          "display_pf": "0.9696 leading"
+        },
+        "2017": {
+          "mean_pf": 1.030991,
+          "pct_leading": 94.0,
+          "display_pf": "0.9690 leading"
+        },
+        "2018": {
+          "mean_pf": 1.035454,
+          "pct_leading": 95.6,
+          "display_pf": "0.9645 leading"
+        },
+        "2019": {
+          "mean_pf": 1.031432,
+          "pct_leading": 93.0,
+          "display_pf": "0.9686 leading"
+        },
+        "2020": {
+          "mean_pf": 1.0336,
+          "pct_leading": 94.0,
+          "display_pf": "0.9664 leading"
+        },
+        "2021": {
+          "mean_pf": 1.037258,
+          "pct_leading": 98.1,
+          "display_pf": "0.9627 leading"
+        },
+        "2022": {
+          "mean_pf": 1.034184,
+          "pct_leading": 97.9,
+          "display_pf": "0.9658 leading"
+        },
+        "2023": {
+          "mean_pf": 1.029618,
+          "pct_leading": 95.6,
+          "display_pf": "0.9704 leading"
+        },
+        "2024": {
+          "mean_pf": 1.036347,
+          "pct_leading": 98.0,
+          "display_pf": "0.9637 leading"
+        },
+        "2025": {
+          "mean_pf": 1.041687,
+          "pct_leading": 99.8,
+          "display_pf": "0.9583 leading"
+        }
+      }
+    },
+    {
+      "code": "EASH",
+      "name": "EA Networks",
+      "display_name": "EA Networks (Mid-Canterbury)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 200,
+        "pf_min": 0.85,
+        "pf_max": 1.11
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.936737,
+          "pct_leading": 10.8,
+          "display_pf": "0.9367 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.972344,
+          "pct_leading": 14.0,
+          "display_pf": "0.9723 lagging"
+        },
+        "2011": {
+          "mean_pf": 1.03336,
+          "pct_leading": 37.8,
+          "display_pf": "0.9666 leading"
+        },
+        "2012": {
+          "mean_pf": 1.041343,
+          "pct_leading": 40.6,
+          "display_pf": "0.9587 leading"
+        },
+        "2013": {
+          "mean_pf": 1.080462,
+          "pct_leading": 37.2,
+          "display_pf": "0.9195 leading"
+        },
+        "2014": {
+          "mean_pf": 1.16364,
+          "pct_leading": 46.5,
+          "display_pf": "0.8364 leading"
+        },
+        "2015": {
+          "mean_pf": 1.183206,
+          "pct_leading": 53.0,
+          "display_pf": "0.8168 leading"
+        },
+        "2016": {
+          "mean_pf": 1.19588,
+          "pct_leading": 69.0,
+          "display_pf": "0.8041 leading"
+        },
+        "2017": {
+          "mean_pf": 1.191672,
+          "pct_leading": 64.4,
+          "display_pf": "0.8083 leading"
+        },
+        "2018": {
+          "mean_pf": 1.290838,
+          "pct_leading": 87.1,
+          "display_pf": "0.7092 leading"
+        },
+        "2019": {
+          "mean_pf": 1.081863,
+          "pct_leading": 66.8,
+          "display_pf": "0.9181 leading"
+        },
+        "2020": {
+          "mean_pf": 1.099722,
+          "pct_leading": 60.3,
+          "display_pf": "0.9003 leading"
+        },
+        "2021": {
+          "mean_pf": 1.119289,
+          "pct_leading": 67.2,
+          "display_pf": "0.8807 leading"
+        },
+        "2022": {
+          "mean_pf": 1.117703,
+          "pct_leading": 80.0,
+          "display_pf": "0.8823 leading"
+        },
+        "2023": {
+          "mean_pf": 1.143218,
+          "pct_leading": 73.2,
+          "display_pf": "0.8568 leading"
+        },
+        "2024": {
+          "mean_pf": 1.10916,
+          "pct_leading": 67.8,
+          "display_pf": "0.8908 leading"
+        },
+        "2025": {
+          "mean_pf": 1.129648,
+          "pct_leading": 76.5,
+          "display_pf": "0.8704 leading"
+        }
+      }
+    },
+    {
+      "code": "ELIN",
+      "name": "Electricity Invercargill",
+      "display_name": "Electricity Invercargill (Invercargill)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 100,
+        "pf_min": 0.97,
+        "pf_max": 1.02
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.993578,
+          "pct_leading": 0.0,
+          "display_pf": "0.9936 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.994018,
+          "pct_leading": 0.1,
+          "display_pf": "0.9940 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.994917,
+          "pct_leading": 0.5,
+          "display_pf": "0.9949 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.9954,
+          "pct_leading": 2.9,
+          "display_pf": "0.9954 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.994838,
+          "pct_leading": 7.4,
+          "display_pf": "0.9948 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.995804,
+          "pct_leading": 10.9,
+          "display_pf": "0.9958 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.996511,
+          "pct_leading": 18.4,
+          "display_pf": "0.9965 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.997057,
+          "pct_leading": 28.6,
+          "display_pf": "0.9971 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.997987,
+          "pct_leading": 34.3,
+          "display_pf": "0.9980 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.998755,
+          "pct_leading": 41.0,
+          "display_pf": "0.9988 lagging"
+        },
+        "2019": {
+          "mean_pf": 1.000117,
+          "pct_leading": 51.9,
+          "display_pf": "0.9999 leading"
+        },
+        "2020": {
+          "mean_pf": 0.999687,
+          "pct_leading": 46.0,
+          "display_pf": "0.9997 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.999683,
+          "pct_leading": 45.1,
+          "display_pf": "0.9997 lagging"
+        },
+        "2022": {
+          "mean_pf": 1.000427,
+          "pct_leading": 50.2,
+          "display_pf": "0.9996 leading"
+        },
+        "2023": {
+          "mean_pf": 1.000878,
+          "pct_leading": 56.6,
+          "display_pf": "0.9991 leading"
+        },
+        "2024": {
+          "mean_pf": 1.000576,
+          "pct_leading": 52.2,
+          "display_pf": "0.9994 leading"
+        },
+        "2025": {
+          "mean_pf": 1.001186,
+          "pct_leading": 55.2,
+          "display_pf": "0.9988 leading"
+        }
+      }
+    },
+    {
+      "code": "EAST",
+      "name": "Firstlight Network",
+      "display_name": "Firstlight Network (Gisborne, East Coast)",
+      "type": "regulated",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 75,
+        "pf_min": 0.97,
+        "pf_max": 1.11
+      },
+      "stats": {
+        "2015": {
+          "mean_pf": 1.030333,
+          "pct_leading": 78.3,
+          "display_pf": "0.9697 leading"
+        },
+        "2016": {
+          "mean_pf": 1.021105,
+          "pct_leading": 74.5,
+          "display_pf": "0.9789 leading"
+        },
+        "2017": {
+          "mean_pf": 1.014343,
+          "pct_leading": 70.4,
+          "display_pf": "0.9857 leading"
+        },
+        "2018": {
+          "mean_pf": 1.019983,
+          "pct_leading": 79.4,
+          "display_pf": "0.9800 leading"
+        },
+        "2019": {
+          "mean_pf": 1.022663,
+          "pct_leading": 85.3,
+          "display_pf": "0.9773 leading"
+        },
+        "2020": {
+          "mean_pf": 1.027957,
+          "pct_leading": 92.6,
+          "display_pf": "0.9720 leading"
+        },
+        "2021": {
+          "mean_pf": 1.028982,
+          "pct_leading": 93.9,
+          "display_pf": "0.9710 leading"
+        },
+        "2022": {
+          "mean_pf": 1.024725,
+          "pct_leading": 90.1,
+          "display_pf": "0.9753 leading"
+        },
+        "2023": {
+          "mean_pf": 1.028665,
+          "pct_leading": 98.2,
+          "display_pf": "0.9713 leading"
+        },
+        "2024": {
+          "mean_pf": 1.031012,
+          "pct_leading": 97.7,
+          "display_pf": "0.9690 leading"
+        },
+        "2025": {
+          "mean_pf": 1.032263,
+          "pct_leading": 99.1,
+          "display_pf": "0.9677 leading"
+        }
+      }
+    },
+    {
+      "code": "HEDL",
+      "name": "Horizon Networks",
+      "display_name": "Horizon Networks (Hawke's Bay (Napier/Hastings))",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 100,
+        "pf_min": 0.85,
+        "pf_max": 1.02
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.919685,
+          "pct_leading": 0.0,
+          "display_pf": "0.9197 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.924311,
+          "pct_leading": 0.0,
+          "display_pf": "0.9243 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.927186,
+          "pct_leading": 0.0,
+          "display_pf": "0.9272 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.939104,
+          "pct_leading": 0.0,
+          "display_pf": "0.9391 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.943736,
+          "pct_leading": 0.0,
+          "display_pf": "0.9437 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.949529,
+          "pct_leading": 0.0,
+          "display_pf": "0.9495 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.946621,
+          "pct_leading": 0.0,
+          "display_pf": "0.9466 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.953773,
+          "pct_leading": 0.0,
+          "display_pf": "0.9538 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.966617,
+          "pct_leading": 0.0,
+          "display_pf": "0.9666 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.948439,
+          "pct_leading": 0.0,
+          "display_pf": "0.9484 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.903641,
+          "pct_leading": 0.0,
+          "display_pf": "0.9036 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.909092,
+          "pct_leading": 0.0,
+          "display_pf": "0.9091 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.913217,
+          "pct_leading": 0.0,
+          "display_pf": "0.9132 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.921704,
+          "pct_leading": 0.0,
+          "display_pf": "0.9217 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.922219,
+          "pct_leading": 0.0,
+          "display_pf": "0.9222 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.919093,
+          "pct_leading": 0.0,
+          "display_pf": "0.9191 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.928724,
+          "pct_leading": 0.0,
+          "display_pf": "0.9287 lagging"
+        }
+      }
+    },
+    {
+      "code": "NELS",
+      "name": "Nelson Electricity",
+      "display_name": "Nelson Electricity (Nelson City)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 150,
+        "pf_min": 0.94,
+        "pf_max": 1.04
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.982638,
+          "pct_leading": 8.4,
+          "display_pf": "0.9826 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.991946,
+          "pct_leading": 25.2,
+          "display_pf": "0.9919 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.994245,
+          "pct_leading": 35.2,
+          "display_pf": "0.9942 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.995172,
+          "pct_leading": 37.0,
+          "display_pf": "0.9952 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.993677,
+          "pct_leading": 28.8,
+          "display_pf": "0.9937 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.990449,
+          "pct_leading": 7.6,
+          "display_pf": "0.9904 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.991515,
+          "pct_leading": 10.1,
+          "display_pf": "0.9915 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.988534,
+          "pct_leading": 4.2,
+          "display_pf": "0.9885 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.987775,
+          "pct_leading": 2.8,
+          "display_pf": "0.9878 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.989873,
+          "pct_leading": 4.2,
+          "display_pf": "0.9899 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.993877,
+          "pct_leading": 10.2,
+          "display_pf": "0.9939 lagging"
+        },
+        "2020": {
+          "mean_pf": 1.000278,
+          "pct_leading": 42.5,
+          "display_pf": "0.9997 leading"
+        },
+        "2021": {
+          "mean_pf": 1.001003,
+          "pct_leading": 48.8,
+          "display_pf": "0.9990 leading"
+        },
+        "2022": {
+          "mean_pf": 1.000566,
+          "pct_leading": 44.1,
+          "display_pf": "0.9994 leading"
+        },
+        "2023": {
+          "mean_pf": 1.001715,
+          "pct_leading": 56.2,
+          "display_pf": "0.9983 leading"
+        },
+        "2024": {
+          "mean_pf": 1.001431,
+          "pct_leading": 50.1,
+          "display_pf": "0.9986 leading"
+        },
+        "2025": {
+          "mean_pf": 1.000434,
+          "pct_leading": 40.5,
+          "display_pf": "0.9996 leading"
+        }
+      }
+    },
+    {
+      "code": "NPOW",
+      "name": "Northpower",
+      "display_name": "Northpower (Whangarei, Kaipara)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 200,
+        "pf_min": 0.95,
+        "pf_max": 1.05
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.970236,
+          "pct_leading": 0.0,
+          "display_pf": "0.9702 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.976004,
+          "pct_leading": 0.0,
+          "display_pf": "0.9760 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.983715,
+          "pct_leading": 0.0,
+          "display_pf": "0.9837 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.984044,
+          "pct_leading": 0.0,
+          "display_pf": "0.9840 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.987163,
+          "pct_leading": 0.3,
+          "display_pf": "0.9872 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.986133,
+          "pct_leading": 0.3,
+          "display_pf": "0.9861 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.991015,
+          "pct_leading": 3.4,
+          "display_pf": "0.9910 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.995658,
+          "pct_leading": 6.9,
+          "display_pf": "0.9957 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.996177,
+          "pct_leading": 7.4,
+          "display_pf": "0.9962 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.996325,
+          "pct_leading": 12.3,
+          "display_pf": "0.9963 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.994183,
+          "pct_leading": 1.3,
+          "display_pf": "0.9942 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.998333,
+          "pct_leading": 26.7,
+          "display_pf": "0.9983 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.996053,
+          "pct_leading": 8.6,
+          "display_pf": "0.9961 lagging"
+        },
+        "2022": {
+          "mean_pf": 1.001389,
+          "pct_leading": 46.9,
+          "display_pf": "0.9986 leading"
+        },
+        "2023": {
+          "mean_pf": 1.004915,
+          "pct_leading": 70.4,
+          "display_pf": "0.9951 leading"
+        },
+        "2024": {
+          "mean_pf": 1.007093,
+          "pct_leading": 75.0,
+          "display_pf": "0.9929 leading"
+        },
+        "2025": {
+          "mean_pf": 1.006774,
+          "pct_leading": 68.4,
+          "display_pf": "0.9932 leading"
+        }
+      }
+    },
+    {
+      "code": "ORON",
+      "name": "Orion",
+      "display_name": "Orion (Canterbury)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 750,
+        "pf_min": 0.98,
+        "pf_max": 1.11
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 1.005011,
+          "pct_leading": 72.6,
+          "display_pf": "0.9950 leading"
+        },
+        "2010": {
+          "mean_pf": 1.004777,
+          "pct_leading": 74.5,
+          "display_pf": "0.9952 leading"
+        },
+        "2011": {
+          "mean_pf": 1.003621,
+          "pct_leading": 68.2,
+          "display_pf": "0.9964 leading"
+        },
+        "2012": {
+          "mean_pf": 1.005209,
+          "pct_leading": 76.1,
+          "display_pf": "0.9948 leading"
+        },
+        "2013": {
+          "mean_pf": 1.005982,
+          "pct_leading": 78.7,
+          "display_pf": "0.9940 leading"
+        },
+        "2014": {
+          "mean_pf": 1.004666,
+          "pct_leading": 73.5,
+          "display_pf": "0.9953 leading"
+        },
+        "2015": {
+          "mean_pf": 1.003328,
+          "pct_leading": 78.3,
+          "display_pf": "0.9967 leading"
+        },
+        "2016": {
+          "mean_pf": 1.008215,
+          "pct_leading": 95.4,
+          "display_pf": "0.9918 leading"
+        },
+        "2017": {
+          "mean_pf": 1.008047,
+          "pct_leading": 97.5,
+          "display_pf": "0.9920 leading"
+        },
+        "2018": {
+          "mean_pf": 1.013242,
+          "pct_leading": 99.2,
+          "display_pf": "0.9868 leading"
+        },
+        "2019": {
+          "mean_pf": 1.011707,
+          "pct_leading": 99.1,
+          "display_pf": "0.9883 leading"
+        },
+        "2020": {
+          "mean_pf": 1.01328,
+          "pct_leading": 99.7,
+          "display_pf": "0.9867 leading"
+        },
+        "2021": {
+          "mean_pf": 1.025844,
+          "pct_leading": 99.9,
+          "display_pf": "0.9742 leading"
+        },
+        "2022": {
+          "mean_pf": 1.028815,
+          "pct_leading": 100.0,
+          "display_pf": "0.9712 leading"
+        },
+        "2023": {
+          "mean_pf": 1.0302,
+          "pct_leading": 100.0,
+          "display_pf": "0.9698 leading"
+        },
+        "2024": {
+          "mean_pf": 1.030168,
+          "pct_leading": 100.0,
+          "display_pf": "0.9698 leading"
+        },
+        "2025": {
+          "mean_pf": 1.036652,
+          "pct_leading": 100.0,
+          "display_pf": "0.9633 leading"
+        }
+      }
+    },
+    {
+      "code": "POCO",
+      "name": "Powerco",
+      "display_name": "Powerco (Waikato, Taranaki, Manawatu, Wairarapa)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 1000,
+        "pf_min": 0.93,
+        "pf_max": 1.04
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.973262,
+          "pct_leading": 0.0,
+          "display_pf": "0.9733 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.977359,
+          "pct_leading": 0.0,
+          "display_pf": "0.9774 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.981143,
+          "pct_leading": 0.0,
+          "display_pf": "0.9811 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.985573,
+          "pct_leading": 0.8,
+          "display_pf": "0.9856 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.987993,
+          "pct_leading": 2.3,
+          "display_pf": "0.9880 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.988864,
+          "pct_leading": 4.1,
+          "display_pf": "0.9889 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.990365,
+          "pct_leading": 5.5,
+          "display_pf": "0.9904 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.991979,
+          "pct_leading": 10.1,
+          "display_pf": "0.9920 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.994192,
+          "pct_leading": 19.8,
+          "display_pf": "0.9942 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.995807,
+          "pct_leading": 26.2,
+          "display_pf": "0.9958 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.997505,
+          "pct_leading": 34.6,
+          "display_pf": "0.9975 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.999501,
+          "pct_leading": 43.1,
+          "display_pf": "0.9995 lagging"
+        },
+        "2021": {
+          "mean_pf": 1.000349,
+          "pct_leading": 46.0,
+          "display_pf": "0.9997 leading"
+        },
+        "2022": {
+          "mean_pf": 1.002362,
+          "pct_leading": 56.1,
+          "display_pf": "0.9976 leading"
+        },
+        "2023": {
+          "mean_pf": 1.006201,
+          "pct_leading": 75.1,
+          "display_pf": "0.9938 leading"
+        },
+        "2024": {
+          "mean_pf": 1.007785,
+          "pct_leading": 81.5,
+          "display_pf": "0.9922 leading"
+        },
+        "2025": {
+          "mean_pf": 1.007255,
+          "pct_leading": 79.2,
+          "display_pf": "0.9927 leading"
+        }
+      }
+    },
+    {
+      "code": "TPCO",
+      "name": "The Power Company",
+      "display_name": "The Power Company (Southland (excl. Invercargill))",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 150,
+        "pf_min": 0.85,
+        "pf_max": 1.06
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.940439,
+          "pct_leading": 0.4,
+          "display_pf": "0.9404 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.945058,
+          "pct_leading": 4.7,
+          "display_pf": "0.9451 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.945521,
+          "pct_leading": 1.9,
+          "display_pf": "0.9455 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.945775,
+          "pct_leading": 1.5,
+          "display_pf": "0.9458 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.945507,
+          "pct_leading": 2.1,
+          "display_pf": "0.9455 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.949155,
+          "pct_leading": 3.5,
+          "display_pf": "0.9492 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.946798,
+          "pct_leading": 2.5,
+          "display_pf": "0.9468 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.946812,
+          "pct_leading": 3.9,
+          "display_pf": "0.9468 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.956967,
+          "pct_leading": 7.3,
+          "display_pf": "0.9570 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.960446,
+          "pct_leading": 6.8,
+          "display_pf": "0.9604 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.959578,
+          "pct_leading": 8.3,
+          "display_pf": "0.9596 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.967984,
+          "pct_leading": 10.8,
+          "display_pf": "0.9680 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.973985,
+          "pct_leading": 12.0,
+          "display_pf": "0.9740 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.984419,
+          "pct_leading": 13.0,
+          "display_pf": "0.9844 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.965946,
+          "pct_leading": 14.6,
+          "display_pf": "0.9659 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.945453,
+          "pct_leading": 17.5,
+          "display_pf": "0.9455 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.971047,
+          "pct_leading": 18.8,
+          "display_pf": "0.9710 lagging"
+        }
+      }
+    },
+    {
+      "code": "TOPE",
+      "name": "Top Energy",
+      "display_name": "Top Energy (Far North)",
+      "type": "regulated",
+      "years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 50,
+        "pf_min": 0.85,
+        "pf_max": 1.11
+      },
+      "stats": {
+        "2012": {
+          "mean_pf": 1.08522,
+          "pct_leading": 94.0,
+          "display_pf": "0.9148 leading"
+        },
+        "2013": {
+          "mean_pf": 1.087178,
+          "pct_leading": 98.4,
+          "display_pf": "0.9128 leading"
+        },
+        "2014": {
+          "mean_pf": 1.106767,
+          "pct_leading": 99.5,
+          "display_pf": "0.8932 leading"
+        },
+        "2015": {
+          "mean_pf": 1.147874,
+          "pct_leading": 99.8,
+          "display_pf": "0.8521 leading"
+        },
+        "2016": {
+          "mean_pf": 1.154028,
+          "pct_leading": 96.3,
+          "display_pf": "0.8460 leading"
+        },
+        "2017": {
+          "mean_pf": 1.17581,
+          "pct_leading": 99.3,
+          "display_pf": "0.8242 leading"
+        },
+        "2018": {
+          "mean_pf": 1.154539,
+          "pct_leading": 99.3,
+          "display_pf": "0.8455 leading"
+        },
+        "2019": {
+          "mean_pf": 1.155551,
+          "pct_leading": 99.1,
+          "display_pf": "0.8444 leading"
+        },
+        "2020": {
+          "mean_pf": 1.177085,
+          "pct_leading": 99.1,
+          "display_pf": "0.8229 leading"
+        },
+        "2021": {
+          "mean_pf": 1.101589,
+          "pct_leading": 78.4,
+          "display_pf": "0.8984 leading"
+        },
+        "2022": {
+          "mean_pf": 1.134112,
+          "pct_leading": 74.0,
+          "display_pf": "0.8659 leading"
+        },
+        "2023": {
+          "mean_pf": 1.097691,
+          "pct_leading": 75.8,
+          "display_pf": "0.9023 leading"
+        },
+        "2024": {
+          "mean_pf": 1.505571,
+          "pct_leading": 98.8,
+          "display_pf": "0.4944 leading"
+        },
+        "2025": {
+          "mean_pf": 1.275588,
+          "pct_leading": 93.9,
+          "display_pf": "0.7244 leading"
+        }
+      }
+    },
+    {
+      "code": "HAWK",
+      "name": "Unison Networks",
+      "display_name": "Unison Networks (Hawke's Bay, Rotorua, Taupo)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 300,
+        "pf_min": 0.92,
+        "pf_max": 1.01
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.954887,
+          "pct_leading": 0.0,
+          "display_pf": "0.9549 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.960007,
+          "pct_leading": 0.0,
+          "display_pf": "0.9600 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.966411,
+          "pct_leading": 0.0,
+          "display_pf": "0.9664 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.968976,
+          "pct_leading": 0.0,
+          "display_pf": "0.9690 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.976743,
+          "pct_leading": 0.0,
+          "display_pf": "0.9767 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.975105,
+          "pct_leading": 0.0,
+          "display_pf": "0.9751 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.976485,
+          "pct_leading": 0.0,
+          "display_pf": "0.9765 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.977993,
+          "pct_leading": 0.0,
+          "display_pf": "0.9780 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.98045,
+          "pct_leading": 0.0,
+          "display_pf": "0.9805 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.982644,
+          "pct_leading": 0.0,
+          "display_pf": "0.9826 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.986697,
+          "pct_leading": 0.3,
+          "display_pf": "0.9867 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.989975,
+          "pct_leading": 1.2,
+          "display_pf": "0.9900 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.992359,
+          "pct_leading": 7.2,
+          "display_pf": "0.9924 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.992023,
+          "pct_leading": 9.6,
+          "display_pf": "0.9920 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.995585,
+          "pct_leading": 21.7,
+          "display_pf": "0.9956 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.994494,
+          "pct_leading": 12.3,
+          "display_pf": "0.9945 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.995897,
+          "pct_leading": 20.1,
+          "display_pf": "0.9959 lagging"
+        }
+      }
+    },
+    {
+      "code": "VECT",
+      "name": "Vector",
+      "display_name": "Vector (Auckland)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 1000,
+        "pf_min": 0.96,
+        "pf_max": 1.05
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.994767,
+          "pct_leading": 32.2,
+          "display_pf": "0.9948 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.995221,
+          "pct_leading": 34.5,
+          "display_pf": "0.9952 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.9982,
+          "pct_leading": 43.3,
+          "display_pf": "0.9982 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.99582,
+          "pct_leading": 32.8,
+          "display_pf": "0.9958 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.995081,
+          "pct_leading": 29.0,
+          "display_pf": "0.9951 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.995076,
+          "pct_leading": 29.1,
+          "display_pf": "0.9951 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.996129,
+          "pct_leading": 33.1,
+          "display_pf": "0.9961 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.998515,
+          "pct_leading": 42.8,
+          "display_pf": "0.9985 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.998757,
+          "pct_leading": 42.8,
+          "display_pf": "0.9988 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.999945,
+          "pct_leading": 48.1,
+          "display_pf": "0.9999 lagging"
+        },
+        "2019": {
+          "mean_pf": 1.00166,
+          "pct_leading": 54.3,
+          "display_pf": "0.9983 leading"
+        },
+        "2020": {
+          "mean_pf": 1.004803,
+          "pct_leading": 64.9,
+          "display_pf": "0.9952 leading"
+        },
+        "2021": {
+          "mean_pf": 1.006183,
+          "pct_leading": 70.3,
+          "display_pf": "0.9938 leading"
+        },
+        "2022": {
+          "mean_pf": 1.007297,
+          "pct_leading": 71.6,
+          "display_pf": "0.9927 leading"
+        },
+        "2023": {
+          "mean_pf": 1.007752,
+          "pct_leading": 73.3,
+          "display_pf": "0.9922 leading"
+        },
+        "2024": {
+          "mean_pf": 1.009795,
+          "pct_leading": 86.2,
+          "display_pf": "0.9902 leading"
+        },
+        "2025": {
+          "mean_pf": 1.01036,
+          "pct_leading": 89.9,
+          "display_pf": "0.9896 leading"
+        }
+      }
+    },
+    {
+      "code": "WAIK",
+      "name": "WEL Networks",
+      "display_name": "WEL Networks (Hamilton, Waikato)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 300,
+        "pf_min": 0.93,
+        "pf_max": 1.11
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.990685,
+          "pct_leading": 19.4,
+          "display_pf": "0.9907 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.991776,
+          "pct_leading": 22.4,
+          "display_pf": "0.9918 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.98901,
+          "pct_leading": 20.9,
+          "display_pf": "0.9890 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.996764,
+          "pct_leading": 36.7,
+          "display_pf": "0.9968 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.99172,
+          "pct_leading": 28.1,
+          "display_pf": "0.9917 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.992614,
+          "pct_leading": 29.3,
+          "display_pf": "0.9926 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.996573,
+          "pct_leading": 36.0,
+          "display_pf": "0.9966 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.999879,
+          "pct_leading": 43.1,
+          "display_pf": "0.9999 lagging"
+        },
+        "2017": {
+          "mean_pf": 1.003319,
+          "pct_leading": 50.9,
+          "display_pf": "0.9967 leading"
+        },
+        "2018": {
+          "mean_pf": 1.007157,
+          "pct_leading": 58.2,
+          "display_pf": "0.9928 leading"
+        },
+        "2019": {
+          "mean_pf": 1.01016,
+          "pct_leading": 64.0,
+          "display_pf": "0.9898 leading"
+        },
+        "2020": {
+          "mean_pf": 1.014078,
+          "pct_leading": 71.9,
+          "display_pf": "0.9859 leading"
+        },
+        "2021": {
+          "mean_pf": 1.021116,
+          "pct_leading": 83.7,
+          "display_pf": "0.9789 leading"
+        },
+        "2022": {
+          "mean_pf": 1.022045,
+          "pct_leading": 87.7,
+          "display_pf": "0.9780 leading"
+        },
+        "2023": {
+          "mean_pf": 1.015142,
+          "pct_leading": 83.3,
+          "display_pf": "0.9849 leading"
+        },
+        "2024": {
+          "mean_pf": 1.016976,
+          "pct_leading": 91.5,
+          "display_pf": "0.9830 leading"
+        },
+        "2025": {
+          "mean_pf": 1.017655,
+          "pct_leading": 92.0,
+          "display_pf": "0.9823 leading"
+        }
+      }
+    },
+    {
+      "code": "CKHK",
+      "name": "Wellington Electricity",
+      "display_name": "Wellington Electricity (Wellington)",
+      "type": "regulated",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 750,
+        "pf_min": 0.96,
+        "pf_max": 1.05
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.990479,
+          "pct_leading": 0.1,
+          "display_pf": "0.9905 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.992816,
+          "pct_leading": 2.9,
+          "display_pf": "0.9928 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.993966,
+          "pct_leading": 6.0,
+          "display_pf": "0.9940 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.994957,
+          "pct_leading": 8.0,
+          "display_pf": "0.9950 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.995409,
+          "pct_leading": 17.5,
+          "display_pf": "0.9954 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.996642,
+          "pct_leading": 26.6,
+          "display_pf": "0.9966 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.994841,
+          "pct_leading": 8.1,
+          "display_pf": "0.9948 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.996674,
+          "pct_leading": 16.8,
+          "display_pf": "0.9967 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.998575,
+          "pct_leading": 30.3,
+          "display_pf": "0.9986 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.999306,
+          "pct_leading": 38.6,
+          "display_pf": "0.9993 lagging"
+        },
+        "2019": {
+          "mean_pf": 1.000599,
+          "pct_leading": 50.2,
+          "display_pf": "0.9994 leading"
+        },
+        "2020": {
+          "mean_pf": 1.001808,
+          "pct_leading": 60.5,
+          "display_pf": "0.9982 leading"
+        },
+        "2021": {
+          "mean_pf": 1.003103,
+          "pct_leading": 68.9,
+          "display_pf": "0.9969 leading"
+        },
+        "2022": {
+          "mean_pf": 1.004663,
+          "pct_leading": 82.0,
+          "display_pf": "0.9953 leading"
+        },
+        "2023": {
+          "mean_pf": 1.004814,
+          "pct_leading": 86.5,
+          "display_pf": "0.9952 leading"
+        },
+        "2024": {
+          "mean_pf": 1.006531,
+          "pct_leading": 87.7,
+          "display_pf": "0.9935 leading"
+        },
+        "2025": {
+          "mean_pf": 1.00791,
+          "pct_leading": 88.7,
+          "display_pf": "0.9921 leading"
+        }
+      }
+    },
+    {
+      "code": "BUEL",
+      "name": "Buller Electricity",
+      "display_name": "Buller Electricity (West Coast (Buller))",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 15,
+        "pf_min": 0.88,
+        "pf_max": 1.11
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.996034,
+          "pct_leading": 8.5,
+          "display_pf": "0.9960 lagging"
+        },
+        "2010": {
+          "mean_pf": 1.005776,
+          "pct_leading": 69.7,
+          "display_pf": "0.9942 leading"
+        },
+        "2011": {
+          "mean_pf": 0.985829,
+          "pct_leading": 4.6,
+          "display_pf": "0.9858 lagging"
+        },
+        "2012": {
+          "mean_pf": 1.012876,
+          "pct_leading": 74.1,
+          "display_pf": "0.9871 leading"
+        },
+        "2013": {
+          "mean_pf": 1.034589,
+          "pct_leading": 98.8,
+          "display_pf": "0.9654 leading"
+        },
+        "2014": {
+          "mean_pf": 1.076267,
+          "pct_leading": 98.2,
+          "display_pf": "0.9237 leading"
+        },
+        "2015": {
+          "mean_pf": 1.137454,
+          "pct_leading": 100.0,
+          "display_pf": "0.8625 leading"
+        },
+        "2016": {
+          "mean_pf": 1.102997,
+          "pct_leading": 96.3,
+          "display_pf": "0.8970 leading"
+        },
+        "2017": {
+          "mean_pf": 1.052504,
+          "pct_leading": 97.2,
+          "display_pf": "0.9475 leading"
+        },
+        "2018": {
+          "mean_pf": 1.121086,
+          "pct_leading": 97.9,
+          "display_pf": "0.8789 leading"
+        },
+        "2019": {
+          "mean_pf": 1.174038,
+          "pct_leading": 99.8,
+          "display_pf": "0.8260 leading"
+        },
+        "2020": {
+          "mean_pf": 1.127739,
+          "pct_leading": 95.5,
+          "display_pf": "0.8723 leading"
+        },
+        "2021": {
+          "mean_pf": 1.117589,
+          "pct_leading": 94.1,
+          "display_pf": "0.8824 leading"
+        },
+        "2022": {
+          "mean_pf": 1.103,
+          "pct_leading": 96.2,
+          "display_pf": "0.8970 leading"
+        },
+        "2023": {
+          "mean_pf": 1.122977,
+          "pct_leading": 98.1,
+          "display_pf": "0.8770 leading"
+        },
+        "2024": {
+          "mean_pf": 1.104057,
+          "pct_leading": 98.4,
+          "display_pf": "0.8959 leading"
+        },
+        "2025": {
+          "mean_pf": 1.103915,
+          "pct_leading": 99.0,
+          "display_pf": "0.8961 leading"
+        }
+      }
+    },
+    {
+      "code": "CHBP",
+      "name": "Centralines",
+      "display_name": "Centralines (Central Hawke's Bay)",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 25,
+        "pf_min": 0.88,
+        "pf_max": 1.01
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.932489,
+          "pct_leading": 0.0,
+          "display_pf": "0.9325 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.936399,
+          "pct_leading": 0.0,
+          "display_pf": "0.9364 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.945105,
+          "pct_leading": 0.0,
+          "display_pf": "0.9451 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.948775,
+          "pct_leading": 0.0,
+          "display_pf": "0.9488 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.94907,
+          "pct_leading": 0.0,
+          "display_pf": "0.9491 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.952128,
+          "pct_leading": 0.0,
+          "display_pf": "0.9521 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.952114,
+          "pct_leading": 0.0,
+          "display_pf": "0.9521 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.950923,
+          "pct_leading": 0.0,
+          "display_pf": "0.9509 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.956262,
+          "pct_leading": 0.0,
+          "display_pf": "0.9563 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.963458,
+          "pct_leading": 0.0,
+          "display_pf": "0.9635 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.97904,
+          "pct_leading": 0.0,
+          "display_pf": "0.9790 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.98105,
+          "pct_leading": 0.0,
+          "display_pf": "0.9810 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.98422,
+          "pct_leading": 0.0,
+          "display_pf": "0.9842 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.987207,
+          "pct_leading": 0.0,
+          "display_pf": "0.9872 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.990042,
+          "pct_leading": 0.0,
+          "display_pf": "0.9900 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.985907,
+          "pct_leading": 0.1,
+          "display_pf": "0.9859 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.987217,
+          "pct_leading": 0.1,
+          "display_pf": "0.9872 lagging"
+        }
+      }
+    },
+    {
+      "code": "COUP",
+      "name": "Counties Energy",
+      "display_name": "Counties Energy (Franklin, South Auckland)",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 150,
+        "pf_min": 0.94,
+        "pf_max": 1.11
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 1.046717,
+          "pct_leading": 80.1,
+          "display_pf": "0.9533 leading"
+        },
+        "2010": {
+          "mean_pf": 1.052907,
+          "pct_leading": 83.5,
+          "display_pf": "0.9471 leading"
+        },
+        "2011": {
+          "mean_pf": 1.04123,
+          "pct_leading": 74.7,
+          "display_pf": "0.9588 leading"
+        },
+        "2012": {
+          "mean_pf": 1.063039,
+          "pct_leading": 87.0,
+          "display_pf": "0.9370 leading"
+        },
+        "2013": {
+          "mean_pf": 1.025421,
+          "pct_leading": 80.8,
+          "display_pf": "0.9746 leading"
+        },
+        "2014": {
+          "mean_pf": 1.014031,
+          "pct_leading": 62.7,
+          "display_pf": "0.9860 leading"
+        },
+        "2015": {
+          "mean_pf": 1.007347,
+          "pct_leading": 58.1,
+          "display_pf": "0.9927 leading"
+        },
+        "2016": {
+          "mean_pf": 1.00406,
+          "pct_leading": 53.3,
+          "display_pf": "0.9959 leading"
+        },
+        "2017": {
+          "mean_pf": 1.002716,
+          "pct_leading": 51.0,
+          "display_pf": "0.9973 leading"
+        },
+        "2018": {
+          "mean_pf": 1.007035,
+          "pct_leading": 62.3,
+          "display_pf": "0.9930 leading"
+        },
+        "2019": {
+          "mean_pf": 1.00953,
+          "pct_leading": 69.6,
+          "display_pf": "0.9905 leading"
+        },
+        "2020": {
+          "mean_pf": 1.00847,
+          "pct_leading": 71.9,
+          "display_pf": "0.9915 leading"
+        },
+        "2021": {
+          "mean_pf": 1.006106,
+          "pct_leading": 66.8,
+          "display_pf": "0.9939 leading"
+        },
+        "2022": {
+          "mean_pf": 1.007931,
+          "pct_leading": 76.3,
+          "display_pf": "0.9921 leading"
+        },
+        "2023": {
+          "mean_pf": 1.016233,
+          "pct_leading": 89.9,
+          "display_pf": "0.9838 leading"
+        },
+        "2024": {
+          "mean_pf": 1.018087,
+          "pct_leading": 88.4,
+          "display_pf": "0.9819 leading"
+        },
+        "2025": {
+          "mean_pf": 1.023293,
+          "pct_leading": 92.7,
+          "display_pf": "0.9767 leading"
+        }
+      }
+    },
+    {
+      "code": "ELEC",
+      "name": "Electra",
+      "display_name": "Electra (Kapiti, Horowhenua)",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 100,
+        "pf_min": 0.87,
+        "pf_max": 1.07
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.976463,
+          "pct_leading": 0.0,
+          "display_pf": "0.9765 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.97763,
+          "pct_leading": 0.0,
+          "display_pf": "0.9776 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.978172,
+          "pct_leading": 0.0,
+          "display_pf": "0.9782 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.98104,
+          "pct_leading": 0.0,
+          "display_pf": "0.9810 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.96724,
+          "pct_leading": 0.0,
+          "display_pf": "0.9672 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.969684,
+          "pct_leading": 0.5,
+          "display_pf": "0.9697 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.973502,
+          "pct_leading": 2.3,
+          "display_pf": "0.9735 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.981733,
+          "pct_leading": 6.6,
+          "display_pf": "0.9817 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.985036,
+          "pct_leading": 16.7,
+          "display_pf": "0.9850 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.984393,
+          "pct_leading": 19.7,
+          "display_pf": "0.9844 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.993443,
+          "pct_leading": 34.6,
+          "display_pf": "0.9934 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.996374,
+          "pct_leading": 38.8,
+          "display_pf": "0.9964 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.999979,
+          "pct_leading": 49.0,
+          "display_pf": "1.0000 lagging"
+        },
+        "2022": {
+          "mean_pf": 1.005751,
+          "pct_leading": 63.5,
+          "display_pf": "0.9942 leading"
+        },
+        "2023": {
+          "mean_pf": 1.008578,
+          "pct_leading": 74.4,
+          "display_pf": "0.9914 leading"
+        },
+        "2024": {
+          "mean_pf": 1.012072,
+          "pct_leading": 85.8,
+          "display_pf": "0.9879 leading"
+        },
+        "2025": {
+          "mean_pf": 1.012454,
+          "pct_leading": 85.1,
+          "display_pf": "0.9875 leading"
+        }
+      }
+    },
+    {
+      "code": "MPOW",
+      "name": "Mainpower",
+      "display_name": "Mainpower (North Canterbury)",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 150,
+        "pf_min": 0.95,
+        "pf_max": 1.07
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.987428,
+          "pct_leading": 0.0,
+          "display_pf": "0.9874 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.987455,
+          "pct_leading": 0.6,
+          "display_pf": "0.9875 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.991834,
+          "pct_leading": 11.1,
+          "display_pf": "0.9918 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.994278,
+          "pct_leading": 20.7,
+          "display_pf": "0.9943 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.994107,
+          "pct_leading": 25.9,
+          "display_pf": "0.9941 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.994083,
+          "pct_leading": 24.5,
+          "display_pf": "0.9941 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.991261,
+          "pct_leading": 24.3,
+          "display_pf": "0.9913 lagging"
+        },
+        "2016": {
+          "mean_pf": 1.000374,
+          "pct_leading": 53.4,
+          "display_pf": "0.9996 leading"
+        },
+        "2017": {
+          "mean_pf": 1.002075,
+          "pct_leading": 62.1,
+          "display_pf": "0.9979 leading"
+        },
+        "2018": {
+          "mean_pf": 1.008067,
+          "pct_leading": 80.0,
+          "display_pf": "0.9919 leading"
+        },
+        "2019": {
+          "mean_pf": 1.004581,
+          "pct_leading": 63.2,
+          "display_pf": "0.9954 leading"
+        },
+        "2020": {
+          "mean_pf": 1.004611,
+          "pct_leading": 62.6,
+          "display_pf": "0.9954 leading"
+        },
+        "2021": {
+          "mean_pf": 1.006112,
+          "pct_leading": 63.2,
+          "display_pf": "0.9939 leading"
+        },
+        "2022": {
+          "mean_pf": 1.008519,
+          "pct_leading": 78.7,
+          "display_pf": "0.9915 leading"
+        },
+        "2023": {
+          "mean_pf": 1.00946,
+          "pct_leading": 78.9,
+          "display_pf": "0.9905 leading"
+        },
+        "2024": {
+          "mean_pf": 1.005621,
+          "pct_leading": 65.5,
+          "display_pf": "0.9944 leading"
+        },
+        "2025": {
+          "mean_pf": 1.011897,
+          "pct_leading": 82.6,
+          "display_pf": "0.9881 leading"
+        }
+      }
+    },
+    {
+      "code": "MARL",
+      "name": "Marlborough Lines",
+      "display_name": "Marlborough Lines (Marlborough)",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 75,
+        "pf_min": 0.94,
+        "pf_max": 1.03
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.97664,
+          "pct_leading": 0.0,
+          "display_pf": "0.9766 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.97946,
+          "pct_leading": 0.0,
+          "display_pf": "0.9795 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.983184,
+          "pct_leading": 0.0,
+          "display_pf": "0.9832 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.986243,
+          "pct_leading": 0.0,
+          "display_pf": "0.9862 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.988186,
+          "pct_leading": 0.5,
+          "display_pf": "0.9882 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.989823,
+          "pct_leading": 2.0,
+          "display_pf": "0.9898 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.990416,
+          "pct_leading": 6.6,
+          "display_pf": "0.9904 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.992922,
+          "pct_leading": 10.7,
+          "display_pf": "0.9929 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.994048,
+          "pct_leading": 10.9,
+          "display_pf": "0.9940 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.996928,
+          "pct_leading": 23.8,
+          "display_pf": "0.9969 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.997262,
+          "pct_leading": 30.3,
+          "display_pf": "0.9973 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.998603,
+          "pct_leading": 36.3,
+          "display_pf": "0.9986 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.999359,
+          "pct_leading": 41.2,
+          "display_pf": "0.9994 lagging"
+        },
+        "2022": {
+          "mean_pf": 1.000121,
+          "pct_leading": 49.7,
+          "display_pf": "0.9999 leading"
+        },
+        "2023": {
+          "mean_pf": 1.00149,
+          "pct_leading": 57.5,
+          "display_pf": "0.9985 leading"
+        },
+        "2024": {
+          "mean_pf": 1.001446,
+          "pct_leading": 54.1,
+          "display_pf": "0.9986 leading"
+        },
+        "2025": {
+          "mean_pf": 1.001623,
+          "pct_leading": 58.5,
+          "display_pf": "0.9984 leading"
+        }
+      }
+    },
+    {
+      "code": "TASM",
+      "name": "Network Tasman",
+      "display_name": "Network Tasman (Nelson, Tasman)",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 30,
+        "pf_min": 0.85,
+        "pf_max": 1.11
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 1.016455,
+          "pct_leading": 89.6,
+          "display_pf": "0.9835 leading"
+        },
+        "2010": {
+          "mean_pf": 1.009318,
+          "pct_leading": 79.2,
+          "display_pf": "0.9907 leading"
+        },
+        "2011": {
+          "mean_pf": 1.005398,
+          "pct_leading": 76.2,
+          "display_pf": "0.9946 leading"
+        },
+        "2012": {
+          "mean_pf": 1.003961,
+          "pct_leading": 60.6,
+          "display_pf": "0.9960 leading"
+        },
+        "2013": {
+          "mean_pf": 1.008835,
+          "pct_leading": 74.9,
+          "display_pf": "0.9912 leading"
+        },
+        "2014": {
+          "mean_pf": 1.006809,
+          "pct_leading": 77.9,
+          "display_pf": "0.9932 leading"
+        },
+        "2015": {
+          "mean_pf": 0.68703,
+          "pct_leading": 5.4,
+          "display_pf": "0.6870 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.663255,
+          "pct_leading": 6.3,
+          "display_pf": "0.6633 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.7749,
+          "pct_leading": 24.8,
+          "display_pf": "0.7749 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.585112,
+          "pct_leading": 21.2,
+          "display_pf": "0.5851 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.623345,
+          "pct_leading": 23.2,
+          "display_pf": "0.6233 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.584073,
+          "pct_leading": 14.6,
+          "display_pf": "0.5841 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.451584,
+          "pct_leading": 14.3,
+          "display_pf": "0.4516 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.658067,
+          "pct_leading": 27.3,
+          "display_pf": "0.6581 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.462994,
+          "pct_leading": 20.1,
+          "display_pf": "0.4630 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.714893,
+          "pct_leading": 41.2,
+          "display_pf": "0.7149 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.544805,
+          "pct_leading": 21.3,
+          "display_pf": "0.5448 lagging"
+        }
+      }
+    },
+    {
+      "code": "WATA",
+      "name": "Network Waitaki",
+      "display_name": "Network Waitaki (North Otago)",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 75,
+        "pf_min": 0.92,
+        "pf_max": 1.02
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.960952,
+          "pct_leading": 0.0,
+          "display_pf": "0.9610 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.966098,
+          "pct_leading": 0.0,
+          "display_pf": "0.9661 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.973019,
+          "pct_leading": 0.1,
+          "display_pf": "0.9730 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.975325,
+          "pct_leading": 0.0,
+          "display_pf": "0.9753 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.979422,
+          "pct_leading": 0.3,
+          "display_pf": "0.9794 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.979999,
+          "pct_leading": 0.2,
+          "display_pf": "0.9800 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.987865,
+          "pct_leading": 2.0,
+          "display_pf": "0.9879 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.989785,
+          "pct_leading": 7.2,
+          "display_pf": "0.9898 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.989793,
+          "pct_leading": 5.2,
+          "display_pf": "0.9898 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.99079,
+          "pct_leading": 6.4,
+          "display_pf": "0.9908 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.988651,
+          "pct_leading": 12.2,
+          "display_pf": "0.9887 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.985443,
+          "pct_leading": 11.0,
+          "display_pf": "0.9854 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.988534,
+          "pct_leading": 16.6,
+          "display_pf": "0.9885 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.990641,
+          "pct_leading": 15.1,
+          "display_pf": "0.9906 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.987127,
+          "pct_leading": 18.2,
+          "display_pf": "0.9871 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.988234,
+          "pct_leading": 28.0,
+          "display_pf": "0.9882 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.991061,
+          "pct_leading": 25.9,
+          "display_pf": "0.9911 lagging"
+        }
+      }
+    },
+    {
+      "code": "OTPO",
+      "name": "OtagoNet",
+      "display_name": "OtagoNet (Otago (Balclutha, South Otago))",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 75,
+        "pf_min": 0.91,
+        "pf_max": 1.03
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.962709,
+          "pct_leading": 0.0,
+          "display_pf": "0.9627 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.976154,
+          "pct_leading": 0.1,
+          "display_pf": "0.9762 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.96845,
+          "pct_leading": 0.0,
+          "display_pf": "0.9685 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.973027,
+          "pct_leading": 0.3,
+          "display_pf": "0.9730 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.979119,
+          "pct_leading": 0.4,
+          "display_pf": "0.9791 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.968869,
+          "pct_leading": 0.6,
+          "display_pf": "0.9689 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.97755,
+          "pct_leading": 2.7,
+          "display_pf": "0.9776 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.988652,
+          "pct_leading": 10.0,
+          "display_pf": "0.9887 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.985689,
+          "pct_leading": 4.2,
+          "display_pf": "0.9857 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.984956,
+          "pct_leading": 4.0,
+          "display_pf": "0.9850 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.978743,
+          "pct_leading": 2.2,
+          "display_pf": "0.9787 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.989752,
+          "pct_leading": 4.2,
+          "display_pf": "0.9898 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.986583,
+          "pct_leading": 15.1,
+          "display_pf": "0.9866 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.985008,
+          "pct_leading": 4.9,
+          "display_pf": "0.9850 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.998894,
+          "pct_leading": 34.9,
+          "display_pf": "0.9989 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.985597,
+          "pct_leading": 4.8,
+          "display_pf": "0.9856 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.993444,
+          "pct_leading": 12.5,
+          "display_pf": "0.9934 lagging"
+        }
+      }
+    },
+    {
+      "code": "SCAN",
+      "name": "Scanpower",
+      "display_name": "Scanpower (Tararua)",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 20,
+        "pf_min": 0.94,
+        "pf_max": 1.03
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.975778,
+          "pct_leading": 0.0,
+          "display_pf": "0.9758 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.976464,
+          "pct_leading": 0.0,
+          "display_pf": "0.9765 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.987184,
+          "pct_leading": 0.4,
+          "display_pf": "0.9872 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.988159,
+          "pct_leading": 0.4,
+          "display_pf": "0.9882 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.98788,
+          "pct_leading": 0.9,
+          "display_pf": "0.9879 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.989747,
+          "pct_leading": 11.3,
+          "display_pf": "0.9897 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.990442,
+          "pct_leading": 17.3,
+          "display_pf": "0.9904 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.994184,
+          "pct_leading": 26.1,
+          "display_pf": "0.9942 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.997267,
+          "pct_leading": 39.3,
+          "display_pf": "0.9973 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.999128,
+          "pct_leading": 47.6,
+          "display_pf": "0.9991 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.996952,
+          "pct_leading": 36.1,
+          "display_pf": "0.9970 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.998462,
+          "pct_leading": 44.1,
+          "display_pf": "0.9985 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.998688,
+          "pct_leading": 45.2,
+          "display_pf": "0.9987 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.998997,
+          "pct_leading": 46.4,
+          "display_pf": "0.9990 lagging"
+        },
+        "2023": {
+          "mean_pf": 1.00098,
+          "pct_leading": 53.7,
+          "display_pf": "0.9990 leading"
+        },
+        "2024": {
+          "mean_pf": 1.001554,
+          "pct_leading": 56.5,
+          "display_pf": "0.9984 leading"
+        },
+        "2025": {
+          "mean_pf": 1.003611,
+          "pct_leading": 58.8,
+          "display_pf": "0.9964 leading"
+        }
+      }
+    },
+    {
+      "code": "LINE",
+      "name": "The Lines Company",
+      "display_name": "The Lines Company (King Country, Ruapehu)",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 50,
+        "pf_min": 0.85,
+        "pf_max": 1.02
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.917321,
+          "pct_leading": 0.0,
+          "display_pf": "0.9173 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.926002,
+          "pct_leading": 0.0,
+          "display_pf": "0.9260 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.925665,
+          "pct_leading": 0.0,
+          "display_pf": "0.9257 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.939155,
+          "pct_leading": 0.1,
+          "display_pf": "0.9392 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.933726,
+          "pct_leading": 0.0,
+          "display_pf": "0.9337 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.931873,
+          "pct_leading": 0.0,
+          "display_pf": "0.9319 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.929785,
+          "pct_leading": 0.0,
+          "display_pf": "0.9298 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.948367,
+          "pct_leading": 0.0,
+          "display_pf": "0.9484 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.954145,
+          "pct_leading": 0.1,
+          "display_pf": "0.9541 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.959414,
+          "pct_leading": 0.1,
+          "display_pf": "0.9594 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.965474,
+          "pct_leading": 0.4,
+          "display_pf": "0.9655 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.971873,
+          "pct_leading": 2.3,
+          "display_pf": "0.9719 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.973142,
+          "pct_leading": 0.3,
+          "display_pf": "0.9731 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.969202,
+          "pct_leading": 0.8,
+          "display_pf": "0.9692 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.972552,
+          "pct_leading": 0.5,
+          "display_pf": "0.9726 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.973149,
+          "pct_leading": 0.5,
+          "display_pf": "0.9731 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.973731,
+          "pct_leading": 0.7,
+          "display_pf": "0.9737 lagging"
+        }
+      }
+    },
+    {
+      "code": "WAIP",
+      "name": "Waipa Networks",
+      "display_name": "Waipa Networks (Waipa district)",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 100,
+        "pf_min": 0.94,
+        "pf_max": 1.01
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 0.975343,
+          "pct_leading": 0.0,
+          "display_pf": "0.9753 lagging"
+        },
+        "2010": {
+          "mean_pf": 0.974808,
+          "pct_leading": 0.0,
+          "display_pf": "0.9748 lagging"
+        },
+        "2011": {
+          "mean_pf": 0.976031,
+          "pct_leading": 0.0,
+          "display_pf": "0.9760 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.978342,
+          "pct_leading": 0.0,
+          "display_pf": "0.9783 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.980557,
+          "pct_leading": 0.0,
+          "display_pf": "0.9806 lagging"
+        },
+        "2014": {
+          "mean_pf": 0.98245,
+          "pct_leading": 0.0,
+          "display_pf": "0.9824 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.982112,
+          "pct_leading": 0.0,
+          "display_pf": "0.9821 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.982866,
+          "pct_leading": 0.0,
+          "display_pf": "0.9829 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.985551,
+          "pct_leading": 0.0,
+          "display_pf": "0.9856 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.987617,
+          "pct_leading": 0.0,
+          "display_pf": "0.9876 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.98962,
+          "pct_leading": 2.7,
+          "display_pf": "0.9896 lagging"
+        },
+        "2020": {
+          "mean_pf": 0.992267,
+          "pct_leading": 5.5,
+          "display_pf": "0.9923 lagging"
+        },
+        "2021": {
+          "mean_pf": 0.99371,
+          "pct_leading": 9.4,
+          "display_pf": "0.9937 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.993989,
+          "pct_leading": 11.3,
+          "display_pf": "0.9940 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.995134,
+          "pct_leading": 14.6,
+          "display_pf": "0.9951 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.996076,
+          "pct_leading": 20.9,
+          "display_pf": "0.9961 lagging"
+        },
+        "2025": {
+          "mean_pf": 0.99736,
+          "pct_leading": 28.4,
+          "display_pf": "0.9974 lagging"
+        }
+      }
+    },
+    {
+      "code": "WPOW",
+      "name": "Westpower",
+      "display_name": "Westpower (West Coast (Grey, Westland))",
+      "type": "exempt",
+      "years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "axis": {
+        "p_min": 0,
+        "p_max": 50,
+        "pf_min": 0.85,
+        "pf_max": 1.11
+      },
+      "stats": {
+        "2009": {
+          "mean_pf": 1.008238,
+          "pct_leading": 86.9,
+          "display_pf": "0.9918 leading"
+        },
+        "2010": {
+          "mean_pf": 1.021829,
+          "pct_leading": 93.6,
+          "display_pf": "0.9782 leading"
+        },
+        "2011": {
+          "mean_pf": 1.025047,
+          "pct_leading": 96.8,
+          "display_pf": "0.9750 leading"
+        },
+        "2012": {
+          "mean_pf": 1.030557,
+          "pct_leading": 98.2,
+          "display_pf": "0.9694 leading"
+        },
+        "2013": {
+          "mean_pf": 1.01452,
+          "pct_leading": 77.3,
+          "display_pf": "0.9855 leading"
+        },
+        "2014": {
+          "mean_pf": 0.997496,
+          "pct_leading": 47.3,
+          "display_pf": "0.9975 lagging"
+        },
+        "2015": {
+          "mean_pf": 0.995238,
+          "pct_leading": 44.5,
+          "display_pf": "0.9952 lagging"
+        },
+        "2016": {
+          "mean_pf": 0.97272,
+          "pct_leading": 34.4,
+          "display_pf": "0.9727 lagging"
+        },
+        "2017": {
+          "mean_pf": 0.979044,
+          "pct_leading": 40.5,
+          "display_pf": "0.9790 lagging"
+        },
+        "2018": {
+          "mean_pf": 0.959352,
+          "pct_leading": 27.9,
+          "display_pf": "0.9594 lagging"
+        },
+        "2019": {
+          "mean_pf": 0.985937,
+          "pct_leading": 39.3,
+          "display_pf": "0.9859 lagging"
+        },
+        "2020": {
+          "mean_pf": 1.003201,
+          "pct_leading": 55.4,
+          "display_pf": "0.9968 leading"
+        },
+        "2021": {
+          "mean_pf": 0.971398,
+          "pct_leading": 24.6,
+          "display_pf": "0.9714 lagging"
+        },
+        "2022": {
+          "mean_pf": 0.991292,
+          "pct_leading": 49.9,
+          "display_pf": "0.9913 lagging"
+        },
+        "2023": {
+          "mean_pf": 0.977752,
+          "pct_leading": 30.6,
+          "display_pf": "0.9778 lagging"
+        },
+        "2024": {
+          "mean_pf": 0.989241,
+          "pct_leading": 44.7,
+          "display_pf": "0.9892 lagging"
+        },
+        "2025": {
+          "mean_pf": 1.020581,
+          "pct_leading": 81.2,
+          "display_pf": "0.9794 leading"
+        }
+      }
+    }
+  ]
+}
