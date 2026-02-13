@@ -10,21 +10,15 @@
     :root {
       --blue-dark: #003366;
       --blue-mid: #0066b3;
-      --blue-light: #e6f0fa;
       --bg-primary: #ffffff;
       --bg-secondary: #f8f9fa;
       --text-primary: #212529;
       --text-secondary: #6c757d;
       --border: #dee2e6;
-      --space-xs: 0.25rem;
-      --space-sm: 0.5rem;
-      --space-md: 1rem;
-      --space-lg: 1.5rem;
-      --space-xl: 2rem;
     }
     *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
     body {
-      margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       font-size: 16px; line-height: 1.5;
       color: var(--text-primary);
@@ -36,46 +30,27 @@
     .tool-nav {
       background: var(--blue-dark);
       color: white;
-      padding: var(--space-sm) var(--space-md);
+      padding: 8px 16px;
       display: flex;
       align-items: center;
-      gap: var(--space-md);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      gap: 16px;
     }
-    .nav-home {
-      color: rgba(255,255,255,0.8);
-      font-size: 0.9rem;
-    }
-    .nav-home:hover { color: white; text-decoration: none; }
     .nav-title { font-weight: 600; flex: 1; }
     .data-status {
-      display: inline-block;
       font-size: 0.8rem;
       color: var(--text-secondary);
       background: var(--bg-secondary);
-      padding: var(--space-xs) var(--space-sm);
+      padding: 2px 8px;
       border-radius: 4px;
     }
-    .site-footer {
-      background: var(--blue-dark);
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-      padding: var(--space-lg);
-      margin-top: var(--space-xl);
-    }
-    .site-footer a { color: rgba(255,255,255,0.9); }
 
-    /* Page-specific styles */
     .pf-controls {
       background: var(--bg-primary);
       border-bottom: 1px solid var(--border);
-      padding: var(--space-sm) var(--space-md);
+      padding: 6px 16px;
       display: flex;
       align-items: center;
-      gap: var(--space-md);
-      flex-wrap: wrap;
+      gap: 12px;
     }
     .pf-controls label {
       font-weight: 600;
@@ -90,11 +65,10 @@
       background: var(--bg-primary);
       min-width: 260px;
     }
+
     #chartContainer {
       position: relative;
       width: 100%;
-      flex: 1;
-      min-height: 500px;
     }
     .loading-overlay {
       position: absolute;
@@ -108,58 +82,42 @@
       color: var(--text-secondary);
     }
     .loading-overlay.hidden { display: none; }
+
     .attribution {
       text-align: center;
-      padding: var(--space-sm) var(--space-md);
-      font-size: 0.85rem;
+      padding: 4px 16px;
+      font-size: 0.8rem;
       color: var(--text-secondary);
       background: var(--bg-primary);
       border-top: 1px solid var(--border);
     }
-    .page-wrapper {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
+
     @media (max-width: 768px) {
       .pf-controls select { min-width: 200px; }
-      #chartContainer { min-height: 400px; }
     }
   </style>
 </head>
 <body>
-  <div class="page-wrapper">
-    <nav class="tool-nav">
-      <span class="nav-title">NZ Power Factor Explorer</span>
-      <span class="data-status" id="dataStatus">Loading...</span>
-    </nav>
+  <nav class="tool-nav">
+    <span class="nav-title">NZ Power Factor Explorer</span>
+    <span class="data-status" id="dataStatus">Loading...</span>
+  </nav>
 
-    <div class="pf-controls">
-      <label for="entitySelect">Network:</label>
-      <select id="entitySelect">
-        <option value="">Loading...</option>
-      </select>
-    </div>
+  <div class="pf-controls">
+    <label for="entitySelect">Network:</label>
+    <select id="entitySelect">
+      <option value="">Loading...</option>
+    </select>
+  </div>
 
-    <main>
-      <div id="chartContainer">
-        <div class="loading-overlay" id="loadingOverlay">Loading data...</div>
-        <div id="plotlyChart" style="width:100%; height:100%;"></div>
-      </div>
-      <div class="attribution">
-        Data source: <a href="https://www.emi.ea.govt.nz">Electricity Authority EMI</a>
-        &middot; Half-hourly metered P and Q at grid exit points, 1997&ndash;2025
-      </div>
-    </main>
+  <div id="chartContainer">
+    <div class="loading-overlay" id="loadingOverlay">Loading data...</div>
+    <div id="plotlyChart"></div>
+  </div>
 
-    <footer class="site-footer">
-      <p>Data source: <a href="https://www.emi.ea.govt.nz">Electricity Authority EMI</a></p>
-    </footer>
+  <div class="attribution">
+    Data source: <a href="https://www.emi.ea.govt.nz">Electricity Authority EMI</a>
+    &middot; Half-hourly metered P and Q at grid exit points, 1997&ndash;2025
   </div>
 
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
@@ -169,11 +127,19 @@
     const dataCache = new Map();
     let currentCode = null;
 
-    // Category names and colors (loaded from manifest)
     let CATEGORIES = [];
     let CATEGORY_COLORS = [];
 
-    // --- Utility functions ---
+    // --- Calculate chart height to fill viewport ---
+    function getChartHeight() {
+      const nav = document.querySelector('.tool-nav');
+      const controls = document.querySelector('.pf-controls');
+      const attrib = document.querySelector('.attribution');
+      const used = (nav ? nav.offsetHeight : 0) +
+                   (controls ? controls.offsetHeight : 0) +
+                   (attrib ? attrib.offsetHeight : 0);
+      return Math.max(400, window.innerHeight - used);
+    }
 
     function computePFTicks(pfMin, pfMax) {
       const vals = [];
@@ -216,6 +182,7 @@
       const years = entity.years;
       const axis = entity.axis;
       const pfTicks = computePFTicks(axis.pf_min, axis.pf_max);
+      const chartHeight = getChartHeight();
 
       const firstYear = years[0];
       const firstData = yearData[String(firstYear)];
@@ -229,6 +196,8 @@
           y: 0.97, yanchor: 'top'
         },
         template: 'plotly_white',
+        width: window.innerWidth,
+        height: chartHeight,
         xaxis: {
           title: { text: 'Active Power (MW)', font: { size: 16 } },
           range: [-axis.p_max * 0.03, axis.p_max],
@@ -251,8 +220,7 @@
           font: { size: 11 },
           x: 1.0, xanchor: 'left', y: 1.0
         },
-        margin: { l: 70, r: 160, t: 70, b: 80 },
-        autosize: true
+        margin: { l: 70, r: 160, t: 70, b: 80 }
       };
 
       const frames = years.map(year => {
@@ -285,7 +253,7 @@
       const updatemenus = [{
         type: 'buttons',
         showactive: false,
-        x: 0.0, y: -0.08,
+        x: 0.0, y: -0.06,
         xanchor: 'left', yanchor: 'top',
         buttons: [
           {
@@ -312,7 +280,7 @@
       layout.sliders = sliders;
       layout.updatemenus = updatemenus;
 
-      Plotly.react(chartDiv, traces, layout, { responsive: true })
+      Plotly.react(chartDiv, traces, layout)
         .then(() => Plotly.addFrames(chartDiv, frames));
     }
 
@@ -327,9 +295,9 @@
           x: indices.map(j => yd.P[j]),
           y: indices.map(j => yd.pf[j]),
           mode: 'markers',
-          type: 'scatter',
+          type: 'scattergl',
           name: cat,
-          marker: { size: 4, color: CATEGORY_COLORS[i], opacity: 0.5 },
+          marker: { size: 3, color: CATEGORY_COLORS[i], opacity: 0.4 },
           showlegend: true
         };
       });
@@ -428,7 +396,6 @@
         CATEGORIES = manifest.categories;
         CATEGORY_COLORS = manifest.category_colors;
 
-        const gen = new Date(manifest.generated);
         const firstYear = manifest.entities[0].years[0];
         const lastYear = manifest.entities[0].years.slice(-1)[0];
         document.getElementById('dataStatus').textContent =
@@ -451,7 +418,10 @@
     window.addEventListener('resize', () => {
       const chartDiv = document.getElementById('plotlyChart');
       if (chartDiv && chartDiv.data) {
-        Plotly.Plots.resize(chartDiv);
+        Plotly.relayout(chartDiv, {
+          width: window.innerWidth,
+          height: getChartHeight()
+        });
       }
     });
 
