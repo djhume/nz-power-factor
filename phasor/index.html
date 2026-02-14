@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-Bus Voltage Phasor Diagram - Gridlytics</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-dark: #1a3a5c;
+      --blue-mid: #2d6da8;
+      --red: #c0392b;
+      --red-light: #e74c3c;
+      --green: #27864a;
+      --orange: #d4760a;
+      --gray-900: #1a1a2e;
+      --gray-700: #4a4a5a;
+      --gray-500: #7a7a8a;
+      --gray-300: #b8b8c8;
+      --gray-100: #f0f1f4;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif: 'IBM Plex Serif', 'Palatino', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans);
+      background: #fafbfc;
+      color: var(--gray-900);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    /* Header - minimal */
+    .header {
+      background: var(--blue-dark);
+      color: white;
+      padding: 8px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .header .brand {
+      font-size: 0.75rem;
+      font-weight: 500;
+      opacity: 0.6;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    /* Main area */
+    main {
+      flex: 1;
+      position: relative;
+      min-height: 0;
+      background: #fff;
+    }
+    #phasor-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    /* Readout overlay */
+    .readout {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 10px;
+      padding: 18px 22px;
+      min-width: 210px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      z-index: 10;
+    }
+    .readout-hero {
+      text-align: center;
+      padding-bottom: 14px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .readout-hero-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gray-500);
+      margin-bottom: 2px;
+    }
+    .readout-hero-value {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--red);
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    .readout-hero-unit {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-left: 4px;
+    }
+    .readout-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 3px 0;
+    }
+    .readout-label {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+    .readout-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      font-variant-numeric: tabular-nums;
+    }
+    .readout-unit {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--gray-300);
+      margin-left: 2px;
+    }
+    .status-badge {
+      margin-top: 12px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: all 0.3s;
+    }
+    .status-normal { background: #ecfdf5; color: #065f46; }
+    .status-over { background: #fef2f2; color: #991b1b; }
+    .status-under { background: #fffbeb; color: #92400e; }
+    /* Annotation overlay */
+    .annotation {
+      position: absolute;
+      bottom: 100px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .annotation-label {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--blue-dark);
+      margin-bottom: 4px;
+      opacity: 0;
+      transition: opacity 0.6s;
+    }
+    .annotation-text {
+      font-size: 0.9rem;
+      color: var(--gray-700);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.5;
+      opacity: 0;
+      transition: opacity 0.6s;
+    }
+    .annotation-label.visible, .annotation-text.visible { opacity: 1; }
+    /* Controls */
+    .controls {
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding: 16px 28px 18px;
+      flex-shrink: 0;
+    }
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 8px;
+    }
+    .slider-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      min-width: 90px;
+      text-align: right;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .slider-container { flex: 1; position: relative; }
+    .pf-slider {
+      width: 100%;
+      height: 6px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: linear-gradient(to right,
+        var(--orange) 0%, var(--orange) 38%,
+        #52b788 42%, #52b788 58%,
+        var(--red) 62%, var(--red) 100%);
+      border-radius: 3px;
+      outline: none;
+      cursor: pointer;
+    }
+    .pf-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--blue-dark);
+      border: 2.5px solid white;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .pf-slider::-webkit-slider-thumb:hover { transform: scale(1.12); }
+    .pf-slider::-moz-range-thumb {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--blue-dark);
+      border: 2.5px solid white;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.25);
+      cursor: pointer;
+    }
+    .slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 2px 0;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--gray-300);
+      letter-spacing: 0.02em;
+    }
+    .secondary-slider {
+      width: 100%;
+      height: 3px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: var(--gray-100);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+    .secondary-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--gray-500);
+      border: 2px solid white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+    .secondary-slider::-moz-range-thumb {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--gray-500);
+      border: 2px solid white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+    .pf-display {
+      min-width: 155px;
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      color: var(--gray-700);
+    }
+    .secondary-val {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .btn {
+      padding: 7px 20px;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 6px;
+      background: white;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--gray-700);
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .btn:hover { background: var(--gray-100); }
+    .btn.active { background: var(--blue-dark); color: white; border-color: var(--blue-dark); }
+    .btn-story {
+      background: var(--blue-dark);
+      color: white;
+      border-color: var(--blue-dark);
+    }
+    .btn-story:hover { background: #24486e; }
+    /* SVG styles */
+    .phasor-arrow { stroke-linecap: round; }
+    .drop-arrow { stroke-dasharray: 7,4; stroke-linecap: round; }
+    .ref-arc { fill: none; stroke: #d8d8e0; stroke-width: 0.8; stroke-dasharray: 5,5; }
+    .angle-arc { fill: none; stroke-width: 1.2; }
+    .angle-label {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-style: italic;
+    }
+    .phasor-label {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 600;
+      font-style: italic;
+    }
+    .circuit-text {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-style: italic;
+    }
+    .circuit-text-sm {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      fill: var(--gray-500);
+    }
+    .industry-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .device-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+    .device-btn {
+      padding: 5px 14px;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 6px;
+      background: white;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--gray-500);
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .device-btn:hover { background: var(--gray-100); }
+    .device-btn.on { color: white; border-color: transparent; }
+    .device-btn.on-cap { background: #00897B; }
+    .device-btn.on-reactor { background: #7B1FA2; }
+    .device-btn.on-statcom { background: #E65100; }
+    .device-slider-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 6px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    .device-slider-row.visible { max-height: 50px; opacity: 1; }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .readout { top: 10px; right: 10px; padding: 12px 14px; min-width: 170px; }
+      .readout-hero-value { font-size: 1.6rem; }
+      .slider-label { min-width: 70px; font-size: 0.72rem; }
+      .pf-display { min-width: 130px; font-size: 0.9rem; }
+    }
+    /* Keyboard hint */
+    .keyboard-hint {
+      font-size: 0.65rem;
+      color: var(--gray-300);
+      text-align: center;
+      margin-top: 2px;
+    }
+    .keyboard-hint kbd {
+      display: inline-block;
+      padding: 1px 5px;
+      font-size: 0.6rem;
+      font-family: var(--sans);
+      background: var(--gray-100);
+      border: 1px solid var(--gray-300);
+      border-radius: 3px;
+    }
+    /* Presentation (dark) mode */
+    body.presentation-mode { background: #0d1117; }
+    body.presentation-mode main { background: #161b22; }
+    body.presentation-mode .header { background: #010409; }
+    body.presentation-mode .controls {
+      background: #161b22;
+      border-top-color: #30363d;
+    }
+    body.presentation-mode .readout {
+      background: rgba(22,27,34,0.95);
+      border-color: #30363d;
+    }
+    body.presentation-mode .readout-hero-label,
+    body.presentation-mode .readout-label,
+    body.presentation-mode .readout-unit,
+    body.presentation-mode .slider-label,
+    body.presentation-mode .secondary-val { color: #8b949e; }
+    body.presentation-mode .readout-value,
+    body.presentation-mode .pf-display { color: #c9d1d9; }
+    body.presentation-mode .btn {
+      background: #21262d; color: #c9d1d9; border-color: #30363d;
+    }
+    body.presentation-mode .btn:hover { background: #30363d; }
+    body.presentation-mode .btn.active { background: var(--blue-dark); color: white; }
+    body.presentation-mode .btn-story { background: var(--blue-dark); color: white; }
+    body.presentation-mode .device-btn {
+      background: #21262d; color: #8b949e; border-color: #30363d;
+    }
+    body.presentation-mode .device-btn:hover { background: #30363d; }
+    body.presentation-mode .annotation-label { color: #58a6ff; }
+    body.presentation-mode .annotation-text { color: #c9d1d9; }
+    body.presentation-mode .status-normal { background: #0d1f0d; color: #3fb950; }
+    body.presentation-mode .status-over { background: #2d0d0d; color: #f85149; }
+    body.presentation-mode .status-under { background: #2d1f0d; color: #d29922; }
+    body.presentation-mode .keyboard-hint { color: #484f58; }
+    body.presentation-mode .keyboard-hint kbd {
+      background: #21262d; border-color: #30363d; color: #8b949e;
+    }
+    body.presentation-mode .pf-slider {
+      background: linear-gradient(to right,
+        #b85c00 0%, #b85c00 38%,
+        #2ea043 42%, #2ea043 58%,
+        #a82d2d 62%, #a82d2d 100%);
+    }
+    body.presentation-mode .secondary-slider { background: #30363d; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Two-Bus Power System: Voltage Phasors</h1>
+  <span class="brand">Gridlytics</span>
+</div>
+
+<main>
+  <svg id="phasor-svg"></svg>
+
+  <div class="readout">
+    <div class="readout-hero">
+      <div class="readout-hero-label">Receiving Voltage</div>
+      <div class="readout-hero-value" id="vr-readout">0.979<span class="readout-hero-unit">pu</span></div>
+    </div>
+    <div class="readout-row">
+      <span class="readout-label">|<i>V<sub>s</sub></i>|</span>
+      <span class="readout-value">1.000<span class="readout-unit">pu</span></span>
+    </div>
+    <div class="readout-row">
+      <span class="readout-label"><i>&delta;</i></span>
+      <span class="readout-value" id="delta-readout">8.5<span class="readout-unit">&deg;</span></span>
+    </div>
+    <div class="readout-row">
+      <span class="readout-label">Regulation</span>
+      <span class="readout-value" id="reg-readout">+2.1<span class="readout-unit">%</span></span>
+    </div>
+    <div class="readout-row">
+      <span class="readout-label">I&sup2;R Loss</span>
+      <span class="readout-value" id="loss-readout">4.0<span class="readout-unit">%</span></span>
+    </div>
+    <div class="status-badge status-normal" id="status-badge">Normal</div>
+  </div>
+
+  <div class="annotation">
+    <div class="annotation-label" id="anno-label"></div>
+    <div class="annotation-text" id="anno-text"></div>
+  </div>
+</main>
+
+<div class="controls">
+  <div class="slider-row">
+    <span class="slider-label">Power Factor</span>
+    <div class="slider-container">
+      <input type="range" class="pf-slider" id="pf-slider"
+             min="-35" max="35" value="0" step="0.5">
+      <div class="slider-ticks">
+        <span>0.82 lag</span><span>0.94 lag</span><span>1.0</span><span>0.94 lead</span><span>0.82 lead</span>
+      </div>
+    </div>
+    <span class="pf-display" id="pf-display">PF = 1.000 (unity)</span>
+  </div>
+  <div class="slider-row">
+    <span class="slider-label">Load P</span>
+    <div class="slider-container">
+      <input type="range" class="secondary-slider" id="p-slider"
+             min="0.1" max="2.0" value="1.0" step="0.05">
+    </div>
+    <span class="secondary-val" style="min-width:70px" id="p-display">1.00 pu</span>
+    <span class="slider-label" style="min-width:40px">X/R</span>
+    <div class="slider-container" style="max-width:180px">
+      <input type="range" class="secondary-slider" id="xr-slider"
+             min="3" max="25" value="13" step="1">
+    </div>
+    <span class="secondary-val" style="min-width:30px" id="xr-display">13</span>
+  </div>
+  <div class="device-row">
+    <button class="device-btn" id="btn-cap" onclick="toggleDevice('cap')">&#9649; Shunt Capacitor</button>
+    <button class="device-btn" id="btn-reactor" onclick="toggleDevice('reactor')">&#8764; Shunt Reactor</button>
+    <button class="device-btn" id="btn-statcom" onclick="toggleDevice('statcom')">&#9107; STATCOM</button>
+  </div>
+  <div class="device-slider-row" id="cap-row">
+    <span class="slider-label" style="min-width:100px">Cap B</span>
+    <div class="slider-container" style="max-width:220px">
+      <input type="range" class="secondary-slider" id="cap-slider"
+             min="0.05" max="1.5" value="0.40" step="0.05">
+    </div>
+    <span class="secondary-val" style="min-width:120px" id="cap-display">B = 0.40 pu</span>
+  </div>
+  <div class="device-slider-row" id="reactor-row">
+    <span class="slider-label" style="min-width:100px">Reactor B</span>
+    <div class="slider-container" style="max-width:220px">
+      <input type="range" class="secondary-slider" id="reactor-slider"
+             min="0.05" max="1.5" value="0.40" step="0.05">
+    </div>
+    <span class="secondary-val" style="min-width:120px" id="reactor-display">B = 0.40 pu</span>
+  </div>
+  <div class="device-slider-row" id="statcom-row">
+    <span class="slider-label" style="min-width:80px">V setpoint</span>
+    <div class="slider-container" style="max-width:140px">
+      <input type="range" class="secondary-slider" id="statcom-slider"
+             min="0.90" max="1.10" value="1.00" step="0.005">
+    </div>
+    <span class="slider-label" style="min-width:40px">&plusmn;B</span>
+    <div class="slider-container" style="max-width:100px">
+      <input type="range" class="secondary-slider" id="statcom-blimit-slider"
+             min="0.1" max="2.0" value="1.0" step="0.1">
+    </div>
+    <span class="secondary-val" style="min-width:150px" id="statcom-display">V\u209B\u209A = 1.000 pu</span>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-story" id="btn-story" onclick="toggleStory()">&#9654; Play Story</button>
+    <button class="btn" id="btn-reset" onclick="resetDefaults()">Reset</button>
+    <button class="btn" id="btn-present" onclick="togglePresentation()">&#9632;&#9632; Present</button>
+  </div>
+  <div class="keyboard-hint">
+    <kbd>&larr;</kbd><kbd>&rarr;</kbd> Power Factor &nbsp;
+    <kbd>&uarr;</kbd><kbd>&darr;</kbd> Load &nbsp;
+    <kbd>P</kbd> Present &nbsp;
+    <kbd>Space</kbd> Story
+  </div>
+</div>
+
+<script>
+// ============================================================
+// POWER FLOW SOLVER
+// ============================================================
+// Two-bus system: Vs (sending) --- Z = R + jX --- Vr (receiving) --- Load (P + jQ)
+// Convention: Vr is reference phasor (angle 0). Normalize |Vs| = 1 pu.
+// pfAngleDeg: current angle relative to Vr. Positive = leading, negative = lagging.
+
+function solveTwoBus(pfAngleDeg, P, R, X, capB, reactorB, statcomB) {
+    capB = capB || 0;
+    reactorB = reactorB || 0;
+    statcomB = statcomB || 0;
+
+    const theta = pfAngleDeg * Math.PI / 180;
+    const cosT = Math.cos(theta);
+    const sinT = Math.sin(theta);
+    const Vr0 = 1.0; // Vr as reference for calculation
+
+    // Load current: I = P / (Vr * cos(theta)) at angle theta relative to Vr
+    const Imag = P / (Vr0 * cosT);
+    const ILx = Imag * cosT;
+    const ILy = Imag * sinT;
+
+    // Shunt device currents (Vr is reference = real axis)
+    // Capacitor: leads Vr by 90° (+j direction)
+    const ICx = 0, ICy = capB * Vr0;
+    // Reactor: lags Vr by 90° (-j direction)
+    const IRex = 0, IRey = -reactorB * Vr0;
+    // STATCOM: positive B = cap-like (+j), negative = reactor-like (-j)
+    const ISx = 0, ISy = statcomB * Vr0;
+
+    // Total transmission line current
+    const ITx = ILx + ICx + IRex + ISx;
+    const ITy = ILy + ICy + IRey + ISy;
+
+    // Voltage drops using total current through Z
+    const VIRx = R * ITx;
+    const VIRy = R * ITy;
+    const VjIXx = -X * ITy;
+    const VjIXy = X * ITx;
+
+    // Sending end: Vs = Vr + IT*Z
+    const Vsx = Vr0 + VIRx + VjIXx;
+    const Vsy = VIRy + VjIXy;
+    const Vsmag = Math.sqrt(Vsx * Vsx + Vsy * Vsy);
+
+    // Normalize so |Vs| = 1 pu
+    const s = 1.0 / Vsmag;
+    const delta = Math.atan2(Vsy, Vsx);
+
+    // Rotate everything by -delta so Vs becomes the HORIZONTAL reference
+    const cd = Math.cos(-delta);
+    const sd = Math.sin(-delta);
+    function rot(x, y) { return { x: x*cd - y*sd, y: x*sd + y*cd }; }
+
+    const VrR    = rot(Vr0 * s, 0);
+    const IR_r   = rot(VIRx * s, VIRy * s);
+    const jIX_r  = rot(VjIXx * s, VjIXy * s);
+    const IT_r   = rot(ITx * s, ITy * s);
+    const IL_r   = rot(ILx * s, ILy * s);
+    const IC_r   = rot(ICx * s, ICy * s);
+    const IRe_r  = rot(IRex * s, IRey * s);
+    const IS_r   = rot(ISx * s, ISy * s);
+
+    const ITmag = Math.sqrt(ITx * ITx + ITy * ITy);
+
+    return {
+        Vr:  { x: VrR.x, y: VrR.y, mag: Vr0 * s },
+        Vs:  { x: 1.0, y: 0, mag: 1.0 },
+        I:   { x: IT_r.x, y: IT_r.y, mag: ITmag * s },
+        Iload:    { x: IL_r.x, y: IL_r.y, mag: Imag * s },
+        Icap:     { x: IC_r.x, y: IC_r.y, mag: capB * Vr0 * s },
+        Ireactor: { x: IRe_r.x, y: IRe_r.y, mag: reactorB * Vr0 * s },
+        Istatcom: { x: IS_r.x, y: IS_r.y, mag: Math.abs(statcomB) * Vr0 * s },
+        IR:  { dx: IR_r.x, dy: IR_r.y },
+        jIX: { dx: jIX_r.x, dy: jIX_r.y },
+        delta: delta,
+        pf: Math.abs(cosT),
+        pfAngle: pfAngleDeg,
+    };
+}
+
+// ============================================================
+// STATE
+// ============================================================
+let state = {
+    pfAngle: 0,    // degrees: negative=lag, positive=lead
+    P: 1.0,        // pu active power
+    R: 0.04,       // pu resistance (exaggerated for illustration)
+    X: 0.50,       // pu reactance (exaggerated for illustration)
+    capOn: false,       // shunt capacitor switch
+    capB: 0.4,          // susceptance (pu)
+    reactorOn: false,   // shunt reactor switch
+    reactorB: 0.4,      // susceptance (pu)
+    statcomOn: false,    // STATCOM switch
+    statcomVset: 1.0,    // STATCOM voltage setpoint (pu)
+    statcomBmax: 1.0,    // STATCOM B limit (+/- pu)
+};
+
+let storyPlaying = false;
+let storyTimeouts = [];
+let presentationMode = false;
+// Theme colors (light / dark)
+const lightTheme = {
+    wire: '#2a2a3a', comp: '#3a3a4a', svgBg: '#ffffff',
+    ghostCurve: '#ddd', ghostDot: '#ccc',
+    axisLine: '#e0e0e0', refArc: '#d8d8e0', refLabel: '#bbb',
+    industryLabel: '#90a4ae', bracket: '#c8d6e0', busSending: '#1a2a3a',
+    zoneLeadBg: 'rgba(220,53,69,0.06)', zoneLagBg: 'rgba(45,109,168,0.06)',
+    zoneLeadText: 'rgba(220,53,69,0.35)', zoneLagText: 'rgba(45,109,168,0.35)',
+};
+const darkTheme = {
+    wire: '#8b949e', comp: '#9ba5b0', svgBg: '#161b22',
+    ghostCurve: '#30363d', ghostDot: '#484f58',
+    axisLine: '#21262d', refArc: '#30363d', refLabel: '#484f58',
+    industryLabel: '#6a7a8a', bracket: '#3a4a5a', busSending: '#6a7a8a',
+    zoneLeadBg: 'rgba(248,81,73,0.08)', zoneLagBg: 'rgba(88,166,255,0.08)',
+    zoneLeadText: 'rgba(248,81,73,0.4)', zoneLagText: 'rgba(88,166,255,0.4)',
+};
+function theme() { return presentationMode ? darkTheme : lightTheme; }
+
+// ============================================================
+// SVG SETUP
+// ============================================================
+const svg = d3.select('#phasor-svg')
+    .attr('viewBox', '0 0 1200 650')
+    .attr('preserveAspectRatio', 'xMidYMid meet');
+
+// Fixed coordinate system inside the viewBox - browser handles all scaling
+const ox = 240, oy = 400;
+const scale = 420; // 1 pu = 420 px
+
+// Convert physics (x, y) to SVG (sx, sy)
+function toSVG(px, py) {
+    return [ox + px * scale, oy - py * scale];
+}
+
+// ---- Arrow markers ----
+const colors = {
+    vs: '#1a3a5c', vr: '#c0392b', current: '#8a8a9a',
+    ir: '#2d6da8', jix: '#27864a',
+    iload: '#5d6d7e', icap: '#00897B', ireactor: '#7B1FA2', istatcom: '#E65100',
+};
+
+// Smooth diverging voltage color scale — green 0.95–1.05, red above, blue below
+const voltageColorScale = d3.scaleLinear()
+    .domain([0.85, 0.92, 0.95, 1.0, 1.05, 1.08, 1.15])
+    .range(['#1a56db', '#3b82f6', '#2b9348', '#2b9348', '#2b9348', '#dc3545', '#dc3545'])
+    .clamp(true);
+
+// SVG background (for dark mode)
+svg.append('rect').attr('id', 'svg-bg')
+    .attr('width', 1200).attr('height', 650)
+    .attr('fill', theme().svgBg);
+
+const defs = svg.append('defs');
+
+function addMarker(id, color, size) {
+    defs.append('marker')
+        .attr('id', id)
+        .attr('viewBox', '0 0 10 10')
+        .attr('refX', 9).attr('refY', 5)
+        .attr('markerWidth', size).attr('markerHeight', size)
+        .attr('orient', 'auto-start-reverse')
+        .append('path')
+        .attr('d', 'M 1 2 L 9 5 L 1 8')
+        .attr('fill', 'none')
+        .attr('stroke', color)
+        .attr('stroke-width', 1.5);
+}
+
+addMarker('arrow-vs', '#2a2a3a', 6);
+addMarker('arrow-vr', colors.vr, 6);
+addMarker('arrow-i', colors.current, 5);
+addMarker('arrow-ir', colors.ir, 5);
+addMarker('arrow-jix', colors.jix, 5);
+addMarker('arrow-iload', colors.iload, 5);
+addMarker('arrow-icap', colors.icap, 4);
+addMarker('arrow-ireactor', colors.ireactor, 4);
+addMarker('arrow-istatcom', colors.istatcom, 4);
+
+// ---- Layer groups ----
+const gGhost = svg.append('g').attr('class', 'ghost-layer');
+const gRef = svg.append('g').attr('class', 'ref-layer');
+const gDrops = svg.append('g').attr('class', 'drops-layer');
+const gPhasors = svg.append('g').attr('class', 'phasors-layer');
+const gLabels = svg.append('g').attr('class', 'labels-layer');
+const gCircuit = svg.append('g').attr('class', 'circuit-layer');
+const gCircuitDyn = svg.append('g').attr('class', 'circuit-dyn-layer');
+const gAngles = svg.append('g').attr('class', 'angles-layer');
+
+// ---- Circuit layout constants (shared between drawCircuit & update) ----
+const circY0 = 72;
+const circRBus = 555;
+const circResEnd = 400;     // sBus(130) + 30 + coilLen(120) + 20 + resLen(100)
+const circITcenter = (circResEnd + circRBus) / 2;   // midpoint of wire between R and Vr
+const circLoadX = circRBus + 30;
+const circILcenter = circRBus + 15;  // midpoint of wire to load
+const circArrowY = circY0 - 16;      // arrows sit above the wire
+const circShuntWireY = circY0 + 28 + 12;  // y0 + busH + 12
+const circDevSpacing = 70;
+const circReactX = circRBus - circDevSpacing;
+const circCapX = circRBus;
+const circStatX = circRBus + circDevSpacing;
+
+// ============================================================
+// CIRCUIT SCHEMATIC (upper area)
+// ============================================================
+function drawCircuit() {
+    gCircuit.selectAll('*').remove();
+    const g = gCircuit;
+    const wire = theme().wire;
+    const comp = theme().comp;
+    const lw = 1.8;              // line weight for components
+    const ww = 1.8;              // wire weight
+
+    // Layout coordinates
+    const y0 = 72;               // main horizontal bus height
+    const busH = 28;             // bus bar half-height
+    const sBus = 130;            // sending bus x
+    const rBus = 555;            // receiving bus x
+
+    // Helper: draw ground symbol
+    function drawGround(x, y) {
+        g.append('line').attr('x1', x).attr('y1', y).attr('x2', x).attr('y2', y + 10)
+            .attr('stroke', comp).attr('stroke-width', lw);
+        [0, 5, 10].forEach((dy, i) => {
+            const hw = 9 - i * 3;
+            g.append('line')
+                .attr('x1', x - hw).attr('y1', y + 10 + dy)
+                .attr('x2', x + hw).attr('y2', y + 10 + dy)
+                .attr('stroke', comp).attr('stroke-width', 1.4);
+        });
+    }
+
+    // ── Generator (below sending bus, wire goes left then down) ──
+    const genX = sBus - 45;
+    const genY = y0 + 65;
+    // Horizontal wire left from sending bus (at main wire height y0)
+    g.append('line').attr('x1', sBus).attr('y1', y0)
+        .attr('x2', genX).attr('y2', y0)
+        .attr('stroke', wire).attr('stroke-width', ww);
+    // Vertical wire down to generator
+    g.append('line').attr('x1', genX).attr('y1', y0)
+        .attr('x2', genX).attr('y2', genY - 22)
+        .attr('stroke', wire).attr('stroke-width', ww);
+    // Generator circle
+    g.append('circle').attr('cx', genX).attr('cy', genY).attr('r', 22)
+        .attr('fill', 'none').attr('stroke', comp).attr('stroke-width', lw);
+    // Sine wave inside generator
+    g.append('path')
+        .attr('d', `M ${genX - 10} ${genY} C ${genX - 5} ${genY - 8}, ${genX} ${genY - 8}, ${genX} ${genY} C ${genX} ${genY}, ${genX + 5} ${genY + 8}, ${genX + 10} ${genY}`)
+        .attr('fill', 'none').attr('stroke', comp).attr('stroke-width', 1.3);
+    // Ground below generator
+    g.append('line').attr('x1', genX).attr('y1', genY + 22)
+        .attr('x2', genX).attr('y2', genY + 34)
+        .attr('stroke', comp).attr('stroke-width', lw);
+    drawGround(genX, genY + 34);
+
+    // ── Sending bus bar ──
+    g.append('line').attr('x1', sBus).attr('y1', y0 - busH)
+        .attr('x2', sBus).attr('y2', y0 + busH)
+        .attr('stroke', theme().busSending).attr('stroke-width', 5)
+        .attr('stroke-linecap', 'round');
+
+    // Vs label
+    g.append('text').attr('x', sBus).attr('y', y0 - busH - 8)
+        .attr('text-anchor', 'middle')
+        .attr('class', 'circuit-text').attr('fill', colors.vs)
+        .style('font-size', '16px').text('V\u209B');
+
+    // ── Wire from sending bus to inductor ──
+    const coilStart = sBus + 30;
+    g.append('line').attr('x1', sBus).attr('y1', y0)
+        .attr('x2', coilStart).attr('y2', y0)
+        .attr('stroke', wire).attr('stroke-width', ww);
+
+    // ── Inductor (X): tight semicircular coil humps ──
+    const coilLen = 120;
+    const humpW = coilLen / 4;
+    const humpH = 20;
+    let coilPath = `M ${coilStart} ${y0}`;
+    for (let i = 0; i < 4; i++) {
+        const x0 = coilStart + i * humpW;
+        coilPath += ` C ${x0 + humpW * 0.05} ${y0 - humpH * 1.4}, ${x0 + humpW * 0.95} ${y0 - humpH * 1.4}, ${x0 + humpW} ${y0}`;
+    }
+    g.append('path').attr('d', coilPath)
+        .attr('fill', 'none').attr('stroke', comp).attr('stroke-width', lw);
+    // X label
+    g.append('text').attr('x', coilStart + coilLen / 2).attr('y', y0 - humpH * 1.4 - 6)
+        .attr('text-anchor', 'middle')
+        .attr('class', 'circuit-text').attr('fill', comp)
+        .style('font-size', '16px').text('X');
+
+    // ── Wire from inductor to resistor ──
+    const resStart = coilStart + coilLen + 20;
+    g.append('line').attr('x1', coilStart + coilLen).attr('y1', y0)
+        .attr('x2', resStart).attr('y2', y0)
+        .attr('stroke', wire).attr('stroke-width', ww);
+
+    // ── Resistor (R): standard zigzag, 5 teeth (symmetric entry/exit) ──
+    const resLen = 100;
+    const teeth = 5;
+    const toothW = resLen / (teeth + 1);
+    const toothH = 10;
+    let resPath = `M ${resStart} ${y0} L ${resStart + toothW * 0.5} ${y0 - toothH}`;
+    for (let i = 1; i <= teeth; i++) {
+        const yOff = (i % 2 === 1) ? toothH : -toothH;
+        resPath += ` L ${resStart + toothW * (i + 0.5)} ${y0 + yOff}`;
+    }
+    resPath += ` L ${resStart + resLen} ${y0}`;
+    g.append('path').attr('d', resPath)
+        .attr('fill', 'none').attr('stroke', comp).attr('stroke-width', lw)
+        .attr('stroke-linejoin', 'round');
+    // R label
+    g.append('text').attr('x', resStart + resLen / 2).attr('y', y0 - toothH - 10)
+        .attr('text-anchor', 'middle')
+        .attr('class', 'circuit-text').attr('fill', comp)
+        .style('font-size', '16px').text('R');
+
+    // ── Wire from resistor to receiving bus ──
+    g.append('line').attr('x1', resStart + resLen).attr('y1', y0)
+        .attr('x2', rBus).attr('y2', y0)
+        .attr('stroke', wire).attr('stroke-width', ww);
+
+    // (I_T arrow is now dynamic — drawn in gCircuitDyn and updated in update())
+
+    // ── Receiving bus bar ──
+    g.append('line').attr('x1', rBus).attr('y1', y0 - busH)
+        .attr('x2', rBus).attr('y2', y0 + busH)
+        .attr('stroke', '#999').attr('stroke-width', 5)
+        .attr('stroke-linecap', 'round');
+
+    // Vr label (colored dynamically by update() via circ-vr-label)
+    g.append('text').attr('id', 'circ-vr-label')
+        .attr('x', rBus).attr('y', y0 - busH - 8)
+        .attr('text-anchor', 'middle')
+        .attr('class', 'circuit-text').attr('fill', '#999')
+        .style('font-size', '16px').text('V\u1D63');
+
+    // ── Wire to load ──
+    const loadX = rBus + 30;
+    g.append('line').attr('x1', rBus).attr('y1', y0)
+        .attr('x2', loadX).attr('y2', y0)
+        .attr('stroke', wire).attr('stroke-width', ww);
+
+    // (I_L arrow is now dynamic — drawn in gCircuitDyn and updated in update())
+
+    // ── Load triangle (open, pointing right) ──
+    const triH = 18;
+    const triW = 26;
+    g.append('path')
+        .attr('d', `M ${loadX} ${y0 - triH} L ${loadX + triW} ${y0} L ${loadX} ${y0 + triH} Z`)
+        .attr('fill', 'none').attr('stroke', comp).attr('stroke-width', lw)
+        .attr('stroke-linejoin', 'round');
+    g.append('text').attr('x', loadX + triW + 8).attr('y', y0 - 4)
+        .attr('class', 'circuit-text-sm').style('font-size', '13px')
+        .attr('fill', comp).text('Load');
+    g.append('text').attr('x', loadX + triW + 8).attr('y', y0 + 12)
+        .attr('class', 'circuit-text').style('font-size', '12px')
+        .attr('fill', comp).text('P + jQ');
+
+    // ══════════════════════════════════════
+    // SHUNT DEVICES (below receiving bus)
+    // ══════════════════════════════════════
+    const shuntTop = y0 + busH;
+    const shuntWireY = shuntTop + 12;
+    const devSpacing = 70;
+    const reactX = rBus - devSpacing;
+    const capX = rBus;
+    const statX = rBus + devSpacing;
+
+    // Horizontal collection wire below receiving bus
+    g.append('line').attr('x1', rBus).attr('y1', shuntTop)
+        .attr('x2', rBus).attr('y2', shuntWireY)
+        .attr('stroke', wire).attr('stroke-width', ww);
+    g.append('line').attr('x1', reactX).attr('y1', shuntWireY)
+        .attr('x2', statX).attr('y2', shuntWireY)
+        .attr('stroke', wire).attr('stroke-width', ww);
+
+    // Helper: draw a shunt device with switch indicator
+    function drawSwitch(x, y, isOn, color) {
+        // Small switch indicator circle
+        const sw = g.append('circle').attr('cx', x).attr('cy', y + 6).attr('r', 4)
+            .attr('fill', isOn ? color : 'white')
+            .attr('stroke', isOn ? color : '#bbb').attr('stroke-width', 1.5)
+            .style('cursor', 'pointer');
+        // Wire through switch
+        g.append('line').attr('x1', x).attr('y1', y)
+            .attr('x2', x).attr('y2', y + 12)
+            .attr('stroke', isOn ? color : '#bbb').attr('stroke-width', isOn ? ww : 1)
+            .attr('stroke-dasharray', isOn ? 'none' : '3,3');
+        return y + 12;
+    }
+
+    // --- Shunt Reactor (left) ---
+    const reColor = state.reactorOn ? colors.ireactor : '#ccc';
+    const reSwitchEnd = drawSwitch(reactX, shuntWireY, state.reactorOn, colors.ireactor);
+    // Wire to reactor coil
+    g.append('line').attr('x1', reactX).attr('y1', reSwitchEnd)
+        .attr('x2', reactX).attr('y2', reSwitchEnd + 4)
+        .attr('stroke', reColor).attr('stroke-width', ww);
+    // Reactor coil (3 vertical humps)
+    const reCoilTop = reSwitchEnd + 4;
+    const reHumpH = 10;
+    let reCoilPath = `M ${reactX} ${reCoilTop}`;
+    for (let i = 0; i < 3; i++) {
+        const y1 = reCoilTop + i * reHumpH;
+        reCoilPath += ` C ${reactX - 14} ${y1 + reHumpH * 0.05}, ${reactX - 14} ${y1 + reHumpH * 0.95}, ${reactX} ${y1 + reHumpH}`;
+    }
+    g.append('path').attr('d', reCoilPath)
+        .attr('fill', 'none').attr('stroke', reColor).attr('stroke-width', lw);
+    // Ground below reactor
+    const reBottom = reCoilTop + 3 * reHumpH;
+    g.append('line').attr('x1', reactX).attr('y1', reBottom)
+        .attr('x2', reactX).attr('y2', reBottom + 6)
+        .attr('stroke', reColor).attr('stroke-width', lw);
+    drawGround(reactX, reBottom + 6);
+    // Reactor label
+    g.append('text').attr('x', reactX).attr('y', reBottom + 38)
+        .attr('text-anchor', 'middle').attr('class', 'circuit-text-sm')
+        .style('font-size', '10px').attr('fill', reColor).text('Reactor');
+    // Clickable overlay
+    g.append('rect').attr('x', reactX - 20).attr('y', shuntWireY)
+        .attr('width', 40).attr('height', reBottom - shuntWireY + 40)
+        .attr('fill', 'transparent').style('cursor', 'pointer')
+        .on('click', () => { toggleDevice('reactor'); });
+
+    // --- Shunt Capacitor (middle) ---
+    const caColor = state.capOn ? colors.icap : '#ccc';
+    const caSwitchEnd = drawSwitch(capX, shuntWireY, state.capOn, colors.icap);
+    // Wire to cap
+    g.append('line').attr('x1', capX).attr('y1', caSwitchEnd)
+        .attr('x2', capX).attr('y2', caSwitchEnd + 6)
+        .attr('stroke', caColor).attr('stroke-width', ww);
+    // Capacitor plates
+    const caPlateY = caSwitchEnd + 6;
+    const plateW = 12;
+    g.append('line').attr('x1', capX - plateW).attr('y1', caPlateY)
+        .attr('x2', capX + plateW).attr('y2', caPlateY)
+        .attr('stroke', caColor).attr('stroke-width', 2);
+    g.append('line').attr('x1', capX - plateW).attr('y1', caPlateY + 5)
+        .attr('x2', capX + plateW).attr('y2', caPlateY + 5)
+        .attr('stroke', caColor).attr('stroke-width', 2);
+    // Ground below cap
+    g.append('line').attr('x1', capX).attr('y1', caPlateY + 5)
+        .attr('x2', capX).attr('y2', caPlateY + 12)
+        .attr('stroke', caColor).attr('stroke-width', lw);
+    drawGround(capX, caPlateY + 12);
+    // Cap label
+    g.append('text').attr('x', capX).attr('y', caPlateY + 44)
+        .attr('text-anchor', 'middle').attr('class', 'circuit-text-sm')
+        .style('font-size', '10px').attr('fill', caColor).text('Cables / Caps');
+    // Clickable overlay
+    g.append('rect').attr('x', capX - 20).attr('y', shuntWireY)
+        .attr('width', 40).attr('height', 70)
+        .attr('fill', 'transparent').style('cursor', 'pointer')
+        .on('click', () => { toggleDevice('cap'); });
+
+    // --- STATCOM (right) ---
+    const stColor = state.statcomOn ? colors.istatcom : '#ccc';
+    const stSwitchEnd = drawSwitch(statX, shuntWireY, state.statcomOn, colors.istatcom);
+    // Wire to STATCOM box
+    g.append('line').attr('x1', statX).attr('y1', stSwitchEnd)
+        .attr('x2', statX).attr('y2', stSwitchEnd + 6)
+        .attr('stroke', stColor).attr('stroke-width', ww);
+    // STATCOM: small rectangle (voltage source converter)
+    const stBoxY = stSwitchEnd + 6;
+    const stBoxH = 22, stBoxW = 20;
+    g.append('rect').attr('x', statX - stBoxW / 2).attr('y', stBoxY)
+        .attr('width', stBoxW).attr('height', stBoxH)
+        .attr('fill', state.statcomOn ? '#FFF3E0' : '#f8f8f8')
+        .attr('stroke', stColor).attr('stroke-width', lw)
+        .attr('rx', 2);
+    // Sine wave inside STATCOM box
+    g.append('path')
+        .attr('d', `M ${statX - 7} ${stBoxY + stBoxH / 2} C ${statX - 3} ${stBoxY + stBoxH / 2 - 6}, ${statX + 1} ${stBoxY + stBoxH / 2 - 6}, ${statX + 1} ${stBoxY + stBoxH / 2} C ${statX + 1} ${stBoxY + stBoxH / 2}, ${statX + 5} ${stBoxY + stBoxH / 2 + 6}, ${statX + 7} ${stBoxY + stBoxH / 2}`)
+        .attr('fill', 'none').attr('stroke', stColor).attr('stroke-width', 1.2);
+    // Ground below STATCOM
+    g.append('line').attr('x1', statX).attr('y1', stBoxY + stBoxH)
+        .attr('x2', statX).attr('y2', stBoxY + stBoxH + 6)
+        .attr('stroke', stColor).attr('stroke-width', lw);
+    drawGround(statX, stBoxY + stBoxH + 6);
+    // STATCOM label
+    g.append('text').attr('x', statX).attr('y', stBoxY + stBoxH + 38)
+        .attr('text-anchor', 'middle').attr('class', 'circuit-text-sm')
+        .style('font-size', '10px').attr('fill', stColor).text('STATCOM');
+    // Clickable overlay
+    g.append('rect').attr('x', statX - 20).attr('y', shuntWireY)
+        .attr('width', 40).attr('height', 75)
+        .attr('fill', 'transparent').style('cursor', 'pointer')
+        .on('click', () => { toggleDevice('statcom'); });
+
+    // ══════════════════════════════════════
+    // INDUSTRY PARTICIPANT LABELS
+    // ══════════════════════════════════════
+    const labelY = y0 - busH - 26;
+
+    // Generators (above generator area)
+    g.append('text').attr('x', genX).attr('y', labelY + 4)
+        .attr('text-anchor', 'middle').attr('class', 'industry-label')
+        .attr('fill', theme().industryLabel).text('Generators');
+
+    // Transpower (spanning X and R with bracket)
+    const tpLeft = coilStart - 5;
+    const tpRight = resStart + resLen + 5;
+    const tpMid = (tpLeft + tpRight) / 2;
+    g.append('text').attr('x', tpMid).attr('y', labelY)
+        .attr('text-anchor', 'middle').attr('class', 'industry-label')
+        .attr('fill', theme().industryLabel).text('Transpower (Grid Owner)');
+    // Bracket line
+    const bracketY = labelY + 5;
+    g.append('line').attr('x1', tpLeft).attr('y1', bracketY)
+        .attr('x2', tpRight).attr('y2', bracketY)
+        .attr('stroke', theme().bracket).attr('stroke-width', 1);
+    g.append('line').attr('x1', tpLeft).attr('y1', bracketY)
+        .attr('x2', tpLeft).attr('y2', bracketY + 4)
+        .attr('stroke', theme().bracket).attr('stroke-width', 1);
+    g.append('line').attr('x1', tpRight).attr('y1', bracketY)
+        .attr('x2', tpRight).attr('y2', bracketY + 4)
+        .attr('stroke', theme().bracket).attr('stroke-width', 1);
+
+    // Lines Companies (above load area)
+    g.append('text').attr('x', loadX + triW / 2 + 20).attr('y', labelY + 4)
+        .attr('text-anchor', 'middle').attr('class', 'industry-label')
+        .attr('fill', theme().industryLabel).text('Lines Co (EDBs)');
+}
+
+// ============================================================
+// REFERENCE ELEMENTS (1.0 pu dashed arc, axis)
+// ============================================================
+function drawReference() {
+    gRef.selectAll('*').remove();
+    const th = theme();
+
+    // Horizontal axis (thin gray line)
+    gRef.append('line')
+        .attr('x1', ox - 20).attr('y1', oy)
+        .attr('x2', ox + scale * 1.18).attr('y2', oy)
+        .attr('stroke', th.axisLine).attr('stroke-width', 1);
+
+    // 1.0 pu reference arc (dashed circle segment)
+    const arcR = scale * 1.0;
+    const arcPath = describeArc(ox, oy, arcR, -0.55, 0.15);
+    gRef.append('path')
+        .attr('d', arcPath)
+        .attr('class', 'ref-arc')
+        .attr('stroke', th.refArc);
+
+    // "1.0 pu" label on the arc
+    const labelAngle = -0.45;
+    const lx = ox + arcR * Math.cos(labelAngle) + 12;
+    const ly = oy - arcR * Math.sin(labelAngle);
+    gRef.append('text')
+        .attr('x', lx).attr('y', ly)
+        .attr('text-anchor', 'middle')
+        .attr('font-size', '11px').attr('fill', th.refLabel)
+        .text('1.0 pu');
+}
+
+// ============================================================
+// GHOST TRAIL (precomputed Vr positions)
+// ============================================================
+function drawGhostTrail() {
+    gGhost.selectAll('*').remove();
+    const th = theme();
+    // Compute the locus of Vr tips as PF sweeps from lag to lead
+    const lagPoints = [];
+    const leadPoints = [];
+    const allPoints = [];
+    for (let a = -35; a <= 35; a += 0.5) {
+        const r = solveTwoBus(a, state.P, state.R, state.X, state.capOn ? state.capB : 0, state.reactorOn ? state.reactorB : 0, state.statcomOn ? solveStatcomB(a, state.P, state.R, state.X, state.capOn ? state.capB : 0, state.reactorOn ? state.reactorB : 0, state.statcomVset) : 0);
+        const [sx, sy] = toSVG(r.Vr.x, r.Vr.y);
+        allPoints.push([sx, sy]);
+        if (a <= 0) lagPoints.push([sx, sy]);
+        if (a >= 0) leadPoints.push([sx, sy]);
+    }
+
+    // Zone shading: lagging (blue) and leading (red/orange) regions
+    // Draw filled bands around the curve
+    const bandW = 30;
+    if (lagPoints.length > 1) {
+        const lagBand = [...lagPoints, ...lagPoints.slice().reverse().map(p => [p[0], p[1] + bandW])];
+        gGhost.append('polygon')
+            .attr('points', lagBand.map(p => p.join(',')).join(' '))
+            .attr('fill', th.zoneLagBg).attr('stroke', 'none');
+    }
+    if (leadPoints.length > 1) {
+        const leadBand = [...leadPoints, ...leadPoints.slice().reverse().map(p => [p[0], p[1] - bandW])];
+        gGhost.append('polygon')
+            .attr('points', leadBand.map(p => p.join(',')).join(' '))
+            .attr('fill', th.zoneLeadBg).attr('stroke', 'none');
+    }
+
+    // Draw the ghost curve
+    const line = d3.line().curve(d3.curveBasis);
+    gGhost.append('path')
+        .attr('d', line(allPoints))
+        .attr('fill', 'none')
+        .attr('stroke', th.ghostCurve)
+        .attr('stroke-width', 2);
+
+    // Zone labels at curve ends
+    const lagEnd = lagPoints[0];
+    const leadEnd = leadPoints[leadPoints.length - 1];
+    gGhost.append('text')
+        .attr('x', lagEnd[0] - 8).attr('y', lagEnd[1] + 18)
+        .attr('text-anchor', 'end')
+        .attr('font-family', 'var(--sans)').attr('font-size', '11px')
+        .attr('font-weight', '700').attr('letter-spacing', '0.08em')
+        .attr('fill', th.zoneLagText).text('LAGGING');
+    gGhost.append('text')
+        .attr('x', leadEnd[0] + 8).attr('y', leadEnd[1] - 10)
+        .attr('text-anchor', 'start')
+        .attr('font-family', 'var(--sans)').attr('font-size', '11px')
+        .attr('font-weight', '700').attr('letter-spacing', '0.08em')
+        .attr('fill', th.zoneLeadText).text('LEADING');
+
+    // Tick marks at key PF angles
+    [-30, -20, -10, 0, 10, 20, 30].forEach(a => {
+        const r = solveTwoBus(a, state.P, state.R, state.X, state.capOn ? state.capB : 0, state.reactorOn ? state.reactorB : 0, state.statcomOn ? solveStatcomB(a, state.P, state.R, state.X, state.capOn ? state.capB : 0, state.reactorOn ? state.reactorB : 0, state.statcomVset) : 0);
+        const [sx, sy] = toSVG(r.Vr.x, r.Vr.y);
+        gGhost.append('circle')
+            .attr('cx', sx).attr('cy', sy).attr('r', 2.5)
+            .attr('fill', th.ghostDot);
+    });
+
+    // Unity marker
+    const rUnity = solveTwoBus(0, state.P, state.R, state.X, state.capOn ? state.capB : 0, state.reactorOn ? state.reactorB : 0, state.statcomOn ? solveStatcomB(0, state.P, state.R, state.X, state.capOn ? state.capB : 0, state.reactorOn ? state.reactorB : 0, state.statcomVset) : 0);
+    const [ux, uy] = toSVG(rUnity.Vr.x, rUnity.Vr.y);
+    gGhost.append('circle')
+        .attr('cx', ux).attr('cy', uy).attr('r', 4)
+        .attr('fill', '#52b788').attr('stroke', '#fff').attr('stroke-width', 1.5);
+    gGhost.append('text')
+        .attr('x', ux).attr('y', uy + 18)
+        .attr('text-anchor', 'middle')
+        .attr('font-family', 'var(--sans)').attr('font-size', '10px')
+        .attr('font-weight', '600')
+        .attr('fill', '#52b788').text('Unity PF');
+}
+
+// ============================================================
+// CREATE SVG ELEMENTS (called once)
+// ============================================================
+function createElements() {
+    // Voltage drop: IR (from Vr tip)
+    gDrops.append('line').attr('id', 'drop-ir')
+        .attr('stroke', colors.ir).attr('stroke-width', 1.5)
+        .attr('class', 'drop-arrow')
+        .attr('marker-end', 'url(#arrow-ir)');
+
+    // Voltage drop: jIX (from IR tip)
+    gDrops.append('line').attr('id', 'drop-jix')
+        .attr('stroke', colors.jix).attr('stroke-width', 1.5)
+        .attr('class', 'drop-arrow')
+        .attr('marker-end', 'url(#arrow-jix)');
+
+    // Vs phasor (thin dark)
+    gPhasors.append('line').attr('id', 'phasor-vs')
+        .attr('stroke', '#2a2a3a').attr('stroke-width', 1.8)
+        .attr('class', 'phasor-arrow')
+        .attr('marker-end', 'url(#arrow-vs)');
+
+    // Vr phasor (thin red)
+    gPhasors.append('line').attr('id', 'phasor-vr')
+        .attr('stroke', colors.vr).attr('stroke-width', 1.8)
+        .attr('class', 'phasor-arrow')
+        .attr('marker-end', 'url(#arrow-vr)');
+
+    // Current phasor (thin, lighter)
+    gPhasors.append('line').attr('id', 'phasor-i')
+        .attr('stroke', colors.current).attr('stroke-width', 1.2)
+        .attr('class', 'phasor-arrow')
+        .attr('marker-end', 'url(#arrow-i)')
+        .attr('opacity', 0.6);
+
+    // Angle arc: delta (Vs to Vr)
+    gAngles.append('path').attr('id', 'arc-delta')
+        .attr('class', 'angle-arc').attr('stroke', '#7a7a8a');
+    gAngles.append('text').attr('id', 'label-delta')
+        .attr('class', 'angle-label').attr('fill', '#5a5a6a');
+
+    // Angle arc: phi (I to Vr)
+    gAngles.append('path').attr('id', 'arc-phi')
+        .attr('class', 'angle-arc').attr('stroke', colors.current)
+        .attr('stroke-dasharray', '3,3');
+    gAngles.append('text').attr('id', 'label-phi')
+        .attr('class', 'angle-label').attr('fill', colors.current);
+
+    // Labels
+    gLabels.append('text').attr('id', 'lbl-vs')
+        .attr('class', 'phasor-label').attr('fill', '#3a3a4a');
+    gLabels.append('text').attr('id', 'lbl-vr')
+        .attr('class', 'phasor-label').attr('fill', colors.vr);
+    gLabels.append('text').attr('id', 'lbl-i')
+        .attr('font-size', '13px').attr('fill', colors.current);
+    gLabels.append('text').attr('id', 'lbl-ir')
+        .attr('font-size', '13px').attr('font-weight', '600').attr('fill', colors.ir);
+    gLabels.append('text').attr('id', 'lbl-jix')
+        .attr('font-size', '13px').attr('font-weight', '600').attr('fill', colors.jix);
+
+    // I_L (load current) - always visible, varies with power factor
+    gPhasors.append('line').attr('id', 'phasor-iload')
+        .attr('stroke', colors.iload).attr('stroke-width', 1.4)
+        .attr('class', 'phasor-arrow')
+        .attr('marker-end', 'url(#arrow-iload)');
+    gLabels.append('text').attr('id', 'lbl-iload')
+        .attr('font-size', '13px').attr('font-weight', '600').attr('fill', colors.iload);
+
+    // Component current phasors (shown when shunt devices active)
+    gPhasors.append('line').attr('id', 'phasor-icap')
+        .attr('stroke', colors.icap).attr('stroke-width', 1.4)
+        .attr('class', 'phasor-arrow')
+        .attr('marker-end', 'url(#arrow-icap)')
+        .attr('opacity', 0);
+    gPhasors.append('line').attr('id', 'phasor-ireactor')
+        .attr('stroke', colors.ireactor).attr('stroke-width', 1.4)
+        .attr('class', 'phasor-arrow')
+        .attr('marker-end', 'url(#arrow-ireactor)')
+        .attr('opacity', 0);
+    gPhasors.append('line').attr('id', 'phasor-istatcom')
+        .attr('stroke', colors.istatcom).attr('stroke-width', 1.4)
+        .attr('class', 'phasor-arrow')
+        .attr('marker-end', 'url(#arrow-istatcom)')
+        .attr('opacity', 0);
+
+    // Component current labels
+    gLabels.append('text').attr('id', 'lbl-icap')
+        .attr('font-size', '12px').attr('font-weight', '600').attr('fill', colors.icap).attr('opacity', 0);
+    gLabels.append('text').attr('id', 'lbl-ireactor')
+        .attr('font-size', '12px').attr('font-weight', '600').attr('fill', colors.ireactor).attr('opacity', 0);
+    gLabels.append('text').attr('id', 'lbl-istatcom')
+        .attr('font-size', '12px').attr('font-weight', '600').attr('fill', colors.istatcom).attr('opacity', 0);
+
+    // Origin dot
+    gPhasors.append('circle')
+        .attr('cx', ox).attr('cy', oy).attr('r', 4)
+        .attr('fill', '#4a4a5a');
+
+    // --- Dynamic circuit current arrows (persistent, updated in update()) ---
+    // I_T arrow (horizontal, between R and receiving bus)
+    gCircuitDyn.append('line').attr('id', 'circ-it')
+        .attr('stroke', colors.current).attr('stroke-width', 1.4)
+        .attr('marker-end', 'url(#arrow-i)');
+    gCircuitDyn.append('text').attr('id', 'circ-it-lbl')
+        .attr('text-anchor', 'middle').attr('font-size', '13px')
+        .attr('fill', colors.current).text('I\u209C');
+
+    // I_L arrow (horizontal, between receiving bus and load)
+    gCircuitDyn.append('line').attr('id', 'circ-il')
+        .attr('stroke', colors.iload).attr('stroke-width', 1.4)
+        .attr('marker-end', 'url(#arrow-iload)');
+    gCircuitDyn.append('text').attr('id', 'circ-il-lbl')
+        .attr('text-anchor', 'middle').attr('font-size', '13px')
+        .attr('fill', colors.iload).text('I\u2097');
+
+    // Shunt device current arrows (vertical, flowing down into devices)
+    gCircuitDyn.append('line').attr('id', 'circ-icap')
+        .attr('stroke', colors.icap).attr('stroke-width', 1.4)
+        .attr('marker-end', 'url(#arrow-icap)').attr('opacity', 0);
+    gCircuitDyn.append('text').attr('id', 'circ-icap-lbl')
+        .attr('text-anchor', 'start').attr('font-size', '10px')
+        .attr('fill', colors.icap).attr('opacity', 0);
+
+    gCircuitDyn.append('line').attr('id', 'circ-ireactor')
+        .attr('stroke', colors.ireactor).attr('stroke-width', 1.4)
+        .attr('marker-end', 'url(#arrow-ireactor)').attr('opacity', 0);
+    gCircuitDyn.append('text').attr('id', 'circ-ireactor-lbl')
+        .attr('text-anchor', 'end').attr('font-size', '10px')
+        .attr('fill', colors.ireactor).attr('opacity', 0);
+
+    gCircuitDyn.append('line').attr('id', 'circ-istatcom')
+        .attr('stroke', colors.istatcom).attr('stroke-width', 1.4)
+        .attr('marker-end', 'url(#arrow-istatcom)').attr('opacity', 0);
+    gCircuitDyn.append('text').attr('id', 'circ-istatcom-lbl')
+        .attr('text-anchor', 'start').attr('font-size', '10px')
+        .attr('fill', colors.istatcom).attr('opacity', 0);
+
+    // Voltage-colored receiving bus overlay (on top of static bus in drawCircuit)
+    gCircuitDyn.append('line').attr('id', 'circ-vr-bus')
+        .attr('x1', circRBus).attr('y1', circY0 - 28)
+        .attr('x2', circRBus).attr('y2', circY0 + 28)
+        .attr('stroke', '#28a745')
+        .attr('stroke-width', 5)
+        .attr('stroke-linecap', 'round');
+}
+
+// ============================================================
+// UPDATE PHASORS (called on every parameter change)
+// ============================================================
+function update(animate) {
+    const dur = animate ? 300 : 0;
+    const capB = state.capOn ? state.capB : 0;
+    const reactorB = state.reactorOn ? state.reactorB : 0;
+    const statcomB = state.statcomOn
+        ? solveStatcomB(state.pfAngle, state.P, state.R, state.X, capB, reactorB, state.statcomVset)
+        : 0;
+    const r = solveTwoBus(state.pfAngle, state.P, state.R, state.X, capB, reactorB, statcomB);
+    const anyShunt = state.capOn || state.reactorOn || state.statcomOn;
+
+    // --- Phasor endpoints ---
+    const [vsX, vsY] = toSVG(1.0, 0);
+    const [vrX, vrY] = toSVG(r.Vr.x, r.Vr.y);
+
+    // Current phasor: fixed scale so arrows vary with magnitude
+    const iFixedScale = 0.18;
+    const [iX, iY] = toSVG(r.I.x * iFixedScale, r.I.y * iFixedScale);
+
+    // Voltage drops: from Vr tip → +IR → +jIX → arrives at Vs tip
+    const irStartX = vrX;
+    const irStartY = vrY;
+    const irEndX = vrX + r.IR.dx * scale;
+    const irEndY = vrY - r.IR.dy * scale;
+    const jixEndX = irEndX + r.jIX.dx * scale;
+    const jixEndY = irEndY - r.jIX.dy * scale;
+
+    // --- Transitions ---
+    const t = d3.transition().duration(dur).ease(d3.easeCubicOut);
+
+    // Vs phasor (fixed horizontal)
+    d3.select('#phasor-vs').transition(t)
+        .attr('x1', ox).attr('y1', oy)
+        .attr('x2', vsX).attr('y2', vsY);
+
+    // Vr phasor (moves)
+    d3.select('#phasor-vr').transition(t)
+        .attr('x1', ox).attr('y1', oy)
+        .attr('x2', vrX).attr('y2', vrY);
+
+    // I_T phasor (total line current - only show when shunt devices active)
+    d3.select('#phasor-i').transition(t)
+        .attr('x1', ox).attr('y1', oy)
+        .attr('x2', iX).attr('y2', iY)
+        .attr('opacity', anyShunt ? 0.6 : 0);
+
+    // I_L phasor (load current - always visible, varies with PF and magnitude)
+    const [ilX, ilY] = toSVG(r.Iload.x * iFixedScale, r.Iload.y * iFixedScale);
+    d3.select('#phasor-iload').transition(t)
+        .attr('x1', ox).attr('y1', oy)
+        .attr('x2', ilX).attr('y2', ilY);
+
+    // IR drop (from Vr tip)
+    d3.select('#drop-ir').transition(t)
+        .attr('x1', irStartX).attr('y1', irStartY)
+        .attr('x2', irEndX).attr('y2', irEndY);
+
+    // jIX drop (from IR endpoint toward Vs tip)
+    d3.select('#drop-jix').transition(t)
+        .attr('x1', irEndX).attr('y1', irEndY)
+        .attr('x2', jixEndX).attr('y2', jixEndY);
+
+    // --- Angle arcs ---
+    // Delta arc: angle between Vs (horizontal) and Vr
+    const deltaR = 70;
+    const vrAngle = Math.atan2(r.Vr.y, r.Vr.x); // Vr angle (negative = below Vs)
+    if (Math.abs(vrAngle) > 0.01) {
+        const arcPath = describeArc(ox, oy, deltaR, Math.min(0, vrAngle), Math.max(0, vrAngle));
+        d3.select('#arc-delta').transition(t).attr('d', arcPath).attr('opacity', 1);
+        const midA = vrAngle / 2;
+        d3.select('#label-delta').transition(t)
+            .attr('x', ox + (deltaR + 16) * Math.cos(midA))
+            .attr('y', oy - (deltaR + 16) * Math.sin(midA) + 4)
+            .attr('text-anchor', 'middle')
+            .attr('opacity', 1)
+            .text('\u03B4');
+    } else {
+        d3.select('#arc-delta').transition(t).attr('opacity', 0);
+        d3.select('#label-delta').transition(t).attr('opacity', 0);
+    }
+
+    // Phi arc: power factor angle (between I_L and Vr)
+    const phiR = 50;
+    const iAngle = Math.atan2(r.Iload.y, r.Iload.x);
+    if (Math.abs(iAngle - vrAngle) > 0.01) {
+        const a1 = Math.min(vrAngle, iAngle);
+        const a2 = Math.max(vrAngle, iAngle);
+        const arcPath = describeArc(ox, oy, phiR, a1, a2);
+        d3.select('#arc-phi').transition(t).attr('d', arcPath).attr('opacity', 0.5);
+        const midP = (vrAngle + iAngle) / 2;
+        d3.select('#label-phi').transition(t)
+            .attr('x', ox + (phiR + 16) * Math.cos(midP))
+            .attr('y', oy - (phiR + 16) * Math.sin(midP) + 4)
+            .attr('text-anchor', 'middle')
+            .attr('opacity', 0.5)
+            .text('\u03C6');
+    } else {
+        d3.select('#arc-phi').transition(t).attr('opacity', 0);
+        d3.select('#label-phi').transition(t).attr('opacity', 0);
+    }
+
+    // --- Labels ---
+    // Vs label (fixed, above the horizontal arrow tip)
+    d3.select('#lbl-vs').transition(t)
+        .attr('x', vsX + 8).attr('y', vsY - 14)
+        .attr('text-anchor', 'start')
+        .text('V\u209B = 1.0 pu');
+
+    // Vr label (moves with Vr tip)
+    const vrLabelOff = perpOffset(r.Vr.x, r.Vr.y, 18);
+    d3.select('#lbl-vr').transition(t)
+        .attr('x', vrX + vrLabelOff[0] + 8)
+        .attr('y', vrY + vrLabelOff[1])
+        .attr('text-anchor', 'start')
+        .text('V\u1D63 = ' + r.Vr.mag.toFixed(3) + ' pu');
+
+    // I_L label (always visible)
+    const ilDir = r.Iload.mag > 1e-10 ? { x: r.Iload.x / r.Iload.mag, y: r.Iload.y / r.Iload.mag } : { x: 1, y: 0 };
+    const ilLabelOff = perpOffset(ilDir.x, ilDir.y, 14);
+    d3.select('#lbl-iload').transition(t)
+        .attr('x', ilX + ilLabelOff[0])
+        .attr('y', ilY + ilLabelOff[1])
+        .attr('text-anchor', 'middle')
+        .text('I\u2097');
+
+    // I_T label (only when shunt devices active)
+    const iDir = r.I.mag > 1e-10 ? { x: r.I.x / r.I.mag, y: r.I.y / r.I.mag } : { x: 1, y: 0 };
+    const iLabelOff = perpOffset(iDir.x, iDir.y, -14);
+    d3.select('#lbl-i').transition(t)
+        .attr('x', iX + iLabelOff[0])
+        .attr('y', iY + iLabelOff[1])
+        .attr('text-anchor', 'middle')
+        .attr('opacity', anyShunt ? 0.6 : 0)
+        .text('I\u209C');
+
+    // IR label
+    const irMidX = (irStartX + irEndX) / 2;
+    const irMidY = (irStartY + irEndY) / 2;
+    const irOff = perpOffset(r.IR.dx, r.IR.dy, -14);
+    d3.select('#lbl-ir').transition(t)
+        .attr('x', irMidX + irOff[0])
+        .attr('y', irMidY + irOff[1])
+        .attr('text-anchor', 'middle')
+        .text('IR');
+
+    // jIX label
+    const jixMidX = (irEndX + jixEndX) / 2;
+    const jixMidY = (irEndY + jixEndY) / 2;
+    const jixOff = perpOffset(r.jIX.dx, r.jIX.dy, 16);
+    d3.select('#lbl-jix').transition(t)
+        .attr('x', jixMidX + jixOff[0])
+        .attr('y', jixMidY + jixOff[1])
+        .attr('text-anchor', 'middle')
+        .text('jIX');
+
+    // --- Component current phasors (head-to-tail vector addition) ---
+    // Chain: I_L (from origin) → I_C → I_reactor → I_statcom
+    // I_T is the resultant from origin to the final tip
+    let tipX = r.Iload.x * iFixedScale;  // physics coords (start from I_L tip)
+    let tipY = r.Iload.y * iFixedScale;
+
+    function drawChainedCurrent(id, lblId, comp, isOn, label) {
+        if (isOn && comp.mag > 0.005) {
+            const dx = comp.x * iFixedScale;
+            const dy = comp.y * iFixedScale;
+            const [sx, sy] = toSVG(tipX, tipY);
+            const newTipX = tipX + dx;
+            const newTipY = tipY + dy;
+            const [ex, ey] = toSVG(newTipX, newTipY);
+            d3.select('#' + id).transition(t)
+                .attr('x1', sx).attr('y1', sy)
+                .attr('x2', ex).attr('y2', ey)
+                .attr('opacity', 0.8);
+            const cDir = comp.mag > 1e-10 ? { x: comp.x / comp.mag, y: comp.y / comp.mag } : { x: 0, y: 1 };
+            const cOff = perpOffset(cDir.x, cDir.y, 14);
+            const midSX = (sx + ex) / 2;
+            const midSY = (sy + ey) / 2;
+            d3.select('#' + lblId).transition(t)
+                .attr('x', midSX + cOff[0]).attr('y', midSY + cOff[1])
+                .attr('text-anchor', 'middle')
+                .attr('opacity', 0.9).text(label);
+            tipX = newTipX;
+            tipY = newTipY;
+        } else {
+            d3.select('#' + id).transition(t).attr('opacity', 0);
+            d3.select('#' + lblId).transition(t).attr('opacity', 0);
+        }
+    }
+
+    drawChainedCurrent('phasor-icap', 'lbl-icap', r.Icap, state.capOn, 'I\u1d04');
+    drawChainedCurrent('phasor-ireactor', 'lbl-ireactor', r.Ireactor, state.reactorOn, 'I\u2097');
+    drawChainedCurrent('phasor-istatcom', 'lbl-istatcom', r.Istatcom, state.statcomOn, 'I\u209B\u209c');
+
+    // --- Dynamic circuit current arrows (same scale as phasor arrows) ---
+    const circIScale = iFixedScale * scale;  // px per pu of current
+
+    // I_T horizontal arrow (between R and Vr bus) — always visible
+    // When no shunts, this is the only current; show as I_L. When shunts active, show as I_T.
+    const itLen = r.I.mag * circIScale;
+    const itHalf = itLen / 2;
+    d3.select('#circ-it').transition(t)
+        .attr('x1', circITcenter - itHalf).attr('y1', circArrowY)
+        .attr('x2', circITcenter + itHalf).attr('y2', circArrowY)
+        .attr('stroke', anyShunt ? colors.current : colors.iload)
+        .attr('marker-end', anyShunt ? 'url(#arrow-i)' : 'url(#arrow-iload)')
+        .attr('opacity', 0.7);
+    d3.select('#circ-it-lbl').transition(t)
+        .attr('x', circITcenter).attr('y', circArrowY - 8)
+        .attr('fill', anyShunt ? colors.current : colors.iload)
+        .attr('opacity', 0.7)
+        .text(anyShunt ? 'I\u209C' : 'I\u2097');
+
+    // I_L horizontal arrow (between rBus and load) — only when shunts differ from I_T
+    const ilLen = r.Iload.mag * circIScale;
+    const ilHalf = ilLen / 2;
+    d3.select('#circ-il').transition(t)
+        .attr('x1', circILcenter - ilHalf).attr('y1', circArrowY)
+        .attr('x2', circILcenter + ilHalf).attr('y2', circArrowY)
+        .attr('opacity', anyShunt ? 0.7 : 0);
+    d3.select('#circ-il-lbl').transition(t)
+        .attr('x', circILcenter).attr('y', circArrowY - 8)
+        .attr('opacity', anyShunt ? 0.7 : 0);
+
+    // Shunt device vertical arrows
+    // direction: 'up' = inject into bus (cap), 'down' = absorb from bus (reactor)
+    function updateCircShuntArrow(id, lblId, x, mag, isOn, label, direction) {
+        if (isOn && mag > 0.005) {
+            const arrowLen = mag * circIScale;
+            const up = direction === 'up';
+            // Arrow positioned alongside the device wire
+            const ax = x + 12;
+            const y1 = up ? circShuntWireY + 2 + arrowLen : circShuntWireY + 2;
+            const y2 = up ? circShuntWireY + 2 : circShuntWireY + 2 + arrowLen;
+            d3.select('#' + id).transition(t)
+                .attr('x1', ax).attr('y1', y1)
+                .attr('x2', ax).attr('y2', y2)
+                .attr('opacity', 0.7);
+            d3.select('#' + lblId).transition(t)
+                .attr('x', ax + 6).attr('y', circShuntWireY + 2 + arrowLen / 2 + 4)
+                .attr('opacity', 0.7).text(label);
+        } else {
+            d3.select('#' + id).transition(t).attr('opacity', 0);
+            d3.select('#' + lblId).transition(t).attr('opacity', 0);
+        }
+    }
+
+    // Cap injects into bus (up), reactor absorbs (down)
+    updateCircShuntArrow('circ-icap', 'circ-icap-lbl', circCapX, r.Icap.mag, state.capOn, 'I\u1d04', 'up');
+    updateCircShuntArrow('circ-ireactor', 'circ-ireactor-lbl', circReactX, r.Ireactor.mag, state.reactorOn, 'I\u2097', 'down');
+    // STATCOM: positive B = cap-like (up), negative B = reactor-like (down)
+    const statcomDir = statcomB >= 0 ? 'up' : 'down';
+    updateCircShuntArrow('circ-istatcom', 'circ-istatcom-lbl', circStatX, r.Istatcom.mag, state.statcomOn, 'I\u209B\u209c', statcomDir);
+
+    // --- Voltage coloring: Vr phasor, label, bus bar, arrowhead all match ---
+    const vColor = voltageColorScale(r.Vr.mag);
+    d3.select('#phasor-vr').transition(t).attr('stroke', vColor);
+    d3.select('#lbl-vr').transition(t).attr('fill', vColor);
+    d3.select('#circ-vr-bus').transition(t).attr('stroke', vColor);
+    d3.select('#circ-vr-label').transition(t).attr('fill', vColor);
+    d3.select('#arrow-vr path').transition(t).attr('stroke', vColor);
+
+    // --- Readout ---
+    updateReadout(r);
+}
+
+// Helper: perpendicular offset from a direction vector (in physics coords)
+function perpOffset(dx, dy, dist) {
+    const len = Math.sqrt(dx * dx + dy * dy);
+    if (len < 1e-10) return [0, dist];
+    // Perpendicular in physics: (-dy, dx), but SVG y is flipped
+    return [(-dy / len) * dist, -(dx / len) * dist];
+}
+
+// Helper: SVG arc path between two angles (in physics radians, CCW positive)
+function describeArc(cx, cy, radius, startAngle, endAngle) {
+    // Convert to SVG coordinates (y flipped, angles go CW in SVG)
+    const s = Math.min(startAngle, endAngle);
+    const e = Math.max(startAngle, endAngle);
+    const x1 = cx + radius * Math.cos(s);
+    const y1 = cy - radius * Math.sin(s);
+    const x2 = cx + radius * Math.cos(e);
+    const y2 = cy - radius * Math.sin(e);
+    const largeArc = (e - s > Math.PI) ? 1 : 0;
+    // SVG arc sweep: 0 = CW in SVG = CCW in physics
+    return `M ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 0 ${x2} ${y2}`;
+}
+
+// ============================================================
+// READOUT UPDATE
+// ============================================================
+function updateReadout(r) {
+    const vrMag = r.Vr.mag;
+    const deltaDeg = r.delta * 180 / Math.PI;
+    const reg = ((1.0 - vrMag) / 1.0 * 100);
+
+    document.getElementById('vr-readout').innerHTML =
+        vrMag.toFixed(3) + '<span class="readout-hero-unit">pu</span>';
+    // Colour the hero value using same voltage scale as phasor/bus
+    document.getElementById('vr-readout').style.color = voltageColorScale(vrMag);
+    document.getElementById('delta-readout').innerHTML =
+        deltaDeg.toFixed(1) + '<span class="readout-unit">&deg;</span>';
+    document.getElementById('reg-readout').innerHTML =
+        (reg >= 0 ? '+' : '') + reg.toFixed(1) + '<span class="readout-unit">%</span>';
+
+    // I²R losses (as percentage of load P)
+    const lossPu = r.I.mag * r.I.mag * state.R;
+    const lossPct = (lossPu / state.P * 100);
+    document.getElementById('loss-readout').innerHTML =
+        lossPct.toFixed(1) + '<span class="readout-unit">%</span>';
+
+    // Status badge
+    const badge = document.getElementById('status-badge');
+    badge.removeAttribute('style');
+    if (vrMag > 1.05) {
+        badge.className = 'status-badge status-over';
+        badge.textContent = 'OVERVOLTAGE';
+    } else if (vrMag < 0.90) {
+        badge.className = 'status-badge status-under';
+        badge.textContent = 'UNDERVOLTAGE';
+    } else if (vrMag > 1.0) {
+        badge.className = 'status-badge';
+        badge.style.background = '#fff8e1';
+        badge.style.color = '#f57f17';
+        badge.textContent = 'Voltage Rise';
+    } else if (vrMag < 0.95) {
+        badge.className = 'status-badge status-under';
+        badge.textContent = 'Low Voltage';
+    } else {
+        badge.className = 'status-badge status-normal';
+        badge.textContent = 'Normal';
+    }
+
+    // PF display
+    const pfVal = r.pf;
+    let pfText;
+    if (Math.abs(state.pfAngle) < 0.3) {
+        pfText = 'PF = 1.000 (unity)';
+    } else if (state.pfAngle < 0) {
+        pfText = `PF = ${pfVal.toFixed(3)} (lagging)`;
+    } else {
+        pfText = `PF = ${pfVal.toFixed(3)} (leading)`;
+    }
+    document.getElementById('pf-display').textContent = pfText;
+}
+
+// ============================================================
+// CONTROLS
+// ============================================================
+const pfSlider = document.getElementById('pf-slider');
+const pSlider = document.getElementById('p-slider');
+const xrSlider = document.getElementById('xr-slider');
+
+pfSlider.addEventListener('input', function() {
+    state.pfAngle = parseFloat(this.value);
+    update(true);
+});
+
+pSlider.addEventListener('input', function() {
+    state.P = parseFloat(this.value);
+    document.getElementById('p-display').textContent = state.P.toFixed(2) + ' pu';
+    drawGhostTrail();
+    update(true);
+});
+
+xrSlider.addEventListener('input', function() {
+    const xr = parseFloat(this.value);
+    state.X = state.R * xr;
+    document.getElementById('xr-display').textContent = xr;
+    drawGhostTrail();
+    update(true);
+});
+
+// Keyboard controls
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        const step = e.shiftKey ? 5 : 1;
+        const dir = e.key === 'ArrowLeft' ? -step : step;
+        state.pfAngle = Math.max(-35, Math.min(35, state.pfAngle + dir));
+        pfSlider.value = state.pfAngle;
+        update(true);
+    }
+    if (e.key === ' ') {
+        e.preventDefault();
+        toggleStory();
+    }
+});
+
+// ============================================================
+// SHUNT DEVICE CONTROLS
+// ============================================================
+function toggleDevice(device) {
+    if (device === 'cap') {
+        state.capOn = !state.capOn;
+        const btn = document.getElementById('btn-cap');
+        btn.classList.toggle('on', state.capOn);
+        btn.classList.toggle('on-cap', state.capOn);
+        document.getElementById('cap-row').classList.toggle('visible', state.capOn);
+    } else if (device === 'reactor') {
+        state.reactorOn = !state.reactorOn;
+        const btn = document.getElementById('btn-reactor');
+        btn.classList.toggle('on', state.reactorOn);
+        btn.classList.toggle('on-reactor', state.reactorOn);
+        document.getElementById('reactor-row').classList.toggle('visible', state.reactorOn);
+    } else if (device === 'statcom') {
+        state.statcomOn = !state.statcomOn;
+        const btn = document.getElementById('btn-statcom');
+        btn.classList.toggle('on', state.statcomOn);
+        btn.classList.toggle('on-statcom', state.statcomOn);
+        document.getElementById('statcom-row').classList.toggle('visible', state.statcomOn);
+        updateStatcomDisplay();
+    }
+    drawCircuit();
+    drawGhostTrail();
+    update(true);
+}
+
+// Find STATCOM susceptance B that achieves target Vr magnitude (bisection)
+function solveStatcomB(pfAngleDeg, P, R, X, capB, reactorB, targetVr) {
+    const bLimit = state.statcomBmax;
+    let lo = -bLimit, hi = bLimit;
+    for (let iter = 0; iter < 40; iter++) {
+        const mid = (lo + hi) / 2;
+        const r = solveTwoBus(pfAngleDeg, P, R, X, capB, reactorB, mid);
+        if (r.Vr.mag < targetVr) {
+            lo = mid; // need more cap-like (higher B) to raise voltage
+        } else {
+            hi = mid; // need more reactor-like (lower B) to lower voltage
+        }
+    }
+    return Math.max(-bLimit, Math.min(bLimit, (lo + hi) / 2));
+}
+
+function updateStatcomDisplay() {
+    if (!state.statcomOn) {
+        document.getElementById('statcom-display').textContent = 'V\u209B\u209A = ' + state.statcomVset.toFixed(3) + ' pu';
+        return;
+    }
+    // Compute what B the STATCOM is injecting
+    const capB = state.capOn ? state.capB : 0;
+    const reactorB = state.reactorOn ? state.reactorB : 0;
+    const B = solveStatcomB(state.pfAngle, state.P, state.R, state.X, capB, reactorB, state.statcomVset);
+    const saturated = Math.abs(B) >= state.statcomBmax * 0.99;
+    let mode = Math.abs(B) < 0.01 ? '' : (B > 0 ? ' inj' : ' abs');
+    if (saturated) mode += ' LIMIT';
+    document.getElementById('statcom-display').textContent =
+        'V = ' + state.statcomVset.toFixed(3) + '  B = ' + B.toFixed(2) + mode;
+}
+
+// Capacitor susceptance slider
+document.getElementById('cap-slider').addEventListener('input', function() {
+    state.capB = parseFloat(this.value);
+    document.getElementById('cap-display').textContent = 'B = ' + state.capB.toFixed(2) + ' pu';
+    drawGhostTrail();
+    update(true);
+});
+
+// Reactor susceptance slider
+document.getElementById('reactor-slider').addEventListener('input', function() {
+    state.reactorB = parseFloat(this.value);
+    document.getElementById('reactor-display').textContent = 'B = ' + state.reactorB.toFixed(2) + ' pu';
+    drawGhostTrail();
+    update(true);
+});
+
+// STATCOM voltage setpoint slider
+document.getElementById('statcom-slider').addEventListener('input', function() {
+    state.statcomVset = parseFloat(this.value);
+    updateStatcomDisplay();
+    drawGhostTrail();
+    update(true);
+});
+
+// STATCOM B limit slider
+document.getElementById('statcom-blimit-slider').addEventListener('input', function() {
+    state.statcomBmax = parseFloat(this.value);
+    updateStatcomDisplay();
+    drawGhostTrail();
+    update(true);
+});
+
+function setDeviceStates(capOn, reactorOn, statcomOn, statcomVset) {
+    state.capOn = capOn;
+    state.reactorOn = reactorOn;
+    state.statcomOn = statcomOn;
+    if (statcomVset !== undefined) state.statcomVset = statcomVset;
+    document.getElementById('btn-cap').classList.toggle('on', capOn);
+    document.getElementById('btn-cap').classList.toggle('on-cap', capOn);
+    document.getElementById('cap-row').classList.toggle('visible', capOn);
+    document.getElementById('btn-reactor').classList.toggle('on', reactorOn);
+    document.getElementById('btn-reactor').classList.toggle('on-reactor', reactorOn);
+    document.getElementById('reactor-row').classList.toggle('visible', reactorOn);
+    document.getElementById('btn-statcom').classList.toggle('on', statcomOn);
+    document.getElementById('btn-statcom').classList.toggle('on-statcom', statcomOn);
+    document.getElementById('statcom-row').classList.toggle('visible', statcomOn);
+    if (statcomVset !== undefined) document.getElementById('statcom-slider').value = statcomVset;
+    updateStatcomDisplay();
+}
+
+function resetDefaults() {
+    stopStory();
+    state.pfAngle = 0;
+    state.P = 1.0;
+    state.R = 0.04;
+    state.X = 0.50;
+    pfSlider.value = 0;
+    pSlider.value = 1.0;
+    xrSlider.value = 13;
+    document.getElementById('p-display').textContent = '1.00 pu';
+    document.getElementById('xr-display').textContent = '13';
+    state.capB = 0.4;
+    state.reactorB = 0.4;
+    document.getElementById('cap-slider').value = 0.40;
+    document.getElementById('cap-display').textContent = 'B = 0.40 pu';
+    document.getElementById('reactor-slider').value = 0.40;
+    document.getElementById('reactor-display').textContent = 'B = 0.40 pu';
+    state.statcomBmax = 1.0;
+    document.getElementById('statcom-blimit-slider').value = 1.0;
+    setDeviceStates(false, false, false, 1.0);
+    hideAnnotation();
+    drawCircuit();
+    drawGhostTrail();
+    update(true);
+}
+
+// ============================================================
+// STORY MODE
+// ============================================================
+const storyScenes = [
+    {
+        pfAngle: -18, P: 1.0,
+        devices: { cap: false, reactor: false, statcom: false, statcomVset: 1.0 },
+        label: 'The NZ Journey: 2009',
+        text: 'Traditional inductive loads \u2014 motors, transformers, old lighting. Power factor ~0.95 lagging. The jIX voltage drop pulls V\u1D63 well below V\u209B. This is what the system was designed for.',
+        duration: 5000,
+    },
+    {
+        pfAngle: -8, P: 0.9,
+        devices: { cap: false, reactor: false, statcom: false, statcomVset: 1.0 },
+        label: '2012\u20132015: LEDs & Variable Speed Drives',
+        text: 'Efficient lighting and power electronics reduce reactive demand. Power factors improve toward unity. The voltage drop shrinks. Everyone is happy.',
+        duration: 4500,
+    },
+    {
+        pfAngle: -2, P: 0.7,
+        devices: { cap: false, reactor: false, statcom: false, statcomVset: 1.0 },
+        label: '2018: Near-Perfect Power Factor',
+        text: 'PF \u2248 0.999 at many GXPs. Only the small IR drop remains. V\u1D63 is close to V\u209B. An engineer\u2019s dream\u2026 but the story doesn\u2019t end here.',
+        duration: 4500,
+    },
+    {
+        pfAngle: 5, P: 0.5,
+        devices: { cap: true, reactor: false, statcom: false, statcomVset: 1.0 },
+        label: '2020: Something New Appears',
+        text: 'Underground cables are giant capacitors. At low load (overnight), cable charging current dominates. The power factor crosses into LEADING territory. Watch I\u1d04 push the current upward.',
+        duration: 5500,
+    },
+    {
+        pfAngle: 15, P: 0.3,
+        devices: { cap: true, reactor: false, statcom: false, statcomVset: 1.0 },
+        label: '2024: 3am \u2014 Overvoltage',
+        text: 'At minimum demand overnight, power factors reach 0.96 leading at some GXPs. V\u1D63 EXCEEDS V\u209B \u2014 the bus bar turns amber. This wasn\u2019t foreseen! (Spain/Portugal blackout, April 2025, had overvoltage as a factor.)',
+        duration: 5500,
+    },
+    {
+        pfAngle: 15, P: 0.3,
+        devices: { cap: true, reactor: true, statcom: false, statcomVset: 1.0 },
+        label: 'Transpower\u2019s Response: Shunt Reactors',
+        text: 'Shunt reactors installed at Otahuhu, Pakuranga, Kikiwa, Islington. I\u2097 (reactor) opposes I\u1d04 (cable) \u2014 the bus bar returns to green. Potential savings: $5\u201350M/year in reduced losses.',
+        duration: 5500,
+    },
+    {
+        pfAngle: 15, P: 0.3,
+        devices: { cap: true, reactor: false, statcom: true, statcomVset: 1.0 },
+        label: 'The Future: Dynamic Voltage Control',
+        text: 'A STATCOM continuously adjusts its reactive output to hold voltage at exactly 1.0 pu. Unlike fixed reactors, it adapts in real-time as conditions change. The smart grid in action.',
+        duration: 5500,
+    },
+    {
+        pfAngle: -12, P: 1.2,
+        devices: { cap: true, reactor: false, statcom: true, statcomVset: 1.0 },
+        label: 'Evening Peak: The STATCOM Flips',
+        text: 'At 6pm peak demand, the STATCOM switches from absorbing to injecting reactive power. Same device, opposite mode. Watch the arrow direction change \u2014 it\u2019s now supporting voltage instead of suppressing it.',
+        duration: 5500,
+    },
+];
+
+function toggleStory() {
+    if (storyPlaying) {
+        stopStory();
+    } else {
+        playStory();
+    }
+}
+
+function playStory() {
+    stopStory();
+    storyPlaying = true;
+    document.getElementById('btn-story').classList.add('active');
+    document.getElementById('btn-story').innerHTML = '&#9724; Stop';
+
+    let delay = 500;
+    storyScenes.forEach((scene, i) => {
+        const t = setTimeout(() => {
+            state.pfAngle = scene.pfAngle;
+            state.P = scene.P;
+            pfSlider.value = scene.pfAngle;
+            pSlider.value = scene.P;
+            document.getElementById('p-display').textContent = scene.P.toFixed(2) + ' pu';
+            // Apply device states
+            if (scene.devices) {
+                setDeviceStates(scene.devices.cap, scene.devices.reactor, scene.devices.statcom, scene.devices.statcomVset);
+                drawCircuit();
+            }
+            drawGhostTrail();
+            update(true);
+            showAnnotation(scene.label, scene.text);
+        }, delay);
+        storyTimeouts.push(t);
+        delay += scene.duration;
+    });
+
+    // End story
+    const endT = setTimeout(() => {
+        stopStory();
+    }, delay + 1000);
+    storyTimeouts.push(endT);
+}
+
+function stopStory() {
+    storyPlaying = false;
+    storyTimeouts.forEach(t => clearTimeout(t));
+    storyTimeouts = [];
+    document.getElementById('btn-story').classList.remove('active');
+    document.getElementById('btn-story').innerHTML = '&#9654; Play Story';
+    hideAnnotation();
+}
+
+function showAnnotation(label, text) {
+    const el = document.getElementById('anno-label');
+    const et = document.getElementById('anno-text');
+    el.textContent = label;
+    et.textContent = text;
+    el.classList.add('visible');
+    et.classList.add('visible');
+}
+
+function hideAnnotation() {
+    document.getElementById('anno-label').classList.remove('visible');
+    document.getElementById('anno-text').classList.remove('visible');
+}
+
+// ============================================================
+// KEYBOARD CONTROLS
+// ============================================================
+document.addEventListener('keydown', function(e) {
+    // Don't capture when typing in inputs
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    let handled = false;
+    switch(e.key) {
+        case 'ArrowLeft':
+            state.pfAngle = Math.max(-35, state.pfAngle - 1);
+            pfSlider.value = state.pfAngle;
+            drawGhostTrail();
+            update(true);
+            handled = true;
+            break;
+        case 'ArrowRight':
+            state.pfAngle = Math.min(35, state.pfAngle + 1);
+            pfSlider.value = state.pfAngle;
+            drawGhostTrail();
+            update(true);
+            handled = true;
+            break;
+        case 'ArrowUp':
+            state.P = Math.min(2.0, +(state.P + 0.05).toFixed(2));
+            pSlider.value = state.P;
+            document.getElementById('p-display').textContent = state.P.toFixed(2) + ' pu';
+            drawGhostTrail();
+            update(true);
+            handled = true;
+            break;
+        case 'ArrowDown':
+            state.P = Math.max(0.1, +(state.P - 0.05).toFixed(2));
+            pSlider.value = state.P;
+            document.getElementById('p-display').textContent = state.P.toFixed(2) + ' pu';
+            drawGhostTrail();
+            update(true);
+            handled = true;
+            break;
+        case ' ':
+            e.preventDefault();
+            toggleStory();
+            handled = true;
+            break;
+        case 'p':
+        case 'P':
+            togglePresentation();
+            handled = true;
+            break;
+    }
+    if (handled) e.preventDefault();
+});
+
+// ============================================================
+// PRESENTATION (DARK) MODE
+// ============================================================
+function togglePresentation() {
+    presentationMode = !presentationMode;
+    document.body.classList.toggle('presentation-mode', presentationMode);
+    d3.select('#svg-bg').attr('fill', theme().svgBg);
+
+    const btn = document.getElementById('btn-present');
+    btn.classList.toggle('active', presentationMode);
+    btn.innerHTML = presentationMode ? '&#9632;&#9632; Light' : '&#9632;&#9632; Present';
+
+    // Redraw everything with new theme
+    drawCircuit();
+    drawReference();
+    drawGhostTrail();
+    update(false);
+
+}
+
+// ============================================================
+// INIT
+// ============================================================
+drawCircuit();
+drawReference();
+drawGhostTrail();
+createElements();
+update(false);
+</script>
+</body>
+</html>
