@@ -60,7 +60,7 @@
       "axis": {
         "p_min": 0,
         "p_max": 7500,
-        "pf_min": 0.93,
+        "pf_min": 0.91,
         "pf_max": 1.02
       },
       "stats": {
