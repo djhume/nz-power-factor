@@ -357,13 +357,18 @@
         for (let j = 0; j < yd.c.length; j++) {
           if (yd.c[j] === i) indices.push(j);
         }
+        const pfs = indices.map(j => yd.pf[j]);
         return {
           x: indices.map(j => yd.P[j]),
-          y: indices.map(j => yd.pf[j]),
+          y: pfs,
           mode: 'markers',
           type: 'scatter',
           name: cat,
-          marker: { size: 7, color: CATEGORY_COLORS[i], opacity: 0.6 },
+          marker: {
+            size: pfs.map(pf => pf > 1.0 ? 9 : 6),
+            color: CATEGORY_COLORS[i],
+            opacity: pfs.map(pf => pf > 1.0 ? 0.85 : 0.4)
+          },
           hovertemplate: '<b>' + cat + '</b><br>' +
                          'P: %{x:,.0f} MW<br>' +
                          'PF: %{y:.4f}<extra></extra>',
@@ -373,15 +378,18 @@
     }
 
     function buildFrameData(yd) {
-      if (!yd) return CATEGORIES.map(() => ({ x: [], y: [] }));
+      if (!yd) return CATEGORIES.map(() => ({ x: [], y: [], marker: { size: [], opacity: [] } }));
       return CATEGORIES.map((cat, i) => {
         const indices = [];
         for (let j = 0; j < yd.c.length; j++) {
           if (yd.c[j] === i) indices.push(j);
         }
+        const pfs = indices.map(j => yd.pf[j]);
         return {
           x: indices.map(j => yd.P[j]),
-          y: indices.map(j => yd.pf[j])
+          y: pfs,
+          'marker.size': pfs.map(pf => pf > 1.0 ? 9 : 6),
+          'marker.opacity': pfs.map(pf => pf > 1.0 ? 0.85 : 0.4)
         };
       });
     }
