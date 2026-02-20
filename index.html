@@ -251,17 +251,17 @@
         width: window.innerWidth,
         height: chartHeight,
         xaxis: {
-          title: { text: 'Active Power (MW)', font: { size: 22 } },
+          title: { text: '<b>Active Power (MW)</b>', font: { size: 22 } },
           range: [-axis.p_max * 0.03, axis.p_max],
-          tickfont: { size: 16 },
+          tickfont: { size: 16, color: '#333' },
           gridcolor: '#e8e8e8'
         },
         yaxis: {
-          title: { text: 'Power Factor', font: { size: 22 } },
+          title: { text: '<b>Power Factor</b>', font: { size: 22 } },
           range: [axis.pf_min, axis.pf_max],
           tickvals: pfTicks.vals,
           ticktext: pfTicks.text,
-          tickfont: { size: 16 },
+          tickfont: { size: 16, color: '#333' },
           gridcolor: '#e8e8e8'
         },
         shapes: shapes,
@@ -273,7 +273,7 @@
           tracegroupgap: 4,
           itemsizing: 'constant'
         },
-        margin: { l: 80, r: 180, t: 85, b: 90 },
+        margin: { l: 80, r: 180, t: 85, b: 120 },
         hoverlabel: {
           font: { size: 14 },
           bgcolor: 'white',
@@ -299,7 +299,7 @@
           font: { size: 20, color: '#333' },
           xanchor: 'center'
         },
-        pad: { t: 55, l: 130 },
+        pad: { t: 70, l: 130 },
         x: 0.08, len: 0.9,
         ticklen: 6,
         tickwidth: 1,
