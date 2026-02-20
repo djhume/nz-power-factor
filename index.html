@@ -30,40 +30,40 @@
     .tool-nav {
       background: var(--blue-dark);
       color: white;
-      padding: 8px 16px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       gap: 16px;
     }
-    .nav-title { font-weight: 600; flex: 1; }
+    .nav-title { font-weight: 600; font-size: 1.15rem; flex: 1; }
     .data-status {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--text-secondary);
       background: var(--bg-secondary);
-      padding: 2px 8px;
+      padding: 2px 10px;
       border-radius: 4px;
     }
 
     .pf-controls {
       background: var(--bg-primary);
       border-bottom: 1px solid var(--border);
-      padding: 6px 16px;
+      padding: 8px 20px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .pf-controls label {
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 1.05rem;
       color: var(--text-secondary);
     }
     .pf-controls select {
-      padding: 6px 12px;
+      padding: 8px 14px;
       border: 1px solid var(--border);
       border-radius: 4px;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       background: var(--bg-primary);
-      min-width: 260px;
+      min-width: 280px;
     }
 
     #chartContainer {
@@ -78,15 +78,15 @@
       align-items: center;
       justify-content: center;
       z-index: 50;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: var(--text-secondary);
     }
     .loading-overlay.hidden { display: none; }
 
     .attribution {
       text-align: center;
-      padding: 4px 16px;
-      font-size: 0.8rem;
+      padding: 5px 20px;
+      font-size: 0.9rem;
       color: var(--text-secondary);
       background: var(--bg-primary);
       border-top: 1px solid var(--border);
@@ -100,7 +100,7 @@
 <body>
   <nav class="tool-nav">
     <span class="nav-title">NZ Power Factor Explorer</span>
-    <a href="phasor/" style="color:rgba(255,255,255,0.85); font-size:0.9rem; text-decoration:none; margin-left:auto;">Phasor Diagram &rarr;</a>
+    <a href="phasor/" style="color:rgba(255,255,255,0.85); font-size:0.95rem; text-decoration:none; margin-left:auto;">Phasor Diagram &rarr;</a>
     <span class="data-status" id="dataStatus">Loading...</span>
   </nav>
 
@@ -153,7 +153,7 @@
         const rounded = Math.round(v * 1000) / 1000;
         vals.push(rounded);
         if (Math.abs(rounded - 1.0) < 0.0005) {
-          text.push('1.0');
+          text.push('1.0 (Unity)');
         } else if (rounded > 1.0) {
           const display = (2 - rounded).toFixed(2);
           text.push(display + ' lead');
@@ -169,8 +169,8 @@
       const stats = entity.stats[String(year)];
       if (!stats) return entity.display_name + ' \u2014 ' + year;
       return (
-        entity.display_name + ' \u2014 ' + year + '<br>' +
-        '<span style="font-size:14px; color:#555">' +
+        '<b>' + entity.display_name + '</b> \u2014 <b>' + year + '</b><br>' +
+        '<span style="font-size:20px; color:#444">' +
         'Mean PF: ' + stats.display_pf + '  \u00b7  ' +
         'Leading ' + stats.pct_leading.toFixed(1) + '% of the time</span>'
       );
@@ -189,10 +189,61 @@
       const firstData = yearData[String(firstYear)];
       const traces = buildTraces(firstData);
 
+      // Leading zone shading (above PF = 1.0)
+      const shapes = [
+        // Subtle leading zone background
+        {
+          type: 'rect',
+          x0: 0, x1: 1, xref: 'paper',
+          y0: 1.0, y1: axis.pf_max,
+          fillcolor: 'rgba(220, 235, 255, 0.35)',
+          line: { width: 0 },
+          layer: 'below'
+        },
+        // Unity line
+        {
+          type: 'line', x0: 0, x1: 1, xref: 'paper',
+          y0: 1.0, y1: 1.0,
+          line: { dash: 'dash', color: '#888', width: 2 }
+        }
+      ];
+
+      // Unity label annotation
+      const annotations = [
+        {
+          x: 0.01, xref: 'paper',
+          y: 1.0,
+          text: '<b>Unity</b>',
+          showarrow: false,
+          font: { size: 14, color: '#666' },
+          xanchor: 'left',
+          yanchor: 'bottom',
+          yshift: 3
+        },
+        {
+          x: 0.99, xref: 'paper',
+          y: axis.pf_max - (axis.pf_max - 1.0) * 0.15,
+          text: 'Leading (capacitive)',
+          showarrow: false,
+          font: { size: 13, color: '#7a9ec2', style: 'italic' },
+          xanchor: 'right',
+          opacity: 0.7
+        },
+        {
+          x: 0.99, xref: 'paper',
+          y: axis.pf_min + (1.0 - axis.pf_min) * 0.08,
+          text: 'Lagging (inductive)',
+          showarrow: false,
+          font: { size: 13, color: '#888', style: 'italic' },
+          xanchor: 'right',
+          opacity: 0.7
+        }
+      ];
+
       const layout = {
         title: {
           text: makeTitle(entity, firstYear),
-          font: { size: 20 },
+          font: { size: 28 },
           x: 0.5, xanchor: 'center',
           y: 0.97, yanchor: 'top'
         },
@@ -200,28 +251,34 @@
         width: window.innerWidth,
         height: chartHeight,
         xaxis: {
-          title: { text: 'Active Power (MW)', font: { size: 16 } },
+          title: { text: 'Active Power (MW)', font: { size: 22 } },
           range: [-axis.p_max * 0.03, axis.p_max],
-          tickfont: { size: 12 }
+          tickfont: { size: 16 },
+          gridcolor: '#e8e8e8'
         },
         yaxis: {
-          title: { text: 'Power Factor', font: { size: 16 } },
+          title: { text: 'Power Factor', font: { size: 22 } },
           range: [axis.pf_min, axis.pf_max],
           tickvals: pfTicks.vals,
           ticktext: pfTicks.text,
-          tickfont: { size: 12 }
+          tickfont: { size: 16 },
+          gridcolor: '#e8e8e8'
         },
-        shapes: [{
-          type: 'line', x0: 0, x1: 1, xref: 'paper',
-          y0: 1.0, y1: 1.0,
-          line: { dash: 'dash', color: 'grey', width: 1 }
-        }],
+        shapes: shapes,
+        annotations: annotations,
         legend: {
-          title: { text: 'Season / Time' },
-          font: { size: 11 },
-          x: 1.0, xanchor: 'left', y: 1.0
+          title: { text: 'Season / Time', font: { size: 15 } },
+          font: { size: 14 },
+          x: 1.0, xanchor: 'left', y: 1.0,
+          tracegroupgap: 4,
+          itemsizing: 'constant'
         },
-        margin: { l: 70, r: 160, t: 70, b: 80 }
+        margin: { l: 80, r: 180, t: 85, b: 90 },
+        hoverlabel: {
+          font: { size: 14 },
+          bgcolor: 'white',
+          bordercolor: '#ccc'
+        }
       };
 
       const frames = years.map(year => {
@@ -237,9 +294,15 @@
 
       const sliders = [{
         active: 0,
-        currentvalue: { prefix: 'Year: ', font: { size: 16 } },
-        pad: { t: 50, l: 120 },
+        currentvalue: {
+          prefix: 'Year: ',
+          font: { size: 20, color: '#333' },
+          xanchor: 'center'
+        },
+        pad: { t: 55, l: 130 },
         x: 0.08, len: 0.9,
+        ticklen: 6,
+        tickwidth: 1,
         steps: years.map(year => ({
           label: String(year),
           method: 'animate',
@@ -256,6 +319,8 @@
         showactive: false,
         x: 0.0, y: -0.06,
         xanchor: 'left', yanchor: 'top',
+        font: { size: 15 },
+        pad: { r: 10, t: 60 },
         buttons: [
           {
             label: '\u25b6 Play',
@@ -298,7 +363,10 @@
           mode: 'markers',
           type: 'scatter',
           name: cat,
-          marker: { size: 5, color: CATEGORY_COLORS[i], opacity: 0.5 },
+          marker: { size: 7, color: CATEGORY_COLORS[i], opacity: 0.6 },
+          hovertemplate: '<b>' + cat + '</b><br>' +
+                         'P: %{x:,.0f} MW<br>' +
+                         'PF: %{y:.4f}<extra></extra>',
           showlegend: true
         };
       });
@@ -390,6 +458,22 @@
         document.getElementById('loadingOverlay').textContent = 'Error loading data';
       }
     }
+
+    // --- Keyboard shortcuts ---
+    document.addEventListener('keydown', function(e) {
+      const chartDiv = document.getElementById('plotlyChart');
+      if (!chartDiv || !chartDiv.data) return;
+
+      if (e.code === 'Space' && e.target === document.body) {
+        e.preventDefault();
+        // Toggle play/pause
+        Plotly.animate(chartDiv, null, {
+          frame: { duration: 800, redraw: true },
+          fromcurrent: true,
+          transition: { duration: 400 }
+        });
+      }
+    });
 
     // --- Init ---
 
