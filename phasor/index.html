@@ -560,7 +560,7 @@
     <kbd>&larr;</kbd><kbd>&rarr;</kbd> Power Factor &nbsp;
     <kbd>&uarr;</kbd><kbd>&darr;</kbd> Load &nbsp;
     <kbd>P</kbd> Present &nbsp;
-    <kbd>Space</kbd> Story
+    <kbd>Space</kbd> Play/Pause
   </div>
 </div>
 
@@ -663,7 +663,8 @@ let state = {
     statcomBmax: 1.0,    // STATCOM B limit (+/- pu)
 };
 
-let storyPlaying = false;
+let storyState = 'stopped'; // 'stopped' | 'playing' | 'paused'
+let storySceneIndex = 0;
 let storyTimeouts = [];
 let presentationMode = false;
 // Theme colors (light / dark)
@@ -1941,28 +1942,39 @@ const storyScenes = [
 ];
 
 function toggleStory() {
-    if (storyPlaying) {
-        stopStory();
+    if (storyState === 'playing') {
+        pauseStory();
+    } else if (storyState === 'paused') {
+        playStory(storySceneIndex + 1);
     } else {
-        playStory();
+        playStory(0);
     }
 }
 
-function playStory() {
-    stopStory();
-    storyPlaying = true;
-    document.getElementById('btn-story').classList.add('active');
-    document.getElementById('btn-story').innerHTML = '&#9724; Stop';
+function playStory(fromIndex) {
+    storyTimeouts.forEach(t => clearTimeout(t));
+    storyTimeouts = [];
+    storyState = 'playing';
+    const btn = document.getElementById('btn-story');
+    btn.classList.add('active');
+    btn.innerHTML = '&#10074;&#10074; Pause';
+
+    if (fromIndex >= storyScenes.length) {
+        stopStory();
+        return;
+    }
 
     let delay = 500;
-    storyScenes.forEach((scene, i) => {
+    for (let i = fromIndex; i < storyScenes.length; i++) {
+        const scene = storyScenes[i];
+        const idx = i;
         const t = setTimeout(() => {
+            storySceneIndex = idx;
             state.pfAngle = scene.pfAngle;
             state.P = scene.P;
             pfSlider.value = scene.pfAngle;
             pSlider.value = scene.P;
             document.getElementById('p-display').textContent = scene.P.toFixed(2) + ' pu';
-            // Apply device states
             if (scene.devices) {
                 setDeviceStates(scene.devices.cap, scene.devices.reactor, scene.devices.statcom, scene.devices.statcomVset);
                 drawCircuit();
@@ -1973,17 +1985,28 @@ function playStory() {
         }, delay);
         storyTimeouts.push(t);
         delay += scene.duration;
-    });
+    }
 
-    // End story
+    // End story after last scene
     const endT = setTimeout(() => {
         stopStory();
     }, delay + 1000);
     storyTimeouts.push(endT);
 }
 
+function pauseStory() {
+    storyState = 'paused';
+    storyTimeouts.forEach(t => clearTimeout(t));
+    storyTimeouts = [];
+    const btn = document.getElementById('btn-story');
+    btn.classList.remove('active');
+    btn.innerHTML = '&#9654; Resume';
+    // Annotation stays visible
+}
+
 function stopStory() {
-    storyPlaying = false;
+    storyState = 'stopped';
+    storySceneIndex = 0;
     storyTimeouts.forEach(t => clearTimeout(t));
     storyTimeouts = [];
     document.getElementById('btn-story').classList.remove('active');
