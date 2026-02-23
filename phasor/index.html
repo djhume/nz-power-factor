@@ -1925,20 +1925,6 @@ const storyScenes = [
         text: 'Shunt reactors installed at Otahuhu, Pakuranga, Kikiwa, Islington. I\u2097 (reactor) absorbs the excess reactive power from both load characteristics and cable charging \u2014 the bus bar returns to green.',
         duration: 5500,
     },
-    {
-        pfAngle: 15, P: 0.2,
-        devices: { cap: true, reactor: false, statcom: true, statcomVset: 1.0 },
-        label: 'The NCC Toolbox: Dynamic Reactive Plant',
-        text: 'The SO\u2019s National Coordination Centre controls SVCs, STATCOMs, and synchronous condensers across the grid. These devices continuously adjust reactive output to hold voltage at target. Unlike fixed reactors, they adapt in real-time \u2014 absorbing VARs overnight, injecting them at peak.',
-        duration: 6000,
-    },
-    {
-        pfAngle: -12, P: 1.2,
-        devices: { cap: true, reactor: false, statcom: true, statcomVset: 1.0 },
-        label: 'Evening Peak: The NCC Flips the Plant',
-        text: 'At 6pm peak demand, the same device switches from absorbing to injecting reactive power. The NCC coordinates this across the network \u2014 matching reactive support to real-time conditions. Watch the arrow direction change.',
-        duration: 5500,
-    },
 ];
 
 function toggleStory() {
