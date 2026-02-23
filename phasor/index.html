@@ -151,7 +151,7 @@
     /* Annotation overlay */
     .annotation {
       position: absolute;
-      bottom: 100px;
+      bottom: 10px;
       left: 0;
       right: 0;
       text-align: center;
@@ -694,7 +694,7 @@ const svg = d3.select('#phasor-svg')
     .attr('preserveAspectRatio', 'xMidYMid meet');
 
 // Fixed coordinate system inside the viewBox - browser handles all scaling
-const ox = 240, oy = 400;
+const ox = 240, oy = 360;
 const scale = 420; // 1 pu = 420 px
 
 // Convert physics (x, y) to SVG (sx, sy)
