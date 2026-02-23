@@ -520,7 +520,7 @@
   <div class="device-row">
     <button class="device-btn" id="btn-cap" onclick="toggleDevice('cap')">&#9649; Shunt Capacitor</button>
     <button class="device-btn" id="btn-reactor" onclick="toggleDevice('reactor')">&#8764; Shunt Reactor</button>
-    <button class="device-btn" id="btn-statcom" onclick="toggleDevice('statcom')">&#9107; STATCOM</button>
+    <button class="device-btn" id="btn-statcom" onclick="toggleDevice('statcom')">&#9107; SVC / STATCOM</button>
   </div>
   <div class="device-slider-row" id="cap-row">
     <span class="slider-label" style="min-width:100px">Cap B</span>
@@ -1051,7 +1051,7 @@ function drawCircuit() {
     // STATCOM label
     g.append('text').attr('x', statX).attr('y', stBoxY + stBoxH + 38)
         .attr('text-anchor', 'middle').attr('class', 'circuit-text-sm')
-        .style('font-size', '10px').attr('fill', stColor).text('STATCOM');
+        .style('font-size', '10px').attr('fill', stColor).text('SVC / STATCOM');
     // Clickable overlay
     g.append('rect').attr('x', statX - 20).attr('y', shuntWireY)
         .attr('width', 40).attr('height', 75)
@@ -1912,31 +1912,31 @@ const storyScenes = [
         duration: 6000,
     },
     {
-        pfAngle: 15, P: 0.3,
+        pfAngle: 15, P: 0.2,
         devices: { cap: true, reactor: false, statcom: false, statcomVset: 1.0 },
         label: '2024: 3am \u2014 Overvoltage',
         text: 'At minimum demand overnight, load characteristics push power factors well into leading territory. Underground cables add to the effect (~20% of the shift) but the dominant driver is the loads themselves. V\u1D63 EXCEEDS V\u209B \u2014 the bus bar turns amber. Of 24 Code provisions audited, zero address this condition. (Spain/Portugal blackout, April 2025, had overvoltage as a factor.)',
         duration: 5500,
     },
     {
-        pfAngle: 15, P: 0.3,
+        pfAngle: 15, P: 0.2,
         devices: { cap: true, reactor: true, statcom: false, statcomVset: 1.0 },
         label: 'Transpower\u2019s Response: Shunt Reactors',
         text: 'Shunt reactors installed at Otahuhu, Pakuranga, Kikiwa, Islington. I\u2097 (reactor) absorbs the excess reactive power from both load characteristics and cable charging \u2014 the bus bar returns to green.',
         duration: 5500,
     },
     {
-        pfAngle: 15, P: 0.3,
+        pfAngle: 15, P: 0.2,
         devices: { cap: true, reactor: false, statcom: true, statcomVset: 1.0 },
-        label: 'The Future: Dynamic Voltage Control',
-        text: 'A STATCOM continuously adjusts its reactive output to hold voltage at exactly 1.0 pu. Unlike fixed reactors, it adapts in real-time as conditions change. The smart grid in action.',
-        duration: 5500,
+        label: 'The NCC Toolbox: Dynamic Reactive Plant',
+        text: 'The SO\u2019s National Coordination Centre controls SVCs, STATCOMs, and synchronous condensers across the grid. These devices continuously adjust reactive output to hold voltage at target. Unlike fixed reactors, they adapt in real-time \u2014 absorbing VARs overnight, injecting them at peak.',
+        duration: 6000,
     },
     {
         pfAngle: -12, P: 1.2,
         devices: { cap: true, reactor: false, statcom: true, statcomVset: 1.0 },
-        label: 'Evening Peak: The STATCOM Flips',
-        text: 'At 6pm peak demand, the STATCOM switches from absorbing to injecting reactive power. Same device, opposite mode. Watch the arrow direction change \u2014 it\u2019s now supporting voltage instead of suppressing it.',
+        label: 'Evening Peak: The NCC Flips the Plant',
+        text: 'At 6pm peak demand, the same device switches from absorbing to injecting reactive power. The NCC coordinates this across the network \u2014 matching reactive support to real-time conditions. Watch the arrow direction change.',
         duration: 5500,
     },
 ];
