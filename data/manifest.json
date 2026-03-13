@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-13T03:00:28.474264+00:00",
+  "generated": "2026-03-13T19:37:31.340845+00:00",
   "categories": [
     "Summer Night",
     "Summer Day",
@@ -11,14 +11,14 @@
     "Spring Day"
   ],
   "category_colors": [
-    "#A87608",
-    "#F0A30A",
-    "#963D12",
-    "#E05A1A",
-    "#1E3F6F",
-    "#4A90D9",
-    "#1A6B30",
-    "#2EAF4F"
+    "#1f77b4",
+    "#ff7f0e",
+    "#2ca02c",
+    "#d62728",
+    "#9467bd",
+    "#8c564b",
+    "#e377c2",
+    "#7f7f7f"
   ],
   "entities": [
     {
@@ -60,8 +60,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 7500,
-        "pf_min": 0.905,
-        "pf_max": 1.025
+        "pf_min": 0.93,
+        "pf_max": 1.02
       },
       "stats": {
         "1997": {
@@ -80,114 +80,114 @@
           "display_pf": "0.9684 lagging"
         },
         "2000": {
-          "mean_pf": 0.972715,
+          "mean_pf": 0.972309,
           "pct_leading": 0.0,
-          "display_pf": "0.9727 lagging"
+          "display_pf": "0.9723 lagging"
         },
         "2001": {
-          "mean_pf": 0.978347,
+          "mean_pf": 0.976815,
           "pct_leading": 0.0,
-          "display_pf": "0.9783 lagging"
+          "display_pf": "0.9768 lagging"
         },
         "2002": {
-          "mean_pf": 0.98047,
+          "mean_pf": 0.979285,
           "pct_leading": 0.0,
-          "display_pf": "0.9805 lagging"
+          "display_pf": "0.9793 lagging"
         },
         "2003": {
-          "mean_pf": 0.981345,
+          "mean_pf": 0.980144,
           "pct_leading": 0.0,
-          "display_pf": "0.9813 lagging"
+          "display_pf": "0.9801 lagging"
         },
         "2004": {
-          "mean_pf": 0.98184,
+          "mean_pf": 0.979714,
           "pct_leading": 0.0,
-          "display_pf": "0.9818 lagging"
+          "display_pf": "0.9797 lagging"
         },
         "2005": {
-          "mean_pf": 0.981799,
+          "mean_pf": 0.978884,
           "pct_leading": 0.0,
-          "display_pf": "0.9818 lagging"
+          "display_pf": "0.9789 lagging"
         },
         "2006": {
-          "mean_pf": 0.983194,
+          "mean_pf": 0.98008,
           "pct_leading": 0.0,
-          "display_pf": "0.9832 lagging"
+          "display_pf": "0.9801 lagging"
         },
         "2007": {
-          "mean_pf": 0.983097,
+          "mean_pf": 0.980284,
           "pct_leading": 0.0,
-          "display_pf": "0.9831 lagging"
+          "display_pf": "0.9803 lagging"
         },
         "2008": {
-          "mean_pf": 0.984476,
+          "mean_pf": 0.98164,
           "pct_leading": 0.0,
-          "display_pf": "0.9845 lagging"
+          "display_pf": "0.9816 lagging"
         },
         "2009": {
-          "mean_pf": 0.987559,
+          "mean_pf": 0.985143,
           "pct_leading": 0.0,
-          "display_pf": "0.9876 lagging"
+          "display_pf": "0.9851 lagging"
         },
         "2010": {
-          "mean_pf": 0.988139,
+          "mean_pf": 0.985768,
           "pct_leading": 0.0,
-          "display_pf": "0.9881 lagging"
+          "display_pf": "0.9858 lagging"
         },
         "2011": {
-          "mean_pf": 0.990933,
+          "mean_pf": 0.988857,
           "pct_leading": 0.0,
-          "display_pf": "0.9909 lagging"
+          "display_pf": "0.9889 lagging"
         },
         "2012": {
-          "mean_pf": 0.993127,
+          "mean_pf": 0.991459,
           "pct_leading": 0.0,
-          "display_pf": "0.9931 lagging"
+          "display_pf": "0.9915 lagging"
         },
         "2013": {
-          "mean_pf": 0.993061,
+          "mean_pf": 0.991729,
           "pct_leading": 0.1,
-          "display_pf": "0.9931 lagging"
+          "display_pf": "0.9917 lagging"
         },
         "2014": {
-          "mean_pf": 0.993265,
+          "mean_pf": 0.991841,
           "pct_leading": 0.1,
-          "display_pf": "0.9933 lagging"
+          "display_pf": "0.9918 lagging"
         },
         "2015": {
-          "mean_pf": 0.99395,
+          "mean_pf": 0.992453,
           "pct_leading": 0.4,
-          "display_pf": "0.9939 lagging"
+          "display_pf": "0.9925 lagging"
         },
         "2016": {
-          "mean_pf": 0.995349,
+          "mean_pf": 0.993971,
           "pct_leading": 3.0,
-          "display_pf": "0.9953 lagging"
+          "display_pf": "0.9940 lagging"
         },
         "2017": {
-          "mean_pf": 0.996222,
+          "mean_pf": 0.995015,
           "pct_leading": 9.7,
-          "display_pf": "0.9962 lagging"
+          "display_pf": "0.9950 lagging"
         },
         "2018": {
-          "mean_pf": 0.996916,
+          "mean_pf": 0.995989,
           "pct_leading": 15.7,
-          "display_pf": "0.9969 lagging"
+          "display_pf": "0.9960 lagging"
         },
         "2019": {
-          "mean_pf": 0.997485,
+          "mean_pf": 0.996803,
           "pct_leading": 20.6,
-          "display_pf": "0.9975 lagging"
+          "display_pf": "0.9968 lagging"
         },
         "2020": {
-          "mean_pf": 0.998764,
+          "mean_pf": 0.998454,
           "pct_leading": 32.5,
-          "display_pf": "0.9988 lagging"
+          "display_pf": "0.9985 lagging"
         },
         "2021": {
-          "mean_pf": 0.99912,
+          "mean_pf": 0.998912,
           "pct_leading": 36.0,
-          "display_pf": "0.9991 lagging"
+          "display_pf": "0.9989 lagging"
         },
         "2022": {
           "mean_pf": 0.999734,
@@ -195,19 +195,19 @@
           "display_pf": "0.9997 lagging"
         },
         "2023": {
-          "mean_pf": 1.00035,
+          "mean_pf": 1.000559,
           "pct_leading": 51.2,
-          "display_pf": "0.9996 leading"
+          "display_pf": "0.9994 leading"
         },
         "2024": {
-          "mean_pf": 1.001049,
+          "mean_pf": 1.001458,
           "pct_leading": 58.5,
-          "display_pf": "0.9990 leading"
+          "display_pf": "0.9985 leading"
         },
         "2025": {
-          "mean_pf": 1.001617,
+          "mean_pf": 1.002275,
           "pct_leading": 63.7,
-          "display_pf": "0.9984 leading"
+          "display_pf": "0.9977 leading"
         }
       }
     },
@@ -250,8 +250,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 250,
-        "pf_min": 0.805,
-        "pf_max": 1.125
+        "pf_min": 0.825,
+        "pf_max": 1.025
       },
       "stats": {
         "1997": {
@@ -305,99 +305,99 @@
           "display_pf": "0.9733 lagging"
         },
         "2007": {
-          "mean_pf": 0.971163,
+          "mean_pf": 0.963725,
           "pct_leading": 0.0,
-          "display_pf": "0.9712 lagging"
+          "display_pf": "0.9637 lagging"
         },
         "2008": {
-          "mean_pf": 0.971128,
+          "mean_pf": 0.958425,
           "pct_leading": 0.5,
-          "display_pf": "0.9711 lagging"
+          "display_pf": "0.9584 lagging"
         },
         "2009": {
-          "mean_pf": 0.977855,
+          "mean_pf": 0.966234,
           "pct_leading": 0.0,
-          "display_pf": "0.9779 lagging"
+          "display_pf": "0.9662 lagging"
         },
         "2010": {
-          "mean_pf": 0.979368,
+          "mean_pf": 0.968008,
           "pct_leading": 1.5,
-          "display_pf": "0.9794 lagging"
+          "display_pf": "0.9680 lagging"
         },
         "2011": {
-          "mean_pf": 0.98056,
+          "mean_pf": 0.97152,
           "pct_leading": 0.7,
-          "display_pf": "0.9806 lagging"
+          "display_pf": "0.9715 lagging"
         },
         "2012": {
-          "mean_pf": 0.98034,
+          "mean_pf": 0.971996,
           "pct_leading": 0.8,
-          "display_pf": "0.9803 lagging"
+          "display_pf": "0.9720 lagging"
         },
         "2013": {
-          "mean_pf": 0.980377,
+          "mean_pf": 0.970527,
           "pct_leading": 1.6,
-          "display_pf": "0.9804 lagging"
+          "display_pf": "0.9705 lagging"
         },
         "2014": {
-          "mean_pf": 0.982394,
+          "mean_pf": 0.975476,
           "pct_leading": 2.5,
-          "display_pf": "0.9824 lagging"
+          "display_pf": "0.9755 lagging"
         },
         "2015": {
-          "mean_pf": 0.983109,
+          "mean_pf": 0.976913,
           "pct_leading": 2.8,
-          "display_pf": "0.9831 lagging"
+          "display_pf": "0.9769 lagging"
         },
         "2016": {
-          "mean_pf": 0.98321,
+          "mean_pf": 0.975391,
           "pct_leading": 4.8,
-          "display_pf": "0.9832 lagging"
+          "display_pf": "0.9754 lagging"
         },
         "2017": {
-          "mean_pf": 0.986054,
+          "mean_pf": 0.981885,
           "pct_leading": 8.4,
-          "display_pf": "0.9861 lagging"
+          "display_pf": "0.9819 lagging"
         },
         "2018": {
-          "mean_pf": 0.987512,
+          "mean_pf": 0.984913,
           "pct_leading": 9.6,
-          "display_pf": "0.9875 lagging"
+          "display_pf": "0.9849 lagging"
         },
         "2019": {
-          "mean_pf": 0.989489,
+          "mean_pf": 0.987191,
           "pct_leading": 12.2,
-          "display_pf": "0.9895 lagging"
+          "display_pf": "0.9872 lagging"
         },
         "2020": {
-          "mean_pf": 0.991133,
+          "mean_pf": 0.989545,
           "pct_leading": 13.5,
-          "display_pf": "0.9911 lagging"
+          "display_pf": "0.9895 lagging"
         },
         "2021": {
-          "mean_pf": 0.992381,
+          "mean_pf": 0.991686,
           "pct_leading": 15.5,
-          "display_pf": "0.9924 lagging"
+          "display_pf": "0.9917 lagging"
         },
         "2022": {
-          "mean_pf": 0.995194,
+          "mean_pf": 0.995089,
           "pct_leading": 21.5,
-          "display_pf": "0.9952 lagging"
+          "display_pf": "0.9951 lagging"
         },
         "2023": {
-          "mean_pf": 0.993106,
+          "mean_pf": 0.991405,
           "pct_leading": 21.7,
-          "display_pf": "0.9931 lagging"
+          "display_pf": "0.9914 lagging"
         },
         "2024": {
-          "mean_pf": 0.992194,
+          "mean_pf": 0.987164,
           "pct_leading": 22.9,
-          "display_pf": "0.9922 lagging"
+          "display_pf": "0.9872 lagging"
         },
         "2025": {
-          "mean_pf": 0.994412,
+          "mean_pf": 0.993021,
           "pct_leading": 23.2,
-          "display_pf": "0.9944 lagging"
+          "display_pf": "0.9930 lagging"
         }
       }
     },
@@ -440,8 +440,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 150,
-        "pf_min": 0.885,
-        "pf_max": 1.035
+        "pf_min": 0.9,
+        "pf_max": 1.02
       },
       "stats": {
         "1997": {
@@ -460,134 +460,134 @@
           "display_pf": "0.9494 lagging"
         },
         "2000": {
-          "mean_pf": 0.948623,
+          "mean_pf": 0.948079,
           "pct_leading": 0.0,
-          "display_pf": "0.9486 lagging"
+          "display_pf": "0.9481 lagging"
         },
         "2001": {
-          "mean_pf": 0.951294,
+          "mean_pf": 0.949276,
           "pct_leading": 0.0,
-          "display_pf": "0.9513 lagging"
+          "display_pf": "0.9493 lagging"
         },
         "2002": {
-          "mean_pf": 0.952535,
+          "mean_pf": 0.948862,
           "pct_leading": 0.0,
-          "display_pf": "0.9525 lagging"
+          "display_pf": "0.9489 lagging"
         },
         "2003": {
-          "mean_pf": 0.956927,
+          "mean_pf": 0.954182,
           "pct_leading": 0.0,
-          "display_pf": "0.9569 lagging"
+          "display_pf": "0.9542 lagging"
         },
         "2004": {
-          "mean_pf": 0.96625,
+          "mean_pf": 0.964695,
           "pct_leading": 0.0,
-          "display_pf": "0.9663 lagging"
+          "display_pf": "0.9647 lagging"
         },
         "2005": {
-          "mean_pf": 0.972801,
+          "mean_pf": 0.971349,
           "pct_leading": 0.0,
-          "display_pf": "0.9728 lagging"
+          "display_pf": "0.9713 lagging"
         },
         "2006": {
-          "mean_pf": 0.97351,
+          "mean_pf": 0.971997,
           "pct_leading": 0.0,
-          "display_pf": "0.9735 lagging"
+          "display_pf": "0.9720 lagging"
         },
         "2007": {
-          "mean_pf": 0.975961,
+          "mean_pf": 0.974837,
           "pct_leading": 0.0,
-          "display_pf": "0.9760 lagging"
+          "display_pf": "0.9748 lagging"
         },
         "2008": {
-          "mean_pf": 0.974011,
+          "mean_pf": 0.973112,
           "pct_leading": 0.0,
-          "display_pf": "0.9740 lagging"
+          "display_pf": "0.9731 lagging"
         },
         "2009": {
-          "mean_pf": 0.978054,
+          "mean_pf": 0.977016,
           "pct_leading": 0.0,
-          "display_pf": "0.9781 lagging"
+          "display_pf": "0.9770 lagging"
         },
         "2010": {
-          "mean_pf": 0.982874,
+          "mean_pf": 0.982134,
           "pct_leading": 5.7,
-          "display_pf": "0.9829 lagging"
+          "display_pf": "0.9821 lagging"
         },
         "2011": {
-          "mean_pf": 0.987808,
+          "mean_pf": 0.987137,
           "pct_leading": 6.2,
-          "display_pf": "0.9878 lagging"
+          "display_pf": "0.9871 lagging"
         },
         "2012": {
-          "mean_pf": 0.987576,
+          "mean_pf": 0.98683,
           "pct_leading": 6.0,
-          "display_pf": "0.9876 lagging"
+          "display_pf": "0.9868 lagging"
         },
         "2013": {
-          "mean_pf": 0.984446,
+          "mean_pf": 0.983593,
           "pct_leading": 2.2,
-          "display_pf": "0.9844 lagging"
+          "display_pf": "0.9836 lagging"
         },
         "2014": {
-          "mean_pf": 0.985851,
+          "mean_pf": 0.985331,
           "pct_leading": 5.9,
-          "display_pf": "0.9859 lagging"
+          "display_pf": "0.9853 lagging"
         },
         "2015": {
-          "mean_pf": 0.986539,
+          "mean_pf": 0.986334,
           "pct_leading": 6.5,
-          "display_pf": "0.9865 lagging"
+          "display_pf": "0.9863 lagging"
         },
         "2016": {
-          "mean_pf": 0.989181,
+          "mean_pf": 0.988809,
           "pct_leading": 8.8,
-          "display_pf": "0.9892 lagging"
+          "display_pf": "0.9888 lagging"
         },
         "2017": {
-          "mean_pf": 0.987436,
+          "mean_pf": 0.986909,
           "pct_leading": 6.0,
-          "display_pf": "0.9874 lagging"
+          "display_pf": "0.9869 lagging"
         },
         "2018": {
-          "mean_pf": 0.991734,
+          "mean_pf": 0.99122,
           "pct_leading": 11.1,
-          "display_pf": "0.9917 lagging"
+          "display_pf": "0.9912 lagging"
         },
         "2019": {
-          "mean_pf": 0.990952,
+          "mean_pf": 0.990597,
           "pct_leading": 14.2,
-          "display_pf": "0.9910 lagging"
+          "display_pf": "0.9906 lagging"
         },
         "2020": {
-          "mean_pf": 0.992735,
+          "mean_pf": 0.992516,
           "pct_leading": 19.7,
-          "display_pf": "0.9927 lagging"
+          "display_pf": "0.9925 lagging"
         },
         "2021": {
-          "mean_pf": 0.994239,
+          "mean_pf": 0.993987,
           "pct_leading": 18.9,
-          "display_pf": "0.9942 lagging"
+          "display_pf": "0.9940 lagging"
         },
         "2022": {
-          "mean_pf": 0.996243,
+          "mean_pf": 0.996032,
           "pct_leading": 22.0,
-          "display_pf": "0.9962 lagging"
+          "display_pf": "0.9960 lagging"
         },
         "2023": {
-          "mean_pf": 0.995169,
+          "mean_pf": 0.994981,
           "pct_leading": 24.7,
-          "display_pf": "0.9952 lagging"
+          "display_pf": "0.9950 lagging"
         },
         "2024": {
-          "mean_pf": 0.996475,
+          "mean_pf": 0.996396,
           "pct_leading": 32.0,
-          "display_pf": "0.9965 lagging"
+          "display_pf": "0.9964 lagging"
         },
         "2025": {
-          "mean_pf": 0.997762,
+          "mean_pf": 0.997705,
           "pct_leading": 36.3,
-          "display_pf": "0.9978 lagging"
+          "display_pf": "0.9977 lagging"
         }
       }
     },
@@ -630,8 +630,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 300,
-        "pf_min": 0.81,
-        "pf_max": 1.225
+        "pf_min": 0.92,
+        "pf_max": 1.15
       },
       "stats": {
         "1997": {
@@ -675,9 +675,9 @@
           "display_pf": "0.9821 lagging"
         },
         "2005": {
-          "mean_pf": 0.983512,
+          "mean_pf": 0.983407,
           "pct_leading": 0.0,
-          "display_pf": "0.9835 lagging"
+          "display_pf": "0.9834 lagging"
         },
         "2006": {
           "mean_pf": 0.986464,
@@ -685,7 +685,7 @@
           "display_pf": "0.9865 lagging"
         },
         "2007": {
-          "mean_pf": 0.988101,
+          "mean_pf": 0.988092,
           "pct_leading": 2.0,
           "display_pf": "0.9881 lagging"
         },
@@ -705,79 +705,79 @@
           "display_pf": "0.9958 lagging"
         },
         "2011": {
-          "mean_pf": 1.007995,
+          "mean_pf": 1.008113,
           "pct_leading": 61.3,
-          "display_pf": "0.9920 leading"
+          "display_pf": "0.9919 leading"
         },
         "2012": {
-          "mean_pf": 1.017679,
+          "mean_pf": 1.017933,
           "pct_leading": 80.8,
-          "display_pf": "0.9823 leading"
+          "display_pf": "0.9821 leading"
         },
         "2013": {
-          "mean_pf": 1.023737,
+          "mean_pf": 1.024072,
           "pct_leading": 87.0,
-          "display_pf": "0.9763 leading"
+          "display_pf": "0.9759 leading"
         },
         "2014": {
-          "mean_pf": 1.017421,
+          "mean_pf": 1.017777,
           "pct_leading": 83.2,
-          "display_pf": "0.9826 leading"
+          "display_pf": "0.9822 leading"
         },
         "2015": {
-          "mean_pf": 1.016204,
+          "mean_pf": 1.016672,
           "pct_leading": 80.0,
-          "display_pf": "0.9838 leading"
+          "display_pf": "0.9833 leading"
         },
         "2016": {
-          "mean_pf": 1.025401,
+          "mean_pf": 1.026002,
           "pct_leading": 92.9,
-          "display_pf": "0.9746 leading"
+          "display_pf": "0.9740 leading"
         },
         "2017": {
-          "mean_pf": 1.026212,
+          "mean_pf": 1.026753,
           "pct_leading": 93.1,
-          "display_pf": "0.9738 leading"
+          "display_pf": "0.9732 leading"
         },
         "2018": {
-          "mean_pf": 1.031166,
+          "mean_pf": 1.031761,
           "pct_leading": 95.4,
-          "display_pf": "0.9688 leading"
+          "display_pf": "0.9682 leading"
         },
         "2019": {
-          "mean_pf": 1.027783,
+          "mean_pf": 1.028551,
           "pct_leading": 92.9,
-          "display_pf": "0.9722 leading"
+          "display_pf": "0.9714 leading"
         },
         "2020": {
-          "mean_pf": 1.033053,
+          "mean_pf": 1.033232,
           "pct_leading": 94.2,
-          "display_pf": "0.9669 leading"
+          "display_pf": "0.9668 leading"
         },
         "2021": {
-          "mean_pf": 1.037261,
+          "mean_pf": 1.037309,
           "pct_leading": 98.1,
           "display_pf": "0.9627 leading"
         },
         "2022": {
-          "mean_pf": 1.034189,
+          "mean_pf": 1.034207,
           "pct_leading": 97.9,
           "display_pf": "0.9658 leading"
         },
         "2023": {
-          "mean_pf": 1.029623,
+          "mean_pf": 1.029642,
           "pct_leading": 95.6,
           "display_pf": "0.9704 leading"
         },
         "2024": {
-          "mean_pf": 1.036349,
+          "mean_pf": 1.036388,
           "pct_leading": 98.0,
-          "display_pf": "0.9637 leading"
+          "display_pf": "0.9636 leading"
         },
         "2025": {
-          "mean_pf": 1.040838,
+          "mean_pf": 1.040893,
           "pct_leading": 99.8,
-          "display_pf": "0.9592 leading"
+          "display_pf": "0.9591 leading"
         }
       }
     },
@@ -820,8 +820,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 200,
-        "pf_min": 0.75,
-        "pf_max": 1.25
+        "pf_min": 0.8,
+        "pf_max": 1.15
       },
       "stats": {
         "1997": {
@@ -855,87 +855,87 @@
           "display_pf": "0.9259 lagging"
         },
         "2003": {
-          "mean_pf": 0.960243,
+          "mean_pf": 0.846331,
           "pct_leading": 0.8,
-          "display_pf": "0.9602 lagging"
+          "display_pf": "0.8463 lagging"
         },
         "2004": {
-          "mean_pf": 0.967568,
+          "mean_pf": 0.890628,
           "pct_leading": 1.7,
-          "display_pf": "0.9676 lagging"
+          "display_pf": "0.8906 lagging"
         },
         "2005": {
-          "mean_pf": 0.941804,
+          "mean_pf": 0.880855,
           "pct_leading": 0.7,
-          "display_pf": "0.9418 lagging"
+          "display_pf": "0.8809 lagging"
         },
         "2006": {
-          "mean_pf": 0.92762,
+          "mean_pf": 0.845141,
           "pct_leading": 0.0,
-          "display_pf": "0.9276 lagging"
+          "display_pf": "0.8451 lagging"
         },
         "2007": {
-          "mean_pf": 0.944042,
+          "mean_pf": 0.900709,
           "pct_leading": 0.2,
-          "display_pf": "0.9440 lagging"
+          "display_pf": "0.9007 lagging"
         },
         "2008": {
-          "mean_pf": 0.950082,
+          "mean_pf": 0.929261,
           "pct_leading": 0.4,
-          "display_pf": "0.9501 lagging"
+          "display_pf": "0.9293 lagging"
         },
         "2009": {
-          "mean_pf": 0.95504,
+          "mean_pf": 0.934816,
           "pct_leading": 2.9,
-          "display_pf": "0.9550 lagging"
+          "display_pf": "0.9348 lagging"
         },
         "2010": {
-          "mean_pf": 0.96661,
+          "mean_pf": 0.961446,
           "pct_leading": 6.7,
-          "display_pf": "0.9666 lagging"
+          "display_pf": "0.9614 lagging"
         },
         "2011": {
-          "mean_pf": 0.975132,
+          "mean_pf": 0.972324,
           "pct_leading": 16.9,
-          "display_pf": "0.9751 lagging"
+          "display_pf": "0.9723 lagging"
         },
         "2012": {
-          "mean_pf": 0.982614,
+          "mean_pf": 0.983884,
           "pct_leading": 20.2,
-          "display_pf": "0.9826 lagging"
+          "display_pf": "0.9839 lagging"
         },
         "2013": {
-          "mean_pf": 0.988358,
+          "mean_pf": 0.998062,
           "pct_leading": 30.4,
-          "display_pf": "0.9884 lagging"
+          "display_pf": "0.9981 lagging"
         },
         "2014": {
-          "mean_pf": 0.993846,
+          "mean_pf": 1.000351,
           "pct_leading": 32.5,
-          "display_pf": "0.9938 lagging"
+          "display_pf": "0.9996 leading"
         },
         "2015": {
-          "mean_pf": 1.027988,
+          "mean_pf": 1.031481,
           "pct_leading": 48.8,
-          "display_pf": "0.9720 leading"
+          "display_pf": "0.9685 leading"
         },
         "2016": {
-          "mean_pf": 1.056457,
+          "mean_pf": 1.063493,
           "pct_leading": 64.5,
-          "display_pf": "0.9435 leading"
+          "display_pf": "0.9365 leading"
         },
         "2017": {
-          "mean_pf": 1.08858,
+          "mean_pf": 1.09104,
           "pct_leading": 64.6,
-          "display_pf": "0.9114 leading"
+          "display_pf": "0.9090 leading"
         },
         "2018": {
-          "mean_pf": 1.145763,
+          "mean_pf": 1.148578,
           "pct_leading": 86.3,
-          "display_pf": "0.8542 leading"
+          "display_pf": "0.8514 leading"
         },
         "2019": {
-          "mean_pf": 1.084593,
+          "mean_pf": 1.084597,
           "pct_leading": 67.4,
           "display_pf": "0.9154 leading"
         },
@@ -965,9 +965,9 @@
           "display_pf": "0.8908 leading"
         },
         "2025": {
-          "mean_pf": 1.117349,
-          "pct_leading": 72.3,
-          "display_pf": "0.8827 leading"
+          "mean_pf": 1.119579,
+          "pct_leading": 72.4,
+          "display_pf": "0.8804 leading"
         }
       }
     },
@@ -1010,8 +1010,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 200,
-        "pf_min": 0.875,
-        "pf_max": 1.035
+        "pf_min": 0.94,
+        "pf_max": 1.02
       },
       "stats": {
         "1997": {
@@ -1200,8 +1200,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 75,
-        "pf_min": 0.83,
-        "pf_max": 1.25
+        "pf_min": 0.8,
+        "pf_max": 1.15
       },
       "stats": {
         "1997": {
@@ -1220,134 +1220,134 @@
           "display_pf": "0.9229 lagging"
         },
         "2000": {
-          "mean_pf": 0.932226,
+          "mean_pf": 0.932216,
           "pct_leading": 0.0,
           "display_pf": "0.9322 lagging"
         },
         "2001": {
-          "mean_pf": 0.938108,
+          "mean_pf": 0.938074,
           "pct_leading": 0.0,
           "display_pf": "0.9381 lagging"
         },
         "2002": {
-          "mean_pf": 0.939077,
+          "mean_pf": 0.939067,
           "pct_leading": 0.0,
           "display_pf": "0.9391 lagging"
         },
         "2003": {
-          "mean_pf": 0.940221,
+          "mean_pf": 0.940093,
           "pct_leading": 0.0,
-          "display_pf": "0.9402 lagging"
+          "display_pf": "0.9401 lagging"
         },
         "2004": {
-          "mean_pf": 0.939959,
+          "mean_pf": 0.939926,
           "pct_leading": 0.0,
-          "display_pf": "0.9400 lagging"
+          "display_pf": "0.9399 lagging"
         },
         "2005": {
-          "mean_pf": 0.944729,
+          "mean_pf": 0.944696,
           "pct_leading": 0.0,
           "display_pf": "0.9447 lagging"
         },
         "2006": {
-          "mean_pf": 0.951955,
+          "mean_pf": 0.951922,
           "pct_leading": 0.0,
-          "display_pf": "0.9520 lagging"
+          "display_pf": "0.9519 lagging"
         },
         "2007": {
-          "mean_pf": 0.955891,
+          "mean_pf": 0.955869,
           "pct_leading": 0.0,
           "display_pf": "0.9559 lagging"
         },
         "2008": {
-          "mean_pf": 0.961039,
+          "mean_pf": 0.96102,
           "pct_leading": 0.0,
           "display_pf": "0.9610 lagging"
         },
         "2009": {
-          "mean_pf": 0.968308,
+          "mean_pf": 0.968285,
           "pct_leading": 0.0,
           "display_pf": "0.9683 lagging"
         },
         "2010": {
-          "mean_pf": 0.969852,
+          "mean_pf": 0.969772,
           "pct_leading": 0.0,
-          "display_pf": "0.9699 lagging"
+          "display_pf": "0.9698 lagging"
         },
         "2011": {
-          "mean_pf": 0.972739,
+          "mean_pf": 0.972722,
           "pct_leading": 0.0,
           "display_pf": "0.9727 lagging"
         },
         "2012": {
-          "mean_pf": 0.977319,
+          "mean_pf": 0.977285,
           "pct_leading": 0.0,
           "display_pf": "0.9773 lagging"
         },
         "2013": {
-          "mean_pf": 0.980472,
+          "mean_pf": 0.980452,
           "pct_leading": 0.0,
           "display_pf": "0.9805 lagging"
         },
         "2014": {
-          "mean_pf": 0.981813,
+          "mean_pf": 0.981799,
           "pct_leading": 0.0,
           "display_pf": "0.9818 lagging"
         },
         "2015": {
-          "mean_pf": 1.016641,
+          "mean_pf": 1.074179,
           "pct_leading": 59.0,
-          "display_pf": "0.9834 leading"
+          "display_pf": "0.9258 leading"
         },
         "2016": {
-          "mean_pf": 1.021105,
+          "mean_pf": 1.06688,
           "pct_leading": 74.5,
-          "display_pf": "0.9789 leading"
+          "display_pf": "0.9331 leading"
         },
         "2017": {
-          "mean_pf": 1.014342,
+          "mean_pf": 1.021358,
           "pct_leading": 70.4,
-          "display_pf": "0.9857 leading"
+          "display_pf": "0.9786 leading"
         },
         "2018": {
-          "mean_pf": 1.019985,
+          "mean_pf": 1.041674,
           "pct_leading": 79.4,
-          "display_pf": "0.9800 leading"
+          "display_pf": "0.9583 leading"
         },
         "2019": {
-          "mean_pf": 1.022665,
+          "mean_pf": 1.097868,
           "pct_leading": 85.3,
-          "display_pf": "0.9773 leading"
+          "display_pf": "0.9021 leading"
         },
         "2020": {
-          "mean_pf": 1.027961,
+          "mean_pf": 1.12403,
           "pct_leading": 92.6,
-          "display_pf": "0.9720 leading"
+          "display_pf": "0.8760 leading"
         },
         "2021": {
-          "mean_pf": 1.028985,
+          "mean_pf": 1.137513,
           "pct_leading": 93.9,
-          "display_pf": "0.9710 leading"
+          "display_pf": "0.8625 leading"
         },
         "2022": {
-          "mean_pf": 1.024729,
+          "mean_pf": 1.046915,
           "pct_leading": 90.1,
-          "display_pf": "0.9753 leading"
+          "display_pf": "0.9531 leading"
         },
         "2023": {
-          "mean_pf": 1.028668,
+          "mean_pf": 1.077371,
           "pct_leading": 98.2,
-          "display_pf": "0.9713 leading"
+          "display_pf": "0.9226 leading"
         },
         "2024": {
-          "mean_pf": 1.031014,
+          "mean_pf": 1.134395,
           "pct_leading": 97.7,
-          "display_pf": "0.9690 leading"
+          "display_pf": "0.8656 leading"
         },
         "2025": {
-          "mean_pf": 1.032787,
+          "mean_pf": 1.149426,
           "pct_leading": 99.1,
-          "display_pf": "0.9672 leading"
+          "display_pf": "0.8506 leading"
         }
       }
     },
@@ -1390,8 +1390,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 100,
-        "pf_min": 0.75,
-        "pf_max": 1.01
+        "pf_min": 0.8,
+        "pf_max": 1.035
       },
       "stats": {
         "1997": {
@@ -1415,7 +1415,7 @@
           "display_pf": "0.9535 lagging"
         },
         "2001": {
-          "mean_pf": 0.954487,
+          "mean_pf": 0.954485,
           "pct_leading": 0.0,
           "display_pf": "0.9545 lagging"
         },
@@ -1450,9 +1450,9 @@
           "display_pf": "0.9309 lagging"
         },
         "2008": {
-          "mean_pf": 0.912188,
+          "mean_pf": 0.912045,
           "pct_leading": 0.0,
-          "display_pf": "0.9122 lagging"
+          "display_pf": "0.9120 lagging"
         },
         "2009": {
           "mean_pf": 0.919837,
@@ -1465,7 +1465,7 @@
           "display_pf": "0.9244 lagging"
         },
         "2011": {
-          "mean_pf": 0.92733,
+          "mean_pf": 0.927329,
           "pct_leading": 0.0,
           "display_pf": "0.9273 lagging"
         },
@@ -1475,12 +1475,12 @@
           "display_pf": "0.9392 lagging"
         },
         "2013": {
-          "mean_pf": 0.943816,
+          "mean_pf": 0.943814,
           "pct_leading": 0.0,
           "display_pf": "0.9438 lagging"
         },
         "2014": {
-          "mean_pf": 0.949548,
+          "mean_pf": 0.949547,
           "pct_leading": 0.0,
           "display_pf": "0.9495 lagging"
         },
@@ -1500,44 +1500,44 @@
           "display_pf": "0.9666 lagging"
         },
         "2018": {
-          "mean_pf": 0.948415,
+          "mean_pf": 0.927138,
           "pct_leading": 0.0,
-          "display_pf": "0.9484 lagging"
+          "display_pf": "0.9271 lagging"
         },
         "2019": {
-          "mean_pf": 0.903642,
+          "mean_pf": 0.836005,
           "pct_leading": 0.0,
-          "display_pf": "0.9036 lagging"
+          "display_pf": "0.8360 lagging"
         },
         "2020": {
-          "mean_pf": 0.909094,
+          "mean_pf": 0.837685,
           "pct_leading": 0.0,
-          "display_pf": "0.9091 lagging"
+          "display_pf": "0.8377 lagging"
         },
         "2021": {
-          "mean_pf": 0.913215,
+          "mean_pf": 0.857429,
           "pct_leading": 0.0,
-          "display_pf": "0.9132 lagging"
+          "display_pf": "0.8574 lagging"
         },
         "2022": {
-          "mean_pf": 0.921702,
+          "mean_pf": 0.868324,
           "pct_leading": 0.0,
-          "display_pf": "0.9217 lagging"
+          "display_pf": "0.8683 lagging"
         },
         "2023": {
-          "mean_pf": 0.92222,
+          "mean_pf": 0.835396,
           "pct_leading": 0.0,
-          "display_pf": "0.9222 lagging"
+          "display_pf": "0.8354 lagging"
         },
         "2024": {
-          "mean_pf": 0.919095,
+          "mean_pf": 0.84174,
           "pct_leading": 0.0,
-          "display_pf": "0.9191 lagging"
+          "display_pf": "0.8417 lagging"
         },
         "2025": {
-          "mean_pf": 0.932657,
+          "mean_pf": 0.874936,
           "pct_leading": 0.0,
-          "display_pf": "0.9327 lagging"
+          "display_pf": "0.8749 lagging"
         }
       }
     },
@@ -1580,8 +1580,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 150,
-        "pf_min": 0.805,
-        "pf_max": 1.135
+        "pf_min": 0.875,
+        "pf_max": 1.035
       },
       "stats": {
         "1997": {
@@ -1770,8 +1770,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 200,
-        "pf_min": 0.87,
-        "pf_max": 1.115
+        "pf_min": 0.905,
+        "pf_max": 1.04
       },
       "stats": {
         "1997": {
@@ -1915,9 +1915,9 @@
           "display_pf": "0.9929 leading"
         },
         "2025": {
-          "mean_pf": 1.006396,
+          "mean_pf": 1.006337,
           "pct_leading": 67.5,
-          "display_pf": "0.9936 leading"
+          "display_pf": "0.9937 leading"
         }
       }
     },
@@ -1960,8 +1960,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 750,
-        "pf_min": 0.915,
-        "pf_max": 1.165
+        "pf_min": 0.935,
+        "pf_max": 1.105
       },
       "stats": {
         "1997": {
@@ -2045,7 +2045,7 @@
           "display_pf": "0.9958 leading"
         },
         "2013": {
-          "mean_pf": 1.004741,
+          "mean_pf": 1.004742,
           "pct_leading": 72.0,
           "display_pf": "0.9953 leading"
         },
@@ -2150,8 +2150,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 1000,
-        "pf_min": 0.855,
-        "pf_max": 1.035
+        "pf_min": 0.88,
+        "pf_max": 1.025
       },
       "stats": {
         "1997": {
@@ -2170,134 +2170,134 @@
           "display_pf": "0.9316 lagging"
         },
         "2000": {
-          "mean_pf": 0.940523,
+          "mean_pf": 0.937925,
           "pct_leading": 0.0,
-          "display_pf": "0.9405 lagging"
+          "display_pf": "0.9379 lagging"
         },
         "2001": {
-          "mean_pf": 0.954052,
+          "mean_pf": 0.944905,
           "pct_leading": 0.0,
-          "display_pf": "0.9541 lagging"
+          "display_pf": "0.9449 lagging"
         },
         "2002": {
-          "mean_pf": 0.955333,
+          "mean_pf": 0.949001,
           "pct_leading": 0.0,
-          "display_pf": "0.9553 lagging"
+          "display_pf": "0.9490 lagging"
         },
         "2003": {
-          "mean_pf": 0.956177,
+          "mean_pf": 0.951597,
           "pct_leading": 0.0,
-          "display_pf": "0.9562 lagging"
+          "display_pf": "0.9516 lagging"
         },
         "2004": {
-          "mean_pf": 0.9497,
+          "mean_pf": 0.942137,
           "pct_leading": 0.0,
-          "display_pf": "0.9497 lagging"
+          "display_pf": "0.9421 lagging"
         },
         "2005": {
-          "mean_pf": 0.946609,
+          "mean_pf": 0.937563,
           "pct_leading": 0.0,
-          "display_pf": "0.9466 lagging"
+          "display_pf": "0.9376 lagging"
         },
         "2006": {
-          "mean_pf": 0.950978,
+          "mean_pf": 0.943162,
           "pct_leading": 0.0,
-          "display_pf": "0.9510 lagging"
+          "display_pf": "0.9432 lagging"
         },
         "2007": {
-          "mean_pf": 0.953959,
+          "mean_pf": 0.947215,
           "pct_leading": 0.0,
-          "display_pf": "0.9540 lagging"
+          "display_pf": "0.9472 lagging"
         },
         "2008": {
-          "mean_pf": 0.957917,
+          "mean_pf": 0.951996,
           "pct_leading": 0.0,
-          "display_pf": "0.9579 lagging"
+          "display_pf": "0.9520 lagging"
         },
         "2009": {
-          "mean_pf": 0.964921,
+          "mean_pf": 0.959753,
           "pct_leading": 0.0,
-          "display_pf": "0.9649 lagging"
+          "display_pf": "0.9598 lagging"
         },
         "2010": {
-          "mean_pf": 0.968824,
+          "mean_pf": 0.964492,
           "pct_leading": 0.0,
-          "display_pf": "0.9688 lagging"
+          "display_pf": "0.9645 lagging"
         },
         "2011": {
-          "mean_pf": 0.972075,
+          "mean_pf": 0.968611,
           "pct_leading": 0.0,
-          "display_pf": "0.9721 lagging"
+          "display_pf": "0.9686 lagging"
         },
         "2012": {
-          "mean_pf": 0.977183,
+          "mean_pf": 0.973832,
           "pct_leading": 0.0,
-          "display_pf": "0.9772 lagging"
+          "display_pf": "0.9738 lagging"
         },
         "2013": {
-          "mean_pf": 0.97993,
+          "mean_pf": 0.977123,
           "pct_leading": 0.0,
-          "display_pf": "0.9799 lagging"
+          "display_pf": "0.9771 lagging"
         },
         "2014": {
-          "mean_pf": 0.981746,
+          "mean_pf": 0.979211,
           "pct_leading": 0.0,
-          "display_pf": "0.9817 lagging"
+          "display_pf": "0.9792 lagging"
         },
         "2015": {
-          "mean_pf": 0.983674,
+          "mean_pf": 0.981482,
           "pct_leading": 0.0,
-          "display_pf": "0.9837 lagging"
+          "display_pf": "0.9815 lagging"
         },
         "2016": {
-          "mean_pf": 0.985957,
+          "mean_pf": 0.984239,
           "pct_leading": 0.0,
-          "display_pf": "0.9860 lagging"
+          "display_pf": "0.9842 lagging"
         },
         "2017": {
-          "mean_pf": 0.98915,
+          "mean_pf": 0.987825,
           "pct_leading": 0.6,
-          "display_pf": "0.9892 lagging"
+          "display_pf": "0.9878 lagging"
         },
         "2018": {
-          "mean_pf": 0.991186,
+          "mean_pf": 0.990232,
           "pct_leading": 2.8,
-          "display_pf": "0.9912 lagging"
+          "display_pf": "0.9902 lagging"
         },
         "2019": {
-          "mean_pf": 0.993247,
+          "mean_pf": 0.992496,
           "pct_leading": 9.2,
-          "display_pf": "0.9932 lagging"
+          "display_pf": "0.9925 lagging"
         },
         "2020": {
-          "mean_pf": 0.995346,
+          "mean_pf": 0.994864,
           "pct_leading": 16.6,
-          "display_pf": "0.9953 lagging"
+          "display_pf": "0.9949 lagging"
         },
         "2021": {
-          "mean_pf": 0.996361,
+          "mean_pf": 0.995991,
           "pct_leading": 22.0,
-          "display_pf": "0.9964 lagging"
+          "display_pf": "0.9960 lagging"
         },
         "2022": {
-          "mean_pf": 0.998069,
+          "mean_pf": 0.997888,
           "pct_leading": 32.9,
-          "display_pf": "0.9981 lagging"
+          "display_pf": "0.9979 lagging"
         },
         "2023": {
-          "mean_pf": 1.000809,
+          "mean_pf": 1.001099,
           "pct_leading": 50.3,
-          "display_pf": "0.9992 leading"
+          "display_pf": "0.9989 leading"
         },
         "2024": {
-          "mean_pf": 1.001603,
-          "pct_leading": 57.3,
-          "display_pf": "0.9984 leading"
-        },
-        "2025": {
-          "mean_pf": 1.002008,
+          "mean_pf": 1.001967,
           "pct_leading": 57.3,
           "display_pf": "0.9980 leading"
+        },
+        "2025": {
+          "mean_pf": 1.00251,
+          "pct_leading": 57.3,
+          "display_pf": "0.9975 leading"
         }
       }
     },
@@ -2340,8 +2340,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 150,
-        "pf_min": 0.75,
-        "pf_max": 1.25
+        "pf_min": 0.8,
+        "pf_max": 1.1
       },
       "stats": {
         "1997": {
@@ -2395,99 +2395,99 @@
           "display_pf": "0.9617 lagging"
         },
         "2007": {
-          "mean_pf": 0.949984,
+          "mean_pf": 0.905003,
           "pct_leading": 0.2,
-          "display_pf": "0.9500 lagging"
+          "display_pf": "0.9050 lagging"
         },
         "2008": {
-          "mean_pf": 0.933992,
+          "mean_pf": 0.835159,
           "pct_leading": 1.6,
-          "display_pf": "0.9340 lagging"
+          "display_pf": "0.8352 lagging"
         },
         "2009": {
-          "mean_pf": 0.940443,
+          "mean_pf": 0.837964,
           "pct_leading": 0.4,
-          "display_pf": "0.9404 lagging"
+          "display_pf": "0.8380 lagging"
         },
         "2010": {
-          "mean_pf": 0.945064,
+          "mean_pf": 0.840671,
           "pct_leading": 4.7,
-          "display_pf": "0.9451 lagging"
+          "display_pf": "0.8407 lagging"
         },
         "2011": {
-          "mean_pf": 0.945515,
+          "mean_pf": 0.849323,
           "pct_leading": 1.9,
-          "display_pf": "0.9455 lagging"
+          "display_pf": "0.8493 lagging"
         },
         "2012": {
-          "mean_pf": 0.94578,
+          "mean_pf": 0.85728,
           "pct_leading": 1.5,
-          "display_pf": "0.9458 lagging"
+          "display_pf": "0.8573 lagging"
         },
         "2013": {
-          "mean_pf": 0.945513,
+          "mean_pf": 0.84715,
           "pct_leading": 2.1,
-          "display_pf": "0.9455 lagging"
+          "display_pf": "0.8471 lagging"
         },
         "2014": {
-          "mean_pf": 0.94916,
+          "mean_pf": 0.871137,
           "pct_leading": 3.5,
-          "display_pf": "0.9492 lagging"
+          "display_pf": "0.8711 lagging"
         },
         "2015": {
-          "mean_pf": 0.946804,
+          "mean_pf": 0.86601,
           "pct_leading": 2.5,
-          "display_pf": "0.9468 lagging"
+          "display_pf": "0.8660 lagging"
         },
         "2016": {
-          "mean_pf": 0.946818,
+          "mean_pf": 0.861644,
           "pct_leading": 3.9,
-          "display_pf": "0.9468 lagging"
+          "display_pf": "0.8616 lagging"
         },
         "2017": {
-          "mean_pf": 0.956971,
+          "mean_pf": 0.900844,
           "pct_leading": 7.3,
-          "display_pf": "0.9570 lagging"
+          "display_pf": "0.9008 lagging"
         },
         "2018": {
-          "mean_pf": 0.960446,
+          "mean_pf": 0.920366,
           "pct_leading": 6.8,
-          "display_pf": "0.9604 lagging"
+          "display_pf": "0.9204 lagging"
         },
         "2019": {
-          "mean_pf": 0.959583,
+          "mean_pf": 0.90755,
           "pct_leading": 8.3,
-          "display_pf": "0.9596 lagging"
+          "display_pf": "0.9075 lagging"
         },
         "2020": {
-          "mean_pf": 0.967981,
+          "mean_pf": 0.929583,
           "pct_leading": 10.8,
-          "display_pf": "0.9680 lagging"
+          "display_pf": "0.9296 lagging"
         },
         "2021": {
-          "mean_pf": 0.973987,
+          "mean_pf": 0.954155,
           "pct_leading": 12.0,
-          "display_pf": "0.9740 lagging"
+          "display_pf": "0.9542 lagging"
         },
         "2022": {
-          "mean_pf": 0.984421,
+          "mean_pf": 0.980438,
           "pct_leading": 13.0,
-          "display_pf": "0.9844 lagging"
+          "display_pf": "0.9804 lagging"
         },
         "2023": {
-          "mean_pf": 0.96595,
+          "mean_pf": 0.928897,
           "pct_leading": 14.6,
-          "display_pf": "0.9660 lagging"
+          "display_pf": "0.9289 lagging"
         },
         "2024": {
-          "mean_pf": 0.945459,
+          "mean_pf": 0.898825,
           "pct_leading": 17.5,
-          "display_pf": "0.9455 lagging"
+          "display_pf": "0.8988 lagging"
         },
         "2025": {
-          "mean_pf": 0.970634,
+          "mean_pf": 0.95251,
           "pct_leading": 17.3,
-          "display_pf": "0.9706 lagging"
+          "display_pf": "0.9525 lagging"
         }
       }
     },
@@ -2530,8 +2530,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 75,
-        "pf_min": 0.75,
-        "pf_max": 1.25
+        "pf_min": 0.8,
+        "pf_max": 1.15
       },
       "stats": {
         "1997": {
@@ -2590,94 +2590,94 @@
           "display_pf": "0.9811 lagging"
         },
         "2008": {
-          "mean_pf": 0.950575,
+          "mean_pf": 0.921896,
           "pct_leading": 2.5,
-          "display_pf": "0.9506 lagging"
+          "display_pf": "0.9219 lagging"
         },
         "2009": {
-          "mean_pf": 0.92389,
+          "mean_pf": 0.848874,
           "pct_leading": 15.6,
-          "display_pf": "0.9239 lagging"
+          "display_pf": "0.8489 lagging"
         },
         "2010": {
-          "mean_pf": 0.946832,
+          "mean_pf": 0.868751,
           "pct_leading": 4.7,
-          "display_pf": "0.9468 lagging"
+          "display_pf": "0.8688 lagging"
         },
         "2011": {
-          "mean_pf": 0.974074,
+          "mean_pf": 0.919962,
           "pct_leading": 16.1,
-          "display_pf": "0.9741 lagging"
+          "display_pf": "0.9200 lagging"
         },
         "2012": {
-          "mean_pf": 1.059166,
+          "mean_pf": 1.043892,
           "pct_leading": 74.7,
-          "display_pf": "0.9408 leading"
+          "display_pf": "0.9561 leading"
         },
         "2013": {
-          "mean_pf": 1.087174,
+          "mean_pf": 1.088936,
           "pct_leading": 98.4,
-          "display_pf": "0.9128 leading"
+          "display_pf": "0.9111 leading"
         },
         "2014": {
-          "mean_pf": 1.106757,
+          "mean_pf": 1.110704,
           "pct_leading": 99.5,
-          "display_pf": "0.8932 leading"
+          "display_pf": "0.8893 leading"
         },
         "2015": {
-          "mean_pf": 1.147864,
+          "mean_pf": 1.151282,
           "pct_leading": 99.8,
-          "display_pf": "0.8521 leading"
+          "display_pf": "0.8487 leading"
         },
         "2016": {
-          "mean_pf": 1.154032,
-          "pct_leading": 96.3,
-          "display_pf": "0.8460 leading"
+          "mean_pf": 1.157049,
+          "pct_leading": 96.4,
+          "display_pf": "0.8430 leading"
         },
         "2017": {
-          "mean_pf": 1.17583,
+          "mean_pf": 1.178603,
           "pct_leading": 99.3,
-          "display_pf": "0.8242 leading"
+          "display_pf": "0.8214 leading"
         },
         "2018": {
-          "mean_pf": 1.154624,
+          "mean_pf": 1.159274,
           "pct_leading": 99.3,
-          "display_pf": "0.8454 leading"
+          "display_pf": "0.8407 leading"
         },
         "2019": {
-          "mean_pf": 1.155589,
+          "mean_pf": 1.159248,
           "pct_leading": 99.1,
-          "display_pf": "0.8444 leading"
+          "display_pf": "0.8408 leading"
         },
         "2020": {
-          "mean_pf": 1.177132,
+          "mean_pf": 1.194082,
           "pct_leading": 99.1,
-          "display_pf": "0.8229 leading"
+          "display_pf": "0.8059 leading"
         },
         "2021": {
-          "mean_pf": 1.101589,
-          "pct_leading": 78.4,
-          "display_pf": "0.8984 leading"
+          "mean_pf": 1.014602,
+          "pct_leading": 57.9,
+          "display_pf": "0.9854 leading"
         },
         "2022": {
-          "mean_pf": 1.134112,
-          "pct_leading": 74.0,
-          "display_pf": "0.8659 leading"
+          "mean_pf": 1.029169,
+          "pct_leading": 49.0,
+          "display_pf": "0.9708 leading"
         },
         "2023": {
-          "mean_pf": 1.097691,
-          "pct_leading": 75.8,
-          "display_pf": "0.9023 leading"
+          "mean_pf": 1.035025,
+          "pct_leading": 70.9,
+          "display_pf": "0.9650 leading"
         },
         "2024": {
-          "mean_pf": 1.505571,
-          "pct_leading": 98.8,
-          "display_pf": "0.4944 leading"
+          "mean_pf": 1.11087,
+          "pct_leading": 83.0,
+          "display_pf": "0.8891 leading"
         },
         "2025": {
-          "mean_pf": 1.275813,
-          "pct_leading": 93.8,
-          "display_pf": "0.7242 leading"
+          "mean_pf": 1.069934,
+          "pct_leading": 72.3,
+          "display_pf": "0.9301 leading"
         }
       }
     },
@@ -2720,8 +2720,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 300,
-        "pf_min": 0.77,
-        "pf_max": 1.04
+        "pf_min": 0.82,
+        "pf_max": 1.02
       },
       "stats": {
         "1997": {
@@ -2740,134 +2740,134 @@
           "display_pf": "0.9171 lagging"
         },
         "2000": {
-          "mean_pf": 0.915668,
+          "mean_pf": 0.914663,
           "pct_leading": 0.0,
-          "display_pf": "0.9157 lagging"
+          "display_pf": "0.9147 lagging"
         },
         "2001": {
-          "mean_pf": 0.91229,
+          "mean_pf": 0.907959,
           "pct_leading": 0.0,
-          "display_pf": "0.9123 lagging"
+          "display_pf": "0.9080 lagging"
         },
         "2002": {
-          "mean_pf": 0.900248,
+          "mean_pf": 0.895511,
           "pct_leading": 0.0,
-          "display_pf": "0.9002 lagging"
+          "display_pf": "0.8955 lagging"
         },
         "2003": {
-          "mean_pf": 0.915697,
+          "mean_pf": 0.912136,
           "pct_leading": 0.0,
-          "display_pf": "0.9157 lagging"
+          "display_pf": "0.9121 lagging"
         },
         "2004": {
-          "mean_pf": 0.918478,
+          "mean_pf": 0.910939,
           "pct_leading": 0.0,
-          "display_pf": "0.9185 lagging"
+          "display_pf": "0.9109 lagging"
         },
         "2005": {
-          "mean_pf": 0.917319,
+          "mean_pf": 0.905944,
           "pct_leading": 0.0,
-          "display_pf": "0.9173 lagging"
+          "display_pf": "0.9059 lagging"
         },
         "2006": {
-          "mean_pf": 0.92318,
+          "mean_pf": 0.909118,
           "pct_leading": 0.0,
-          "display_pf": "0.9232 lagging"
+          "display_pf": "0.9091 lagging"
         },
         "2007": {
-          "mean_pf": 0.932127,
+          "mean_pf": 0.913861,
           "pct_leading": 0.0,
-          "display_pf": "0.9321 lagging"
+          "display_pf": "0.9139 lagging"
         },
         "2008": {
-          "mean_pf": 0.946083,
+          "mean_pf": 0.932273,
           "pct_leading": 0.0,
-          "display_pf": "0.9461 lagging"
+          "display_pf": "0.9323 lagging"
         },
         "2009": {
-          "mean_pf": 0.954887,
+          "mean_pf": 0.942467,
           "pct_leading": 0.0,
-          "display_pf": "0.9549 lagging"
+          "display_pf": "0.9425 lagging"
         },
         "2010": {
-          "mean_pf": 0.960007,
+          "mean_pf": 0.937798,
           "pct_leading": 0.0,
-          "display_pf": "0.9600 lagging"
+          "display_pf": "0.9378 lagging"
         },
         "2011": {
-          "mean_pf": 0.966411,
+          "mean_pf": 0.949065,
           "pct_leading": 0.0,
-          "display_pf": "0.9664 lagging"
+          "display_pf": "0.9491 lagging"
         },
         "2012": {
-          "mean_pf": 0.968976,
+          "mean_pf": 0.949483,
           "pct_leading": 0.0,
-          "display_pf": "0.9690 lagging"
+          "display_pf": "0.9495 lagging"
         },
         "2013": {
-          "mean_pf": 0.976744,
+          "mean_pf": 0.966583,
           "pct_leading": 0.0,
-          "display_pf": "0.9767 lagging"
+          "display_pf": "0.9666 lagging"
         },
         "2014": {
-          "mean_pf": 0.975105,
+          "mean_pf": 0.962939,
           "pct_leading": 0.0,
-          "display_pf": "0.9751 lagging"
+          "display_pf": "0.9629 lagging"
         },
         "2015": {
-          "mean_pf": 0.976486,
+          "mean_pf": 0.966454,
           "pct_leading": 0.0,
-          "display_pf": "0.9765 lagging"
+          "display_pf": "0.9665 lagging"
         },
         "2016": {
-          "mean_pf": 0.977993,
+          "mean_pf": 0.967399,
           "pct_leading": 0.0,
-          "display_pf": "0.9780 lagging"
+          "display_pf": "0.9674 lagging"
         },
         "2017": {
-          "mean_pf": 0.980451,
+          "mean_pf": 0.971965,
           "pct_leading": 0.0,
-          "display_pf": "0.9805 lagging"
+          "display_pf": "0.9720 lagging"
         },
         "2018": {
-          "mean_pf": 0.982645,
+          "mean_pf": 0.974899,
           "pct_leading": 0.0,
-          "display_pf": "0.9826 lagging"
+          "display_pf": "0.9749 lagging"
         },
         "2019": {
-          "mean_pf": 0.986697,
+          "mean_pf": 0.981967,
           "pct_leading": 0.3,
-          "display_pf": "0.9867 lagging"
+          "display_pf": "0.9820 lagging"
         },
         "2020": {
-          "mean_pf": 0.989976,
+          "mean_pf": 0.986824,
           "pct_leading": 1.2,
-          "display_pf": "0.9900 lagging"
+          "display_pf": "0.9868 lagging"
         },
         "2021": {
-          "mean_pf": 0.99236,
+          "mean_pf": 0.990691,
           "pct_leading": 7.2,
-          "display_pf": "0.9924 lagging"
+          "display_pf": "0.9907 lagging"
         },
         "2022": {
-          "mean_pf": 0.992023,
+          "mean_pf": 0.989521,
           "pct_leading": 9.6,
-          "display_pf": "0.9920 lagging"
+          "display_pf": "0.9895 lagging"
         },
         "2023": {
-          "mean_pf": 0.995586,
+          "mean_pf": 0.994684,
           "pct_leading": 21.8,
-          "display_pf": "0.9956 lagging"
+          "display_pf": "0.9947 lagging"
         },
         "2024": {
-          "mean_pf": 0.994495,
+          "mean_pf": 0.994156,
           "pct_leading": 12.3,
-          "display_pf": "0.9945 lagging"
+          "display_pf": "0.9942 lagging"
         },
         "2025": {
-          "mean_pf": 0.995824,
+          "mean_pf": 0.995034,
           "pct_leading": 19.8,
-          "display_pf": "0.9958 lagging"
+          "display_pf": "0.9950 lagging"
         }
       }
     },
@@ -2910,8 +2910,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 2000,
-        "pf_min": 0.875,
-        "pf_max": 1.085
+        "pf_min": 0.92,
+        "pf_max": 1.055
       },
       "stats": {
         "1997": {
@@ -3000,12 +3000,12 @@
           "display_pf": "0.9969 lagging"
         },
         "2014": {
-          "mean_pf": 0.997122,
+          "mean_pf": 0.997121,
           "pct_leading": 35.7,
           "display_pf": "0.9971 lagging"
         },
         "2015": {
-          "mean_pf": 0.998216,
+          "mean_pf": 0.998214,
           "pct_leading": 39.5,
           "display_pf": "0.9982 lagging"
         },
@@ -3030,22 +3030,22 @@
           "display_pf": "0.9967 leading"
         },
         "2020": {
-          "mean_pf": 1.006614,
+          "mean_pf": 1.006616,
           "pct_leading": 68.7,
           "display_pf": "0.9934 leading"
         },
         "2021": {
-          "mean_pf": 1.007777,
+          "mean_pf": 1.007778,
           "pct_leading": 73.5,
           "display_pf": "0.9922 leading"
         },
         "2022": {
-          "mean_pf": 1.008932,
+          "mean_pf": 1.008936,
           "pct_leading": 77.7,
           "display_pf": "0.9911 leading"
         },
         "2023": {
-          "mean_pf": 1.009594,
+          "mean_pf": 1.009597,
           "pct_leading": 83.7,
           "display_pf": "0.9904 leading"
         },
@@ -3055,7 +3055,7 @@
           "display_pf": "0.9882 leading"
         },
         "2025": {
-          "mean_pf": 1.01319,
+          "mean_pf": 1.013193,
           "pct_leading": 96.9,
           "display_pf": "0.9868 leading"
         }
@@ -3100,8 +3100,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 300,
-        "pf_min": 0.79,
-        "pf_max": 1.195
+        "pf_min": 0.82,
+        "pf_max": 1.15
       },
       "stats": {
         "1997": {
@@ -3145,109 +3145,109 @@
           "display_pf": "0.9718 lagging"
         },
         "2005": {
-          "mean_pf": 0.974479,
+          "mean_pf": 0.974361,
           "pct_leading": 1.3,
-          "display_pf": "0.9745 lagging"
+          "display_pf": "0.9744 lagging"
         },
         "2006": {
-          "mean_pf": 0.983918,
+          "mean_pf": 0.983784,
           "pct_leading": 4.8,
-          "display_pf": "0.9839 lagging"
+          "display_pf": "0.9838 lagging"
         },
         "2007": {
-          "mean_pf": 0.983073,
+          "mean_pf": 0.983017,
           "pct_leading": 3.5,
-          "display_pf": "0.9831 lagging"
+          "display_pf": "0.9830 lagging"
         },
         "2008": {
-          "mean_pf": 0.984614,
+          "mean_pf": 0.984586,
           "pct_leading": 9.1,
           "display_pf": "0.9846 lagging"
         },
         "2009": {
-          "mean_pf": 0.990393,
+          "mean_pf": 0.990439,
           "pct_leading": 18.6,
           "display_pf": "0.9904 lagging"
         },
         "2010": {
-          "mean_pf": 0.991637,
+          "mean_pf": 0.991816,
           "pct_leading": 22.0,
-          "display_pf": "0.9916 lagging"
-        },
-        "2011": {
-          "mean_pf": 0.989282,
-          "pct_leading": 20.7,
-          "display_pf": "0.9893 lagging"
-        },
-        "2012": {
-          "mean_pf": 0.996744,
-          "pct_leading": 36.4,
-          "display_pf": "0.9967 lagging"
-        },
-        "2013": {
-          "mean_pf": 0.99179,
-          "pct_leading": 28.3,
           "display_pf": "0.9918 lagging"
         },
+        "2011": {
+          "mean_pf": 0.964199,
+          "pct_leading": 20.7,
+          "display_pf": "0.9642 lagging"
+        },
+        "2012": {
+          "mean_pf": 0.989025,
+          "pct_leading": 36.4,
+          "display_pf": "0.9890 lagging"
+        },
+        "2013": {
+          "mean_pf": 0.974681,
+          "pct_leading": 28.3,
+          "display_pf": "0.9747 lagging"
+        },
         "2014": {
-          "mean_pf": 0.99269,
+          "mean_pf": 0.977887,
           "pct_leading": 29.5,
-          "display_pf": "0.9927 lagging"
+          "display_pf": "0.9779 lagging"
         },
         "2015": {
-          "mean_pf": 0.99665,
+          "mean_pf": 0.992542,
           "pct_leading": 36.2,
-          "display_pf": "0.9966 lagging"
+          "display_pf": "0.9925 lagging"
         },
         "2016": {
-          "mean_pf": 0.999947,
+          "mean_pf": 1.002885,
           "pct_leading": 43.2,
-          "display_pf": "0.9999 lagging"
+          "display_pf": "0.9971 leading"
         },
         "2017": {
-          "mean_pf": 1.00337,
+          "mean_pf": 1.009721,
           "pct_leading": 51.0,
-          "display_pf": "0.9966 leading"
+          "display_pf": "0.9903 leading"
         },
         "2018": {
-          "mean_pf": 1.007163,
+          "mean_pf": 1.014948,
           "pct_leading": 58.2,
-          "display_pf": "0.9928 leading"
+          "display_pf": "0.9851 leading"
         },
         "2019": {
-          "mean_pf": 1.010168,
+          "mean_pf": 1.02124,
           "pct_leading": 64.0,
-          "display_pf": "0.9898 leading"
+          "display_pf": "0.9788 leading"
         },
         "2020": {
-          "mean_pf": 1.014084,
+          "mean_pf": 1.029322,
           "pct_leading": 71.9,
-          "display_pf": "0.9859 leading"
+          "display_pf": "0.9707 leading"
         },
         "2021": {
-          "mean_pf": 1.021122,
+          "mean_pf": 1.037587,
           "pct_leading": 83.7,
-          "display_pf": "0.9789 leading"
+          "display_pf": "0.9624 leading"
         },
         "2022": {
-          "mean_pf": 1.022055,
+          "mean_pf": 1.035544,
           "pct_leading": 87.7,
-          "display_pf": "0.9779 leading"
+          "display_pf": "0.9645 leading"
         },
         "2023": {
-          "mean_pf": 1.015147,
+          "mean_pf": 1.021399,
           "pct_leading": 83.3,
-          "display_pf": "0.9849 leading"
+          "display_pf": "0.9786 leading"
         },
         "2024": {
-          "mean_pf": 1.016981,
+          "mean_pf": 1.017665,
           "pct_leading": 91.5,
-          "display_pf": "0.9830 leading"
+          "display_pf": "0.9823 leading"
         },
         "2025": {
-          "mean_pf": 1.017927,
+          "mean_pf": 1.018883,
           "pct_leading": 91.6,
-          "display_pf": "0.9821 leading"
+          "display_pf": "0.9811 leading"
         }
       }
     },
@@ -3290,8 +3290,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 750,
-        "pf_min": 0.9,
-        "pf_max": 1.075
+        "pf_min": 0.925,
+        "pf_max": 1.045
       },
       "stats": {
         "1997": {
@@ -3380,64 +3380,64 @@
           "display_pf": "0.9954 lagging"
         },
         "2014": {
-          "mean_pf": 0.996643,
+          "mean_pf": 0.996586,
           "pct_leading": 26.6,
           "display_pf": "0.9966 lagging"
         },
         "2015": {
-          "mean_pf": 0.994841,
+          "mean_pf": 0.994275,
           "pct_leading": 8.1,
-          "display_pf": "0.9948 lagging"
+          "display_pf": "0.9943 lagging"
         },
         "2016": {
-          "mean_pf": 0.996674,
+          "mean_pf": 0.996227,
           "pct_leading": 16.8,
-          "display_pf": "0.9967 lagging"
+          "display_pf": "0.9962 lagging"
         },
         "2017": {
-          "mean_pf": 0.998575,
+          "mean_pf": 0.998484,
           "pct_leading": 30.3,
-          "display_pf": "0.9986 lagging"
+          "display_pf": "0.9985 lagging"
         },
         "2018": {
-          "mean_pf": 0.999306,
+          "mean_pf": 0.999304,
           "pct_leading": 38.6,
           "display_pf": "0.9993 lagging"
         },
         "2019": {
-          "mean_pf": 1.000598,
+          "mean_pf": 1.000778,
           "pct_leading": 50.2,
-          "display_pf": "0.9994 leading"
+          "display_pf": "0.9992 leading"
         },
         "2020": {
-          "mean_pf": 1.001809,
+          "mean_pf": 1.002215,
           "pct_leading": 60.5,
-          "display_pf": "0.9982 leading"
+          "display_pf": "0.9978 leading"
         },
         "2021": {
-          "mean_pf": 1.003106,
+          "mean_pf": 1.003757,
           "pct_leading": 68.9,
-          "display_pf": "0.9969 leading"
+          "display_pf": "0.9962 leading"
         },
         "2022": {
-          "mean_pf": 1.004663,
+          "mean_pf": 1.005373,
           "pct_leading": 82.0,
-          "display_pf": "0.9953 leading"
+          "display_pf": "0.9946 leading"
         },
         "2023": {
-          "mean_pf": 1.004816,
+          "mean_pf": 1.005602,
           "pct_leading": 86.5,
-          "display_pf": "0.9952 leading"
+          "display_pf": "0.9944 leading"
         },
         "2024": {
-          "mean_pf": 1.006533,
+          "mean_pf": 1.007953,
           "pct_leading": 87.7,
-          "display_pf": "0.9935 leading"
+          "display_pf": "0.9920 leading"
         },
         "2025": {
-          "mean_pf": 1.00828,
+          "mean_pf": 1.009995,
           "pct_leading": 88.9,
-          "display_pf": "0.9917 leading"
+          "display_pf": "0.9900 leading"
         }
       }
     },
@@ -3480,8 +3480,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 20,
-        "pf_min": 0.79,
-        "pf_max": 1.25
+        "pf_min": 0.85,
+        "pf_max": 1.15
       },
       "stats": {
         "1997": {
@@ -3565,7 +3565,7 @@
           "display_pf": "0.9929 lagging"
         },
         "2013": {
-          "mean_pf": 0.997809,
+          "mean_pf": 0.99781,
           "pct_leading": 23.2,
           "display_pf": "0.9978 lagging"
         },
@@ -3580,54 +3580,54 @@
           "display_pf": "0.9996 leading"
         },
         "2016": {
-          "mean_pf": 1.03943,
+          "mean_pf": 1.039447,
           "pct_leading": 78.8,
           "display_pf": "0.9606 leading"
         },
         "2017": {
-          "mean_pf": 1.052512,
+          "mean_pf": 1.052513,
           "pct_leading": 97.2,
           "display_pf": "0.9475 leading"
         },
         "2018": {
-          "mean_pf": 1.121092,
+          "mean_pf": 1.123003,
           "pct_leading": 97.9,
-          "display_pf": "0.8789 leading"
+          "display_pf": "0.8770 leading"
         },
         "2019": {
-          "mean_pf": 1.174045,
+          "mean_pf": 1.174046,
           "pct_leading": 99.8,
           "display_pf": "0.8260 leading"
         },
         "2020": {
-          "mean_pf": 1.12774,
+          "mean_pf": 1.127748,
           "pct_leading": 95.5,
           "display_pf": "0.8723 leading"
         },
         "2021": {
-          "mean_pf": 1.117587,
-          "pct_leading": 94.1,
-          "display_pf": "0.8824 leading"
+          "mean_pf": 1.12637,
+          "pct_leading": 94.2,
+          "display_pf": "0.8736 leading"
         },
         "2022": {
-          "mean_pf": 1.103002,
-          "pct_leading": 96.2,
-          "display_pf": "0.8970 leading"
+          "mean_pf": 1.112968,
+          "pct_leading": 96.3,
+          "display_pf": "0.8870 leading"
         },
         "2023": {
-          "mean_pf": 1.123067,
+          "mean_pf": 1.131409,
           "pct_leading": 98.1,
-          "display_pf": "0.8769 leading"
+          "display_pf": "0.8686 leading"
         },
         "2024": {
-          "mean_pf": 1.10406,
+          "mean_pf": 1.106533,
           "pct_leading": 98.4,
-          "display_pf": "0.8959 leading"
+          "display_pf": "0.8935 leading"
         },
         "2025": {
-          "mean_pf": 1.108839,
+          "mean_pf": 1.111186,
           "pct_leading": 99.0,
-          "display_pf": "0.8912 leading"
+          "display_pf": "0.8888 leading"
         }
       }
     },
@@ -3670,8 +3670,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 25,
-        "pf_min": 0.75,
-        "pf_max": 1.01
+        "pf_min": 0.8,
+        "pf_max": 1.015
       },
       "stats": {
         "1997": {
@@ -3860,8 +3860,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 150,
-        "pf_min": 0.75,
-        "pf_max": 1.25
+        "pf_min": 0.8,
+        "pf_max": 1.15
       },
       "stats": {
         "1997": {
@@ -3880,134 +3880,134 @@
           "display_pf": "0.9007 lagging"
         },
         "2000": {
-          "mean_pf": 0.837379,
+          "mean_pf": 0.831071,
           "pct_leading": 5.8,
-          "display_pf": "0.8374 lagging"
+          "display_pf": "0.8311 lagging"
         },
         "2001": {
-          "mean_pf": 1.026714,
+          "mean_pf": 0.941029,
           "pct_leading": 43.8,
-          "display_pf": "0.9733 leading"
+          "display_pf": "0.9410 lagging"
         },
         "2002": {
-          "mean_pf": 1.120978,
+          "mean_pf": 1.004504,
           "pct_leading": 54.6,
-          "display_pf": "0.8790 leading"
+          "display_pf": "0.9955 leading"
         },
         "2003": {
-          "mean_pf": 1.075063,
+          "mean_pf": 0.982565,
           "pct_leading": 56.4,
-          "display_pf": "0.9249 leading"
+          "display_pf": "0.9826 lagging"
         },
         "2004": {
-          "mean_pf": 1.062569,
+          "mean_pf": 0.935322,
           "pct_leading": 48.5,
-          "display_pf": "0.9374 leading"
+          "display_pf": "0.9353 lagging"
         },
         "2005": {
-          "mean_pf": 1.019734,
+          "mean_pf": 0.948926,
           "pct_leading": 41.4,
-          "display_pf": "0.9803 leading"
+          "display_pf": "0.9489 lagging"
         },
         "2006": {
-          "mean_pf": 1.094147,
+          "mean_pf": 0.955066,
           "pct_leading": 50.2,
-          "display_pf": "0.9059 leading"
+          "display_pf": "0.9551 lagging"
         },
         "2007": {
-          "mean_pf": 1.117691,
+          "mean_pf": 0.951242,
           "pct_leading": 49.9,
-          "display_pf": "0.8823 leading"
+          "display_pf": "0.9512 lagging"
         },
         "2008": {
-          "mean_pf": 1.063168,
+          "mean_pf": 1.009958,
           "pct_leading": 44.7,
-          "display_pf": "0.9368 leading"
+          "display_pf": "0.9900 leading"
         },
         "2009": {
-          "mean_pf": 1.023677,
+          "mean_pf": 1.123163,
           "pct_leading": 70.2,
-          "display_pf": "0.9763 leading"
+          "display_pf": "0.8768 leading"
         },
         "2010": {
-          "mean_pf": 1.025105,
+          "mean_pf": 1.166378,
           "pct_leading": 70.9,
-          "display_pf": "0.9749 leading"
+          "display_pf": "0.8336 leading"
         },
         "2011": {
-          "mean_pf": 1.021556,
+          "mean_pf": 1.131596,
           "pct_leading": 62.4,
-          "display_pf": "0.9784 leading"
+          "display_pf": "0.8684 leading"
         },
         "2012": {
-          "mean_pf": 1.033323,
+          "mean_pf": 1.202386,
           "pct_leading": 78.1,
-          "display_pf": "0.9667 leading"
+          "display_pf": "0.7976 leading"
         },
         "2013": {
-          "mean_pf": 1.013251,
+          "mean_pf": 1.131055,
           "pct_leading": 71.0,
-          "display_pf": "0.9867 leading"
+          "display_pf": "0.8689 leading"
         },
         "2014": {
-          "mean_pf": 1.005248,
+          "mean_pf": 1.07573,
           "pct_leading": 52.2,
-          "display_pf": "0.9948 leading"
+          "display_pf": "0.9243 leading"
         },
         "2015": {
-          "mean_pf": 1.005495,
+          "mean_pf": 1.093871,
           "pct_leading": 56.0,
-          "display_pf": "0.9945 leading"
+          "display_pf": "0.9061 leading"
         },
         "2016": {
-          "mean_pf": 1.004209,
+          "mean_pf": 1.060205,
           "pct_leading": 54.0,
-          "display_pf": "0.9958 leading"
+          "display_pf": "0.9398 leading"
         },
         "2017": {
-          "mean_pf": 1.002941,
+          "mean_pf": 1.069961,
           "pct_leading": 52.0,
-          "display_pf": "0.9971 leading"
+          "display_pf": "0.9300 leading"
         },
         "2018": {
-          "mean_pf": 1.00676,
+          "mean_pf": 1.063252,
           "pct_leading": 61.8,
-          "display_pf": "0.9932 leading"
+          "display_pf": "0.9367 leading"
         },
         "2019": {
-          "mean_pf": 1.009224,
+          "mean_pf": 1.080014,
           "pct_leading": 68.8,
-          "display_pf": "0.9908 leading"
+          "display_pf": "0.9200 leading"
         },
         "2020": {
-          "mean_pf": 1.008628,
+          "mean_pf": 1.086484,
           "pct_leading": 71.3,
-          "display_pf": "0.9914 leading"
+          "display_pf": "0.9135 leading"
         },
         "2021": {
-          "mean_pf": 1.006451,
+          "mean_pf": 1.083085,
           "pct_leading": 67.4,
-          "display_pf": "0.9935 leading"
+          "display_pf": "0.9169 leading"
         },
         "2022": {
-          "mean_pf": 1.008352,
+          "mean_pf": 1.067773,
           "pct_leading": 77.2,
-          "display_pf": "0.9916 leading"
+          "display_pf": "0.9322 leading"
         },
         "2023": {
-          "mean_pf": 1.017289,
+          "mean_pf": 1.070945,
           "pct_leading": 92.5,
-          "display_pf": "0.9827 leading"
+          "display_pf": "0.9291 leading"
         },
         "2024": {
-          "mean_pf": 1.01809,
+          "mean_pf": 1.1081,
           "pct_leading": 88.4,
-          "display_pf": "0.9819 leading"
+          "display_pf": "0.8919 leading"
         },
         "2025": {
-          "mean_pf": 1.022795,
+          "mean_pf": 1.091453,
           "pct_leading": 91.7,
-          "display_pf": "0.9772 leading"
+          "display_pf": "0.9085 leading"
         }
       }
     },
@@ -4050,8 +4050,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 100,
-        "pf_min": 0.76,
-        "pf_max": 1.225
+        "pf_min": 0.8,
+        "pf_max": 1.15
       },
       "stats": {
         "1997": {
@@ -4070,134 +4070,134 @@
           "display_pf": "0.9347 lagging"
         },
         "2000": {
-          "mean_pf": 0.937829,
+          "mean_pf": 0.904256,
           "pct_leading": 0.0,
-          "display_pf": "0.9378 lagging"
+          "display_pf": "0.9043 lagging"
         },
         "2001": {
-          "mean_pf": 0.940645,
+          "mean_pf": 0.817218,
           "pct_leading": 0.0,
-          "display_pf": "0.9406 lagging"
+          "display_pf": "0.8172 lagging"
         },
         "2002": {
-          "mean_pf": 0.94828,
+          "mean_pf": 0.817828,
           "pct_leading": 0.0,
-          "display_pf": "0.9483 lagging"
+          "display_pf": "0.8178 lagging"
         },
         "2003": {
-          "mean_pf": 0.952775,
+          "mean_pf": 0.853749,
           "pct_leading": 0.0,
-          "display_pf": "0.9528 lagging"
+          "display_pf": "0.8537 lagging"
         },
         "2004": {
-          "mean_pf": 0.957515,
+          "mean_pf": 0.834113,
           "pct_leading": 0.0,
-          "display_pf": "0.9575 lagging"
+          "display_pf": "0.8341 lagging"
         },
         "2005": {
-          "mean_pf": 0.956483,
+          "mean_pf": 0.872965,
           "pct_leading": 0.0,
-          "display_pf": "0.9565 lagging"
+          "display_pf": "0.8730 lagging"
         },
         "2006": {
-          "mean_pf": 0.96349,
+          "mean_pf": 0.856444,
           "pct_leading": 0.0,
-          "display_pf": "0.9635 lagging"
+          "display_pf": "0.8564 lagging"
         },
         "2007": {
-          "mean_pf": 0.96536,
+          "mean_pf": 0.898977,
           "pct_leading": 0.0,
-          "display_pf": "0.9654 lagging"
+          "display_pf": "0.8990 lagging"
         },
         "2008": {
-          "mean_pf": 0.967043,
+          "mean_pf": 0.905527,
           "pct_leading": 0.0,
-          "display_pf": "0.9670 lagging"
+          "display_pf": "0.9055 lagging"
         },
         "2009": {
-          "mean_pf": 0.976464,
+          "mean_pf": 0.922057,
           "pct_leading": 0.0,
-          "display_pf": "0.9765 lagging"
+          "display_pf": "0.9221 lagging"
         },
         "2010": {
-          "mean_pf": 0.977631,
+          "mean_pf": 0.934146,
           "pct_leading": 0.0,
-          "display_pf": "0.9776 lagging"
+          "display_pf": "0.9341 lagging"
         },
         "2011": {
-          "mean_pf": 0.978173,
+          "mean_pf": 0.931509,
           "pct_leading": 0.0,
-          "display_pf": "0.9782 lagging"
+          "display_pf": "0.9315 lagging"
         },
         "2012": {
-          "mean_pf": 0.981041,
+          "mean_pf": 0.929698,
           "pct_leading": 0.0,
-          "display_pf": "0.9810 lagging"
+          "display_pf": "0.9297 lagging"
         },
         "2013": {
-          "mean_pf": 0.967243,
+          "mean_pf": 0.923725,
           "pct_leading": 0.0,
-          "display_pf": "0.9672 lagging"
+          "display_pf": "0.9237 lagging"
         },
         "2014": {
-          "mean_pf": 0.969687,
+          "mean_pf": 0.922967,
           "pct_leading": 0.5,
-          "display_pf": "0.9697 lagging"
+          "display_pf": "0.9230 lagging"
         },
         "2015": {
-          "mean_pf": 0.973505,
+          "mean_pf": 0.925777,
           "pct_leading": 2.3,
-          "display_pf": "0.9735 lagging"
+          "display_pf": "0.9258 lagging"
         },
         "2016": {
-          "mean_pf": 0.981734,
+          "mean_pf": 0.941674,
           "pct_leading": 6.6,
-          "display_pf": "0.9817 lagging"
+          "display_pf": "0.9417 lagging"
         },
         "2017": {
-          "mean_pf": 0.985038,
+          "mean_pf": 0.938938,
           "pct_leading": 16.7,
-          "display_pf": "0.9850 lagging"
+          "display_pf": "0.9389 lagging"
         },
         "2018": {
-          "mean_pf": 0.984395,
+          "mean_pf": 0.95289,
           "pct_leading": 19.7,
-          "display_pf": "0.9844 lagging"
+          "display_pf": "0.9529 lagging"
         },
         "2019": {
-          "mean_pf": 0.993444,
+          "mean_pf": 0.985855,
           "pct_leading": 34.6,
-          "display_pf": "0.9934 lagging"
+          "display_pf": "0.9859 lagging"
         },
         "2020": {
-          "mean_pf": 0.996376,
+          "mean_pf": 0.991635,
           "pct_leading": 38.8,
-          "display_pf": "0.9964 lagging"
+          "display_pf": "0.9916 lagging"
         },
         "2021": {
-          "mean_pf": 0.999981,
+          "mean_pf": 0.997331,
           "pct_leading": 49.0,
-          "display_pf": "1.0000 lagging"
+          "display_pf": "0.9973 lagging"
         },
         "2022": {
-          "mean_pf": 1.005753,
+          "mean_pf": 1.008044,
           "pct_leading": 63.5,
-          "display_pf": "0.9942 leading"
+          "display_pf": "0.9920 leading"
         },
         "2023": {
-          "mean_pf": 1.00858,
+          "mean_pf": 1.01471,
           "pct_leading": 74.4,
-          "display_pf": "0.9914 leading"
+          "display_pf": "0.9853 leading"
         },
         "2024": {
-          "mean_pf": 1.012077,
+          "mean_pf": 1.016263,
           "pct_leading": 85.8,
-          "display_pf": "0.9879 leading"
+          "display_pf": "0.9837 leading"
         },
         "2025": {
-          "mean_pf": 1.012729,
+          "mean_pf": 1.017684,
           "pct_leading": 85.4,
-          "display_pf": "0.9873 leading"
+          "display_pf": "0.9823 leading"
         }
       }
     },
@@ -4240,8 +4240,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 150,
-        "pf_min": 0.88,
-        "pf_max": 1.115
+        "pf_min": 0.905,
+        "pf_max": 1.06
       },
       "stats": {
         "1997": {
@@ -4345,7 +4345,7 @@
           "display_pf": "0.9996 lagging"
         },
         "2017": {
-          "mean_pf": 1.001171,
+          "mean_pf": 1.001177,
           "pct_leading": 59.3,
           "display_pf": "0.9988 leading"
         },
@@ -4355,37 +4355,37 @@
           "display_pf": "0.9940 leading"
         },
         "2019": {
-          "mean_pf": 1.003447,
+          "mean_pf": 1.003472,
           "pct_leading": 63.7,
-          "display_pf": "0.9966 leading"
+          "display_pf": "0.9965 leading"
         },
         "2020": {
-          "mean_pf": 1.00428,
+          "mean_pf": 1.004313,
           "pct_leading": 64.8,
           "display_pf": "0.9957 leading"
         },
         "2021": {
-          "mean_pf": 1.005293,
+          "mean_pf": 1.00531,
           "pct_leading": 66.3,
           "display_pf": "0.9947 leading"
         },
         "2022": {
-          "mean_pf": 1.008619,
+          "mean_pf": 1.008639,
           "pct_leading": 79.4,
           "display_pf": "0.9914 leading"
         },
         "2023": {
-          "mean_pf": 1.009463,
+          "mean_pf": 1.009466,
           "pct_leading": 78.9,
           "display_pf": "0.9905 leading"
         },
         "2024": {
-          "mean_pf": 1.005621,
+          "mean_pf": 1.005682,
           "pct_leading": 65.5,
-          "display_pf": "0.9944 leading"
+          "display_pf": "0.9943 leading"
         },
         "2025": {
-          "mean_pf": 1.010695,
+          "mean_pf": 1.0107,
           "pct_leading": 77.8,
           "display_pf": "0.9893 leading"
         }
@@ -4430,8 +4430,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 75,
-        "pf_min": 0.75,
-        "pf_max": 1.045
+        "pf_min": 0.84,
+        "pf_max": 1.03
       },
       "stats": {
         "1997": {
@@ -4620,8 +4620,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 30,
-        "pf_min": 0.75,
-        "pf_max": 1.25
+        "pf_min": 0.8,
+        "pf_max": 1.15
       },
       "stats": {
         "1997": {
@@ -4715,59 +4715,59 @@
           "display_pf": "0.9848 lagging"
         },
         "2015": {
-          "mean_pf": 0.685523,
+          "mean_pf": 0.835454,
           "pct_leading": 0.4,
-          "display_pf": "0.6855 lagging"
+          "display_pf": "0.8355 lagging"
         },
         "2016": {
-          "mean_pf": 0.663232,
+          "mean_pf": 0.826595,
           "pct_leading": 6.3,
-          "display_pf": "0.6632 lagging"
+          "display_pf": "0.8266 lagging"
         },
         "2017": {
-          "mean_pf": 0.774926,
+          "mean_pf": 0.929055,
           "pct_leading": 24.8,
-          "display_pf": "0.7749 lagging"
+          "display_pf": "0.9291 lagging"
         },
         "2018": {
-          "mean_pf": 0.585165,
+          "mean_pf": 0.827689,
           "pct_leading": 21.2,
-          "display_pf": "0.5852 lagging"
+          "display_pf": "0.8277 lagging"
         },
         "2019": {
-          "mean_pf": 0.623351,
+          "mean_pf": 0.77157,
           "pct_leading": 23.2,
-          "display_pf": "0.6234 lagging"
+          "display_pf": "0.7716 lagging"
         },
         "2020": {
-          "mean_pf": 0.584121,
+          "mean_pf": 0.686831,
           "pct_leading": 14.6,
-          "display_pf": "0.5841 lagging"
+          "display_pf": "0.6868 lagging"
         },
         "2021": {
-          "mean_pf": 0.451649,
+          "mean_pf": 0.756204,
           "pct_leading": 14.3,
-          "display_pf": "0.4516 lagging"
+          "display_pf": "0.7562 lagging"
         },
         "2022": {
-          "mean_pf": 0.658105,
+          "mean_pf": 0.807429,
           "pct_leading": 27.3,
-          "display_pf": "0.6581 lagging"
+          "display_pf": "0.8074 lagging"
         },
         "2023": {
-          "mean_pf": 0.463014,
+          "mean_pf": 0.770177,
           "pct_leading": 20.1,
-          "display_pf": "0.4630 lagging"
+          "display_pf": "0.7702 lagging"
         },
         "2024": {
-          "mean_pf": 0.714931,
+          "mean_pf": 0.83737,
           "pct_leading": 41.2,
-          "display_pf": "0.7149 lagging"
+          "display_pf": "0.8374 lagging"
         },
         "2025": {
-          "mean_pf": 0.572216,
-          "pct_leading": 23.9,
-          "display_pf": "0.5722 lagging"
+          "mean_pf": 0.838047,
+          "pct_leading": 23.8,
+          "display_pf": "0.8380 lagging"
         }
       }
     },
@@ -4810,8 +4810,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 75,
-        "pf_min": 0.835,
-        "pf_max": 1.06
+        "pf_min": 0.8,
+        "pf_max": 1.075
       },
       "stats": {
         "1997": {
@@ -4905,59 +4905,59 @@
           "display_pf": "0.9800 lagging"
         },
         "2015": {
-          "mean_pf": 0.987865,
+          "mean_pf": 0.960185,
           "pct_leading": 2.0,
-          "display_pf": "0.9879 lagging"
+          "display_pf": "0.9602 lagging"
         },
         "2016": {
-          "mean_pf": 0.989786,
+          "mean_pf": 0.917625,
           "pct_leading": 7.3,
-          "display_pf": "0.9898 lagging"
+          "display_pf": "0.9176 lagging"
         },
         "2017": {
-          "mean_pf": 0.989794,
+          "mean_pf": 0.917938,
           "pct_leading": 5.2,
-          "display_pf": "0.9898 lagging"
+          "display_pf": "0.9179 lagging"
         },
         "2018": {
-          "mean_pf": 0.990791,
+          "mean_pf": 0.944667,
           "pct_leading": 6.4,
-          "display_pf": "0.9908 lagging"
+          "display_pf": "0.9447 lagging"
         },
         "2019": {
-          "mean_pf": 0.988652,
+          "mean_pf": 0.930059,
           "pct_leading": 12.2,
-          "display_pf": "0.9887 lagging"
+          "display_pf": "0.9301 lagging"
         },
         "2020": {
-          "mean_pf": 0.985445,
+          "mean_pf": 0.843819,
           "pct_leading": 11.0,
-          "display_pf": "0.9854 lagging"
+          "display_pf": "0.8438 lagging"
         },
         "2021": {
-          "mean_pf": 0.988533,
+          "mean_pf": 0.918618,
           "pct_leading": 16.6,
-          "display_pf": "0.9885 lagging"
+          "display_pf": "0.9186 lagging"
         },
         "2022": {
-          "mean_pf": 0.990642,
+          "mean_pf": 0.986173,
           "pct_leading": 15.1,
-          "display_pf": "0.9906 lagging"
+          "display_pf": "0.9862 lagging"
         },
         "2023": {
-          "mean_pf": 0.987128,
+          "mean_pf": 0.885644,
           "pct_leading": 18.2,
-          "display_pf": "0.9871 lagging"
+          "display_pf": "0.8856 lagging"
         },
         "2024": {
-          "mean_pf": 0.988235,
+          "mean_pf": 0.858302,
           "pct_leading": 28.0,
-          "display_pf": "0.9882 lagging"
+          "display_pf": "0.8583 lagging"
         },
         "2025": {
-          "mean_pf": 0.990166,
+          "mean_pf": 0.919348,
           "pct_leading": 23.7,
-          "display_pf": "0.9902 lagging"
+          "display_pf": "0.9193 lagging"
         }
       }
     },
@@ -5000,8 +5000,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 75,
-        "pf_min": 0.75,
-        "pf_max": 1.235
+        "pf_min": 0.88,
+        "pf_max": 1.02
       },
       "stats": {
         "1997": {
@@ -5020,17 +5020,17 @@
           "display_pf": "0.9445 lagging"
         },
         "2000": {
-          "mean_pf": 0.96674,
+          "mean_pf": 0.966735,
           "pct_leading": 0.0,
           "display_pf": "0.9667 lagging"
         },
         "2001": {
-          "mean_pf": 0.96756,
+          "mean_pf": 0.967558,
           "pct_leading": 0.0,
           "display_pf": "0.9676 lagging"
         },
         "2002": {
-          "mean_pf": 0.968011,
+          "mean_pf": 0.968004,
           "pct_leading": 0.0,
           "display_pf": "0.9680 lagging"
         },
@@ -5040,22 +5040,22 @@
           "display_pf": "0.9724 lagging"
         },
         "2004": {
-          "mean_pf": 0.974197,
+          "mean_pf": 0.974196,
           "pct_leading": 0.0,
           "display_pf": "0.9742 lagging"
         },
         "2005": {
-          "mean_pf": 0.966147,
+          "mean_pf": 0.966145,
           "pct_leading": 0.0,
           "display_pf": "0.9661 lagging"
         },
         "2006": {
-          "mean_pf": 0.975049,
+          "mean_pf": 0.975048,
           "pct_leading": 0.0,
           "display_pf": "0.9750 lagging"
         },
         "2007": {
-          "mean_pf": 0.976608,
+          "mean_pf": 0.976607,
           "pct_leading": 0.0,
           "display_pf": "0.9766 lagging"
         },
@@ -5090,7 +5090,7 @@
           "display_pf": "0.9764 lagging"
         },
         "2014": {
-          "mean_pf": 0.967338,
+          "mean_pf": 0.967337,
           "pct_leading": 0.2,
           "display_pf": "0.9673 lagging"
         },
@@ -5100,52 +5100,52 @@
           "display_pf": "0.9796 lagging"
         },
         "2016": {
-          "mean_pf": 0.990809,
+          "mean_pf": 0.990819,
           "pct_leading": 7.9,
           "display_pf": "0.9908 lagging"
         },
         "2017": {
-          "mean_pf": 0.989821,
+          "mean_pf": 0.989823,
           "pct_leading": 5.7,
           "display_pf": "0.9898 lagging"
         },
         "2018": {
-          "mean_pf": 0.990083,
+          "mean_pf": 0.990053,
           "pct_leading": 6.0,
           "display_pf": "0.9901 lagging"
         },
         "2019": {
-          "mean_pf": 0.986974,
+          "mean_pf": 0.986984,
           "pct_leading": 3.7,
           "display_pf": "0.9870 lagging"
         },
         "2020": {
-          "mean_pf": 0.992108,
+          "mean_pf": 0.992111,
           "pct_leading": 6.1,
           "display_pf": "0.9921 lagging"
         },
         "2021": {
-          "mean_pf": 0.986585,
+          "mean_pf": 0.986562,
           "pct_leading": 15.1,
           "display_pf": "0.9866 lagging"
         },
         "2022": {
-          "mean_pf": 0.985009,
+          "mean_pf": 0.984974,
           "pct_leading": 4.9,
           "display_pf": "0.9850 lagging"
         },
         "2023": {
-          "mean_pf": 0.998894,
+          "mean_pf": 0.998921,
           "pct_leading": 34.9,
           "display_pf": "0.9989 lagging"
         },
         "2024": {
-          "mean_pf": 0.985597,
+          "mean_pf": 0.985617,
           "pct_leading": 4.8,
           "display_pf": "0.9856 lagging"
         },
         "2025": {
-          "mean_pf": 0.993492,
+          "mean_pf": 0.993509,
           "pct_leading": 13.0,
           "display_pf": "0.9935 lagging"
         }
@@ -5190,8 +5190,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 20,
-        "pf_min": 0.85,
-        "pf_max": 1.04
+        "pf_min": 0.895,
+        "pf_max": 1.03
       },
       "stats": {
         "1997": {
@@ -5380,8 +5380,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 50,
-        "pf_min": 0.75,
-        "pf_max": 1.02
+        "pf_min": 0.8,
+        "pf_max": 1.025
       },
       "stats": {
         "1997": {
@@ -5400,134 +5400,134 @@
           "display_pf": "0.9181 lagging"
         },
         "2000": {
-          "mean_pf": 0.926253,
+          "mean_pf": 0.925609,
           "pct_leading": 0.0,
-          "display_pf": "0.9263 lagging"
+          "display_pf": "0.9256 lagging"
         },
         "2001": {
-          "mean_pf": 0.924724,
+          "mean_pf": 0.922535,
           "pct_leading": 0.0,
-          "display_pf": "0.9247 lagging"
+          "display_pf": "0.9225 lagging"
         },
         "2002": {
-          "mean_pf": 0.906032,
+          "mean_pf": 0.901427,
           "pct_leading": 0.0,
-          "display_pf": "0.9060 lagging"
+          "display_pf": "0.9014 lagging"
         },
         "2003": {
-          "mean_pf": 0.90089,
+          "mean_pf": 0.891434,
+          "pct_leading": 0.0,
+          "display_pf": "0.8914 lagging"
+        },
+        "2004": {
+          "mean_pf": 0.89105,
+          "pct_leading": 0.0,
+          "display_pf": "0.8911 lagging"
+        },
+        "2005": {
+          "mean_pf": 0.915467,
+          "pct_leading": 0.0,
+          "display_pf": "0.9155 lagging"
+        },
+        "2006": {
+          "mean_pf": 0.899568,
+          "pct_leading": 0.0,
+          "display_pf": "0.8996 lagging"
+        },
+        "2007": {
+          "mean_pf": 0.900875,
           "pct_leading": 0.0,
           "display_pf": "0.9009 lagging"
         },
-        "2004": {
-          "mean_pf": 0.899797,
-          "pct_leading": 0.0,
-          "display_pf": "0.8998 lagging"
-        },
-        "2005": {
-          "mean_pf": 0.923635,
-          "pct_leading": 0.0,
-          "display_pf": "0.9236 lagging"
-        },
-        "2006": {
-          "mean_pf": 0.904899,
-          "pct_leading": 0.0,
-          "display_pf": "0.9049 lagging"
-        },
-        "2007": {
-          "mean_pf": 0.904149,
-          "pct_leading": 0.0,
-          "display_pf": "0.9041 lagging"
-        },
         "2008": {
-          "mean_pf": 0.91186,
+          "mean_pf": 0.908121,
           "pct_leading": 0.0,
-          "display_pf": "0.9119 lagging"
+          "display_pf": "0.9081 lagging"
         },
         "2009": {
-          "mean_pf": 0.917323,
+          "mean_pf": 0.91465,
           "pct_leading": 0.0,
-          "display_pf": "0.9173 lagging"
+          "display_pf": "0.9147 lagging"
         },
         "2010": {
-          "mean_pf": 0.926004,
+          "mean_pf": 0.922457,
           "pct_leading": 0.0,
-          "display_pf": "0.9260 lagging"
+          "display_pf": "0.9225 lagging"
         },
         "2011": {
-          "mean_pf": 0.925665,
+          "mean_pf": 0.918454,
           "pct_leading": 0.0,
-          "display_pf": "0.9257 lagging"
+          "display_pf": "0.9185 lagging"
         },
         "2012": {
-          "mean_pf": 0.939159,
+          "mean_pf": 0.932249,
           "pct_leading": 0.1,
-          "display_pf": "0.9392 lagging"
+          "display_pf": "0.9322 lagging"
         },
         "2013": {
-          "mean_pf": 0.933732,
+          "mean_pf": 0.927605,
           "pct_leading": 0.0,
-          "display_pf": "0.9337 lagging"
+          "display_pf": "0.9276 lagging"
         },
         "2014": {
-          "mean_pf": 0.931876,
+          "mean_pf": 0.928517,
           "pct_leading": 0.0,
-          "display_pf": "0.9319 lagging"
+          "display_pf": "0.9285 lagging"
         },
         "2015": {
-          "mean_pf": 0.929789,
+          "mean_pf": 0.926791,
           "pct_leading": 0.0,
-          "display_pf": "0.9298 lagging"
+          "display_pf": "0.9268 lagging"
         },
         "2016": {
-          "mean_pf": 0.948369,
+          "mean_pf": 0.945382,
           "pct_leading": 0.0,
-          "display_pf": "0.9484 lagging"
+          "display_pf": "0.9454 lagging"
         },
         "2017": {
-          "mean_pf": 0.954146,
+          "mean_pf": 0.950567,
           "pct_leading": 0.1,
-          "display_pf": "0.9541 lagging"
+          "display_pf": "0.9506 lagging"
         },
         "2018": {
-          "mean_pf": 0.959418,
+          "mean_pf": 0.9572,
           "pct_leading": 0.1,
-          "display_pf": "0.9594 lagging"
+          "display_pf": "0.9572 lagging"
         },
         "2019": {
-          "mean_pf": 0.965477,
+          "mean_pf": 0.963445,
           "pct_leading": 0.4,
-          "display_pf": "0.9655 lagging"
+          "display_pf": "0.9634 lagging"
         },
         "2020": {
-          "mean_pf": 0.971876,
+          "mean_pf": 0.970706,
           "pct_leading": 2.3,
-          "display_pf": "0.9719 lagging"
+          "display_pf": "0.9707 lagging"
         },
         "2021": {
-          "mean_pf": 0.973144,
+          "mean_pf": 0.972332,
           "pct_leading": 0.3,
-          "display_pf": "0.9731 lagging"
+          "display_pf": "0.9723 lagging"
         },
         "2022": {
-          "mean_pf": 0.969205,
+          "mean_pf": 0.964655,
           "pct_leading": 0.8,
-          "display_pf": "0.9692 lagging"
+          "display_pf": "0.9647 lagging"
         },
         "2023": {
-          "mean_pf": 0.972554,
+          "mean_pf": 0.969683,
           "pct_leading": 0.5,
-          "display_pf": "0.9726 lagging"
+          "display_pf": "0.9697 lagging"
         },
         "2024": {
-          "mean_pf": 0.973152,
+          "mean_pf": 0.971862,
           "pct_leading": 0.5,
-          "display_pf": "0.9732 lagging"
+          "display_pf": "0.9719 lagging"
         },
         "2025": {
-          "mean_pf": 0.974119,
+          "mean_pf": 0.972626,
           "pct_leading": 0.7,
-          "display_pf": "0.9741 lagging"
+          "display_pf": "0.9726 lagging"
         }
       }
     },
@@ -5570,8 +5570,8 @@
       "axis": {
         "p_min": 0,
         "p_max": 100,
-        "pf_min": 0.805,
-        "pf_max": 1.02
+        "pf_min": 0.88,
+        "pf_max": 1.015
       },
       "stats": {
         "1997": {
@@ -5759,9 +5759,9 @@
       ],
       "axis": {
         "p_min": 0,
-        "p_max": 50,
-        "pf_min": 0.75,
-        "pf_max": 1.25
+        "p_max": 40,
+        "pf_min": 0.8,
+        "pf_max": 1.15
       },
       "stats": {
         "1997": {
@@ -5780,134 +5780,134 @@
           "display_pf": "0.8330 lagging"
         },
         "2000": {
-          "mean_pf": 0.878067,
+          "mean_pf": 0.871139,
           "pct_leading": 2.1,
-          "display_pf": "0.8781 lagging"
+          "display_pf": "0.8711 lagging"
         },
         "2001": {
-          "mean_pf": 0.975141,
+          "mean_pf": 0.949525,
           "pct_leading": 9.0,
-          "display_pf": "0.9751 lagging"
+          "display_pf": "0.9495 lagging"
         },
         "2002": {
-          "mean_pf": 0.971953,
+          "mean_pf": 0.940086,
           "pct_leading": 7.7,
-          "display_pf": "0.9720 lagging"
+          "display_pf": "0.9401 lagging"
         },
         "2003": {
-          "mean_pf": 0.979853,
+          "mean_pf": 0.962337,
           "pct_leading": 11.5,
-          "display_pf": "0.9799 lagging"
+          "display_pf": "0.9623 lagging"
         },
         "2004": {
-          "mean_pf": 0.997255,
+          "mean_pf": 0.993778,
           "pct_leading": 41.9,
-          "display_pf": "0.9973 lagging"
+          "display_pf": "0.9938 lagging"
         },
         "2005": {
-          "mean_pf": 1.002369,
+          "mean_pf": 1.000719,
           "pct_leading": 58.5,
-          "display_pf": "0.9976 leading"
+          "display_pf": "0.9993 leading"
         },
         "2006": {
-          "mean_pf": 0.999454,
+          "mean_pf": 0.998043,
           "pct_leading": 46.0,
-          "display_pf": "0.9995 lagging"
+          "display_pf": "0.9980 lagging"
         },
         "2007": {
-          "mean_pf": 1.001568,
+          "mean_pf": 1.000786,
           "pct_leading": 58.8,
-          "display_pf": "0.9984 leading"
+          "display_pf": "0.9992 leading"
         },
         "2008": {
-          "mean_pf": 1.004128,
+          "mean_pf": 1.005258,
           "pct_leading": 76.8,
-          "display_pf": "0.9959 leading"
+          "display_pf": "0.9947 leading"
         },
         "2009": {
-          "mean_pf": 1.006785,
+          "mean_pf": 1.007999,
           "pct_leading": 84.5,
-          "display_pf": "0.9932 leading"
+          "display_pf": "0.9920 leading"
         },
         "2010": {
-          "mean_pf": 1.017486,
+          "mean_pf": 1.021016,
           "pct_leading": 90.9,
-          "display_pf": "0.9825 leading"
+          "display_pf": "0.9790 leading"
         },
         "2011": {
-          "mean_pf": 1.026512,
+          "mean_pf": 1.033226,
           "pct_leading": 97.2,
-          "display_pf": "0.9735 leading"
+          "display_pf": "0.9668 leading"
         },
         "2012": {
-          "mean_pf": 1.032736,
+          "mean_pf": 1.03944,
           "pct_leading": 98.8,
-          "display_pf": "0.9673 leading"
+          "display_pf": "0.9606 leading"
         },
         "2013": {
-          "mean_pf": 1.016513,
+          "mean_pf": 1.016905,
           "pct_leading": 80.0,
-          "display_pf": "0.9835 leading"
+          "display_pf": "0.9831 leading"
         },
         "2014": {
-          "mean_pf": 0.999745,
+          "mean_pf": 0.98958,
           "pct_leading": 50.8,
-          "display_pf": "0.9997 lagging"
+          "display_pf": "0.9896 lagging"
         },
         "2015": {
-          "mean_pf": 0.997528,
+          "mean_pf": 0.981886,
           "pct_leading": 47.9,
-          "display_pf": "0.9975 lagging"
+          "display_pf": "0.9819 lagging"
         },
         "2016": {
-          "mean_pf": 0.978825,
+          "mean_pf": 0.890976,
           "pct_leading": 38.9,
-          "display_pf": "0.9788 lagging"
+          "display_pf": "0.8910 lagging"
         },
         "2017": {
-          "mean_pf": 0.983438,
+          "mean_pf": 0.916609,
           "pct_leading": 44.0,
-          "display_pf": "0.9834 lagging"
+          "display_pf": "0.9166 lagging"
         },
         "2018": {
-          "mean_pf": 0.964892,
+          "mean_pf": 0.88087,
           "pct_leading": 30.2,
-          "display_pf": "0.9649 lagging"
+          "display_pf": "0.8809 lagging"
         },
         "2019": {
-          "mean_pf": 0.988509,
+          "mean_pf": 0.934364,
           "pct_leading": 40.9,
-          "display_pf": "0.9885 lagging"
+          "display_pf": "0.9344 lagging"
         },
         "2020": {
-          "mean_pf": 1.001954,
+          "mean_pf": 0.971748,
           "pct_leading": 53.8,
-          "display_pf": "0.9980 leading"
+          "display_pf": "0.9717 lagging"
         },
         "2021": {
-          "mean_pf": 0.975616,
+          "mean_pf": 0.858834,
           "pct_leading": 26.5,
-          "display_pf": "0.9756 lagging"
+          "display_pf": "0.8588 lagging"
         },
         "2022": {
-          "mean_pf": 0.99216,
+          "mean_pf": 0.924059,
           "pct_leading": 50.9,
-          "display_pf": "0.9922 lagging"
+          "display_pf": "0.9241 lagging"
         },
         "2023": {
-          "mean_pf": 0.977747,
+          "mean_pf": 0.913239,
           "pct_leading": 30.5,
-          "display_pf": "0.9777 lagging"
+          "display_pf": "0.9132 lagging"
         },
         "2024": {
-          "mean_pf": 0.989242,
+          "mean_pf": 0.936184,
           "pct_leading": 44.7,
-          "display_pf": "0.9892 lagging"
+          "display_pf": "0.9362 lagging"
         },
         "2025": {
-          "mean_pf": 1.02035,
+          "mean_pf": 1.013281,
           "pct_leading": 81.5,
-          "display_pf": "0.9797 leading"
+          "display_pf": "0.9867 leading"
         }
       }
     }
