@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "Multi-bus phasor tool — representative NZ 220 kV → 400 V radial cascade",
+    "created": "2026-07-14",
+    "hat": "Gridlytics / public physics (generic, representative values; no confidential specifics)",
+    "baseMVA": 100.0,
+    "f0_Hz": 50.0,
+    "model_note": [
+      "Single 'equivalent GXP feeder': one representative path from the grid down to the",
+      "customer LV bus, with each level's parallel plant aggregated (series Z divided,",
+      "shunt charging multiplied) so the whole path carries a realistic GXP's worth of",
+      "load and cable charging. Aggregation tree from transit_ladder.py: 4 zone subs x 4",
+      "feeders/zone x 6 DTx/feeder = 96 DTx. This makes the transmission-to-LV physics",
+      "visible on a single string; it is NOT a literal single 500 kVA transformer.",
+      "A hidden ideal slack ('GRID') sits behind a grid Thevenin reactance so the 220 kV",
+      "bus (B1) responds to reactive injection/absorption — that is what lets the STATCOM",
+      "demonstration ('the 220 kV comes down') actually move the 220 kV voltage."
+    ],
+    "sources": {
+      "transmission": "tools/models/ac-powerflow (PSS/E-derived NZ grid; real Albany-Silverdale 220 kV + SVL/ALB 220/33 transformers). System base 100 MVA.",
+      "distribution": "research/distribution-kb + clients/ea/power-factor/lib/transit_ladder.py (DH-reviewed 13 Jul 2026 'about right') + standard NZ/IEC cable & transformer data.",
+      "voltage_limits": "Electricity (Safety) Regulations reg 28: 230 V nominal, +/-10% (from 13 Nov 2025, SL 2025/225) = 207-253 V; was +/-6% = 216.2-243.8 V."
+    }
+  },
+
+  "buses": [
+    { "id": "GRID", "name": "Grid EMF (system Thevenin source)", "kV": 220.0, "type": "slack", "Vset": 1.00, "level": "220 kV", "hidden": true },
+    { "id": "B1", "name": "220 kV bus (device: STATCOM / reactor)", "kV": 220.0, "type": "PQ", "P": 0, "Q": 0, "Bs": 0.0, "level": "220 kV",
+      "note": "Bs is the shunt device (STATCOM/reactor). Bs<0 absorbs vars (reactor/STATCOM-absorb); Bs>0 injects (cap). Default off." },
+    { "id": "B2", "name": "GXP 220 kV incomer", "kV": 220.0, "type": "PQ", "P": 0, "Q": 0, "level": "220 kV" },
+    { "id": "B3", "name": "GXP 33 kV bus (OLTC-regulated)", "kV": 33.0, "type": "PQ", "P": 0, "Q": 0, "level": "33 kV" },
+    { "id": "B4", "name": "Zone-sub 33 kV incomer", "kV": 33.0, "type": "PQ", "P": 0, "Q": 0, "level": "33 kV" },
+    { "id": "B5", "name": "Zone-sub 11 kV bus (OLTC-regulated)", "kV": 11.0, "type": "PQ", "P": 0, "Q": 0, "level": "11 kV" },
+    { "id": "B6", "name": "11 kV feeder end", "kV": 11.0, "type": "PQ", "P": 0, "Q": 0, "level": "11 kV" },
+    { "id": "B7", "name": "Distribution-transformer LV terminal (400 V)", "kV": 0.4, "type": "PQ", "P": 0, "Q": 0, "level": "400 V" },
+    { "id": "B8", "name": "Customer LV bus (230 V) — load + LV cable C", "kV": 0.4, "type": "PQ", "P": 60.0, "Q": 20.0, "Bs": 0.0005, "level": "230 V",
+      "note": "Aggregate GXP load lives here. Leading (capacitive) customer equipment is represented by Q<0. Bs is small residual LV cable charging." }
+  ],
+
+  "branches": [
+    { "id": "grid_thev", "name": "Grid Thevenin (system strength)", "from": "GRID", "to": "B1", "type": "line",
+      "r": 0.004, "x": 0.040, "b": 0.0,
+      "source": "System short-circuit strength at a 220 kV bus ~2.5 GVA fault level -> Z=100/2500=0.04 pu; X/R~10. Representative (ac-powerflow population). This is what makes B1 (220 kV) move when the device injects/absorbs Q." },
+
+    { "id": "line_220", "name": "220 kV short line (GXP incomer)", "from": "B1", "to": "B2", "type": "line",
+      "r": 0.002, "x": 0.015, "b": 0.0187,
+      "source": "Short 220 kV incomer. transit_ladder.py:83 (0.002+j0.015). Charging b=0.0187 pu from real Albany-Silverdale 220 kV line (ac-powerflow North_Island_peak_winter_2024.raw:962). X/R=7.5." },
+
+    { "id": "tx_220_33", "name": "220/33 kV GXP transformer (OLTC)", "from": "B2", "to": "B3", "type": "transformer",
+      "r": 0.004, "x": 0.100, "b": 0.0, "tap": 1.0,
+      "oltc": { "ctrlBus": "B3", "vset": 1.03, "band": 0.0075, "tmin": 0.85, "tmax": 1.075, "step": 0.0125 },
+      "source": "2x60 MVA 220/33, X=12% each -> 0.10 pu net on 100 MVA (transit_ladder.py:86). Real SVL-TF-T1 is 16% on 100 MVA, X/R~45. OLTC on HV side, range 0.85-1.075 pu, 1.25% steps (real SVL/ALB, ac-powerflow raw:2386). Regulates 33 kV bus to 1.03 pu (transit_ladder SET_33). Raising HV tap lowers the LV bus." },
+
+    { "id": "cable_33", "name": "33 kV cable (aggregate x4 zone feeders)", "from": "B3", "to": "B4", "type": "line",
+      "r": 0.011, "x": 0.0203, "b": 0.0197,
+      "source": "8 km 630 Al 33 kV cable, single = 0.044+j0.081 pu, b=0.00493 pu (R=0.06/X=0.11 ohm/km, C=0.18 uF/km, Zb=10.89 ohm; transit_ladder.py:88, distribution-kb d4). Aggregated over 4 parallel zone feeders: series/4, charging x4. X/R=1.84 (still X-dominated)." },
+
+    { "id": "tx_33_11", "name": "33/11 kV zone transformer (OLTC)", "from": "B4", "to": "B5", "type": "transformer",
+      "r": 0.002, "x": 0.0543, "b": 0.0, "tap": 1.0,
+      "oltc": { "ctrlBus": "B5", "vset": 1.02, "band": 0.0075, "tmin": 0.85, "tmax": 1.15, "step": 0.0125 },
+      "source": "2x23 MVA 33/11, single zone = 0.008+j0.217 pu (X=10% each, X/R~27; transit_ladder.py:92). Aggregated over 4 zones: /4 = 0.002+j0.0543. OLTC +/-15% in 1.25% steps (NZ zone subs). Regulates 11 kV bus to 1.02 pu (transit_ladder SET_11)." },
+
+    { "id": "feeder_11", "name": "11 kV feeder (aggregate x16)", "from": "B5", "to": "B6", "type": "line",
+      "r": 0.03125, "x": 0.01875, "b": 0.00609,
+      "source": "4 km 240 Al 11 kV feeder, single = 0.5+j0.3 pu, b=0.00038 pu (R=0.16/X=0.08 ohm/km, C=0.25 uF/km, Zb=1.21 ohm; transit_ladder.py:94, distribution-kb d4). Aggregated over 16 feeders: series/16, charging x16. R/X=1.67 -> THE FLIP: resistance now dominates. NOTE: transit_ladder rounds single X up to 0.3 pu; the raw ohm/km give 0.529+j0.264 (X/R=0.50 vs 0.60 here) - the flip holds either way, the rounding is conservative against the thesis." },
+
+    { "id": "tx_11_0p4", "name": "11/0.4 kV distribution transformer (fixed +2.5% boost)", "from": "B6", "to": "B7", "type": "transformer",
+      "r": 0.0229, "x": 0.0917, "b": 0.0, "tap": 0.975,
+      "source": "500 kVA 11/0.4, single = 2.2+j8.8 pu (Z~4.5%, X/R~4; transit_ladder.py:98). Aggregated over 96 DTx: /96 = 0.0229+j0.0917. Fixed OFF-LOAD tap set to +2.5% boost -> ratio 0.975 (= -2 x 1.25% steps; transit_ladder DTX_BOOST). No OLTC." },
+
+    { "id": "feeder_lv", "name": "LV feeder (400/230 V, R-dominated)", "from": "B7", "to": "B8", "type": "line",
+      "r": 0.040, "x": 0.012, "b": 0.0005,
+      "source": "Aggregate LV feeder. Standard NZ LV cable (185 mm2 Al): R~0.164/X~0.075 ohm/km, R/X~2-5. Derivation: single ~30 m drop = 0.03*(0.164+j0.075) ohm... referred, single run ~ 3.1+j1.4 pu on 0.4 kV (Zb=0.0016 ohm); aggregated over ~96 DTx x 4 LV runs = 384 -> 0.008+j0.004, but LV load is distributed not end-lumped, so we use a heavier representative equivalent 0.040+j0.012 pu (R/X=3.3) to carry the full aggregate LV drop. This is the least directly-auditable element (representative, order-of-magnitude); it delivers the strongly R-dominated LV and completes the flip." }
+  ],
+
+  "rx_flip_table": {
+    "note": "The reactance->resistance flip is a property of the LINE / CABLE / FEEDER conductor segments. Their per-km R/X is an INPUT choice (X/R is invariant under the parallel-N aggregation: divide-by-N cancels), so the flip is set by the conductor data, not discovered by the solve. The three transformers interleaved in the same cascade stay strongly X-dominated throughout (see 'transformers' below), so the real bus-to-bus series impedance is non-monotonic. The flip is a statement about the conductor segments.",
+    "lines": [
+      { "level": "grid Thevenin", "R": 0.004, "X": 0.040, "XoverR": 10.0, "regime": "strongly X-dominated" },
+      { "level": "220 kV line (GXP incomer)", "R": 0.002, "X": 0.015, "XoverR": 7.5, "regime": "strongly X-dominated" },
+      { "level": "33 kV cable", "R": 0.011, "X": 0.0203, "XoverR": 1.84, "regime": "X-dominated" },
+      { "level": "11 kV feeder", "R": 0.03125, "X": 0.01875, "XoverR": 0.60, "regime": "R-dominated (the FLIP, between 33 and 11 kV)" },
+      { "level": "LV feeder", "R": 0.040, "X": 0.012, "XoverR": 0.30, "regime": "strongly R-dominated" }
+    ],
+    "transformers": [
+      { "level": "220/33 GXP tx", "XoverR": 25, "regime": "X-dominated (unchanged)" },
+      { "level": "33/11 zone tx", "XoverR": 27, "regime": "X-dominated (unchanged)" },
+      { "level": "11/0.4 DTx", "XoverR": 4.0, "regime": "mildly X-dominated (smallest unit)" }
+    ]
+  },
+
+  "scenarios": {
+    "_scale_note": "Loads sized to the 96-DTx aggregate (96 x 0.5 MVA = 48 MVA capacity): a representative ~40 MVA GXP. Day peak = 39.8 MVA = 0.83 of capacity; overnight leading is the overvoltage regime.",
+    "day_peak":    { "label": "Day peak (lagging)",         "P": 38,  "Q": 12,   "deviceBs": 0.0,  "note": "PF~0.95 lag, S=hypot(38,12)=39.8 MVA = 0.83 of the 48 MVA aggregate DTx capacity; series drops dominate." },
+    "day_mid":     { "label": "Daytime (near unity)",       "P": 28,  "Q": 5,    "deviceBs": 0.0,  "note": "Modern load, near-unity PF." },
+    "overnight":   { "label": "Overnight min (leading)",    "P": 18,  "Q": -11,  "deviceBs": 0.0,  "note": "SVL-type night: 18 MW, 11 MVAr leading (PF~0.85 lead). Cable + LED/SMPS. The overvoltage regime." },
+    "overnight_x": { "label": "Overnight, heavy cable",     "P": 12,  "Q": -15,  "deviceBs": 0.0,  "note": "Very light load, more leading Q — pushes OLTCs toward tap-out and the LV floats up." },
+    "statcom_demo":{ "label": "Overnight + 220 kV reactor", "P": 18,  "Q": -11,  "deviceBs": -1.0, "note": "Reactor/STATCOM at B1, B=-1.0 pu = 100 MVAr NOMINAL (at 1.0 pu); a fixed shunt absorbs B*V^2, so ~93 MVAr at the depressed 0.966 pu bus. 220 kV comes down, LV held by OLTCs (the load-bearing demonstration). A V-regulating STATCOM (constant MVAr) is Phase 3." }
+  }
+}
